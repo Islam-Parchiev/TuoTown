@@ -1,0 +1,28 @@
+.header {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 71px;
+    background-color: rgba(#212121,0.8);
+}
+.header__container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header__column {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+.header__phone {
+    color: #FFF;
+font-size: 20px;
+font-family: Montserrat;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+text-transform: uppercase;
+}

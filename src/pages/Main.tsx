@@ -2,7 +2,7 @@ import React,{FC} from 'react'
 
 const Main:FC = () => {
   return (
-    <main className='Main'>Main</main>
+    <main className='Main'></main>
   )
 }
 

@@ -1,0 +1,130 @@
+{
+    "knives":[
+        {
+            "id":1,
+            "title":"Складной нож SQ01-B",
+            "price":850,
+            "descr":"KNIFE 1 description",
+            "new":true
+        },
+        {
+            "id":2,
+            "title":"Складной нож JJ001-TUO-B",
+            "price":12850,
+            "descr":"KNIFE 1 description",
+            "new":true
+        },
+        {
+            "id":3,
+            "title":"Складной нож JJ001-TUO-B",
+            "price":12850,
+            "descr":"KNIFE 1 description",
+            "new":true
+        },
+        {
+            "id":4,
+            "title":"Складной нож SQ01-B",
+            "price":850,
+            "descr":"KNIFE 1 description",
+            "new":true
+        },
+        {
+            "id":5,
+            "title":"Складной нож SQ01-B",
+            "price":850,
+            "descr":"KNIFE 1 description",
+            "new":true
+        },  {
+            "id":6,
+            "title":"Складной нож SQ01-B",
+            "price":850,
+            "descr":"KNIFE 1 description",
+            "new":true
+        },  {
+            "id":7,
+            "title":"Складной нож SQ01-B",
+            "price":850,
+            "descr":"KNIFE 1 description",
+            "new":true
+        },  {
+            "id":8,
+            "title":"Складной нож SQ01-B",
+            "price":850,
+            "descr":"KNIFE 1 description",
+            "new":true
+        },  {
+            "id":9,
+            "title":"Складной нож SQ01-B",
+            "price":850,
+            "descr":"KNIFE 1 description",
+            "new":true
+        },  {
+            "id":10,
+            "title":"Складной нож SQ01-B",
+            "price":850,
+            "descr":"KNIFE 1 description",
+            "new":true
+        },  {
+            "id":11,
+            "title":"Складной нож SQ01-B",
+            "price":850,
+            "descr":"KNIFE 1 description",
+            "new":true
+        },  {
+            "id":12,
+            "title":"Складной нож SQ01-B",
+            "price":850,
+            "descr":"KNIFE 1 description",
+            "new":true
+        },  {
+            "id":13,
+            "title":"Складной нож SQ01-B",
+            "price":850,
+            "descr":"KNIFE 1 description",
+            "new":true
+        },  {
+            "id":14,
+            "title":"Складной нож SQ01-B",
+            "price":850,
+            "descr":"KNIFE 1 description",
+            "new":true
+        },  {
+            "id":15,
+            "title":"Складной нож SQ01-B",
+            "price":850,
+            "descr":"KNIFE 1 description",
+            "new":true
+        },  {
+            "id":16,
+            "title":"Складной нож SQ01-B",
+            "price":850,
+            "descr":"KNIFE 1 description",
+            "new":true
+        },
+        {
+            "id":17,
+            "title":"Складной нож SQ01-B",
+            "price":850,
+            "descr":"KNIFE 1 description",
+            "new":true
+        },  {
+            "id":18,
+            "title":"Складной нож SQ01-B",
+            "price":850,
+            "descr":"KNIFE 1 description",
+            "new":true
+        },  {
+            "id":19,
+            "title":"Складной нож SQ01-B",
+            "price":850,
+            "descr":"KNIFE 1 description",
+            "new":true
+        },  {
+            "id":20,
+            "title":"Складной нож SQ01-B",
+            "price":850,
+            "descr":"KNIFE 1 description",
+            "new":true
+        }
+    ]
+}
