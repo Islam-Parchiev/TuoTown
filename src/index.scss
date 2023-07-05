@@ -15,3 +15,49 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.swiper-button-next {
+  cursor: pointer;
+  position: absolute;
+  top: 182px;
+  right: 29px;
+  z-index: 100;
+  background-image: url("./components/Quantity/arrow-right.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position:center;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+border: 1px solid #FFF;
+}
+.swiper-button-prev {
+  cursor: pointer;
+  position: absolute;
+  top: 182px;
+  left: 29px;
+  z-index: 100;
+  padding: 13px;
+  background-image: url("./components/Quantity/arrow-left.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position:center;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  border: 1px solid #FFF;
+}
+.swiper-pagination {
+  position: absolute;
+  z-index: 100;
+  bottom: 0;
+  right: 50%;
+  display: flex;
+  gap:15px;
+  
+}
+.swiper-pagination span {
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: red;
+}
