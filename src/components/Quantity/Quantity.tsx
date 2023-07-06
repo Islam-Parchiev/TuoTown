@@ -5,6 +5,7 @@ import { Navigation, Pagination, A11y } from 'swiper/modules';
 
 import 'swiper/css';
 import SliderNavigation from '../SliderNavigation/SliderNavigation';
+
 const Quantity:FC = () => {
   return (
     <section className={`${styles.quantity}`}>
@@ -50,6 +51,7 @@ const Quantity:FC = () => {
           </div>
         </SwiperSlide>
         <SliderNavigation/>
+       
       </Swiper>
       
         

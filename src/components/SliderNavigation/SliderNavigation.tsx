@@ -3,6 +3,8 @@ import {useSwiper} from "swiper/react";
 import "./SliderNavigation.scss";
 const SliderNavigation:FC= () => {
   const swiper = useSwiper();
+
+
   return (
     <div className='SliderNavigation'>
       
