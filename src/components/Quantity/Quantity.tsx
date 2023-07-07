@@ -30,23 +30,27 @@ const Quantity:FC = () => {
         </SwiperSlide>
         <SwiperSlide>
           <div className={`${styles.quantity__slide}`}>
-            <h1 className={`${styles.quantity__title}`}>
+           <div className={`${styles.quantity__slide_text}`}>
+           <h1 className={`${styles.quantity__title}`}>
             Исключительное качество без компромиссов
             </h1>
             <div className={`${styles.quantity__descr}`}>
-            Условие, которое необходимо сделать, чтобы они были уничтожены.
+            Ножи «Tuotown» – это главный инструмент поваров и секрет кулинарного мастерства
             </div>
+           </div>
             <button className={`btn-reset ${styles.quantity__btn}`}>ПОДРОБНЕЕ</button>
           </div>
         </SwiperSlide>
         <SwiperSlide>
           <div className={`${styles.quantity__slide}`}>
-            <h1 className={`${styles.quantity__title}`}>
+           <div className={`${styles.quantity__slide_text}`}>
+           <h1 className={`${styles.quantity__title}`}>
             Исключительное качество без компромиссов
             </h1>
             <div className={`${styles.quantity__descr}`}>
-            Условие, которое необходимо сделать, чтобы они были уничтожены.
+            Ножи «Tuotown» – это главный инструмент поваров и секрет кулинарного мастерства
             </div>
+           </div>
             <button className={`btn-reset ${styles.quantity__btn}`}>ПОДРОБНЕЕ</button>
           </div>
         </SwiperSlide>
