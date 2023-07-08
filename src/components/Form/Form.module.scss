@@ -1,0 +1,39 @@
+.form {
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+    &__title { 
+        color: var(--light-color);
+font-family: Jura;
+font-size: 27px;
+font-style: normal;
+font-weight: 500;
+line-height: 42px;
+    }
+ &__label {
+   display: flex;
+   align-items: center;
+
+    width: 276px;
+    height: 59px;
+    border-radius: 6px;
+    background-color:var(--charleston-color);
+    
+}
+&__input {
+    width: 90%;
+    height: 100%;
+}   
+&__btn {
+    width: 10%;
+    height: 100%;
+}
+&__form {
+   
+        display: flex;
+        justify-content: center;
+      
+}
+}

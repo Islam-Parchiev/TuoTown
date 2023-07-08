@@ -1,6 +1,7 @@
 .Categories {
     padding-bottom: 150px;
     &__goods {
+        margin-bottom: 70px;
         padding-top: 80px;
         // display: flex;
         // flex-wrap: wrap;
@@ -11,6 +12,12 @@
         column-gap: 20px;
         row-gap: 40px;
     }
+    &__bottom {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+  
 }
 .categories__list {
     display: flex;

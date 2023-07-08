@@ -2,6 +2,7 @@ import React from 'react'
 import styles from './Categories.module.scss';
 import Card from '../Card/Card';
 import Collection from '../Collection/Collection';
+import Form from '../Form/Form';
 const Categories = () => {
     const [category,setCategory] =React.useState(0);
   return (
@@ -94,7 +95,9 @@ const Categories = () => {
               <Card/>
               
               </ul>
+              <Form />
             </div>
+         
         </div>
     </section>
   )
