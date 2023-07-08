@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from './Categories.module.scss';
 import Card from '../Card/Card';
+import Collection from '../Collection/Collection';
 const Categories = () => {
     const [category,setCategory] =React.useState(0);
   return (
@@ -83,8 +84,15 @@ const Categories = () => {
                   </ul>
             </div>
             <div className={`${styles.Categories__bottom}`}>
-              <ul className={`list-reset ${styles.Categories__list}`}>
+              <ul className={`list-reset ${styles.Categories__goods}`}>
+             <Collection otherClass={'dd'}/>
               <Card/>
+              <Card/>
+              <Card/>
+              <Card/>
+              <Card/>
+              <Card/>
+              
               </ul>
             </div>
         </div>

@@ -1,0 +1,22 @@
+.collection {
+    display: flex;
+    justify-content: center;
+    grid-column: 2 span;
+    align-items: end;
+    width: 590px;
+    height: 480px;
+    background-image: url("../../../public/img/collection/bg.png");
+    &__title {
+        color: var(--light-color);
+font-family: Montserrat;
+font-size: 17px;
+font-style: normal;
+font-weight: 600;
+line-height: 28px;
+    }
+    &__info {
+        display: flex;
+        align-items: center;
+        gap: 90px;
+    }
+}

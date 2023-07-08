@@ -1,6 +1,7 @@
 .Card {
     width: 286px;
     height: 475px;
+    grid-column: 1 span;
     &__top {
         display: flex;
         flex-direction: column;
@@ -32,4 +33,51 @@ line-height: 28px;
     &__new {
         color:var(--red-color);
     }
+    &__basketIcon {
+        position: absolute;
+  overflow: hidden;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  clip: rect(0 0 0 0);
+      
+    }
+    &__icons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        transition:  all 0.3s ease-in-out;
+        max-width: 72px;
+        height: 37px;
+        svg {
+            cursor: pointer;
+            fill: var(--light-color);
+            
+        }
+    }
+    &__plusIcon {
+        stroke: var(--light-color);
+        
+       
+    }
+    
+}
+.Card__icons:hover .Card__basketIcon {
+    position: initial;
+    overflow: initial;
+    margin: 0;
+    border: inherit;
+    padding: 0;
+    width: auto;
+    height: auto;
+    clip: inherit;
+}
+.Card__icons:hover{
+    padding: 0 10px;
+ 
+    background-color: var(--red-color);
+    border-radius: 20px;
 }
