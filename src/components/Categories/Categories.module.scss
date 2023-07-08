@@ -3,10 +3,7 @@
     &__goods {
         margin-bottom: 70px;
         padding-top: 80px;
-        // display: flex;
-        // flex-wrap: wrap;
-        // gap: 50px;
-        // justify-content: center;
+     
         display: grid;
         grid-template-columns: repeat(4,1fr);
         column-gap: 20px;
