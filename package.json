@@ -17,6 +17,7 @@
     "react-redux": "^8.1.1",
     "react-scripts": "5.0.1",
     "sass": "^1.63.6",
+    "stylelint-declaration-block-no-ignored-properties": "^2.7.0",
     "swiper": "^10.0.3",
     "typescript": "^4.9.5",
     "web-vitals": "^2.1.4"
@@ -25,12 +26,24 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "stylelint": "stylelint '**/*{.css,.scss}'",
+    "stylelint:fix": "stylelint '**/*{.css,.scss}' --fix"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.(css|scss)": [
+      "stylelint --fix"
     ]
   },
   "browserslist": {
@@ -44,5 +57,20 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.3",
+    "postcss-lit": "^1.1.0",
+    "prettier": "^3.0.0",
+    "stylelint": "^15.10.1",
+    "stylelint-config-prettier": "^9.0.5",
+    "stylelint-config-rational-order": "^0.1.2",
+    "stylelint-config-standard": "^34.0.0",
+    "stylelint-config-standard-scss": "^10.0.0",
+    "stylelint-order": "^6.0.3",
+    "stylelint-order-config-standard": "^0.1.3",
+    "stylelint-prettier": "^4.0.0",
+    "stylelint-scss": "^5.0.1"
   }
 }
