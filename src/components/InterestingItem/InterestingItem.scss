@@ -1,0 +1,51 @@
+.InterestingItem {
+  
+    width: 380px;
+height: 465px;
+border-radius: 16px;
+background-image: url("./1.jpg");
+background-size: cover;
+background-position:center;
+background-repeat: no-repeat;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+align-items: flex-end;
+
+&__top {
+    padding: 20px;
+}
+time {
+    color:var(--light-color);
+font-family: Montserrat;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: 28px;
+}
+&__bottom {
+    opacity: 0;
+    visibility: hidden;
+    padding: 5px 10px;
+    width: 100%;
+    background-color: var(--red-color);
+    border-radius: 0px 0px 14px 14px;
+    transition: all 0.3s ease-in-out;
+    
+}
+&__title {
+    color: var(--light-color);
+font-family: Montserrat;
+font-size: 17px;
+font-style: normal;
+font-weight: 500;
+line-height: 24px;
+}
+&:hover {
+    .InterestingItem__bottom {
+        visibility: visible;
+        opacity: 1;
+        transition: all 0.3s ease-in-out;
+    }
+}
+}
