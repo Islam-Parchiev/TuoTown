@@ -12,6 +12,7 @@ const Main:FC = () => {
 			<Categories/>
 			<AboutUs/>
 			<Interesting/>
+			
 		</main>
 	)
 }

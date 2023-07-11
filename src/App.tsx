@@ -3,6 +3,7 @@ import React from 'react';
 import Main from './pages/Main';
 import './App.scss';
 import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
 
 const  App:React.FC = () => {
 	return (
@@ -10,6 +11,8 @@ const  App:React.FC = () => {
 			<Header/>
 			
 			<Main/>
+			
+			<Footer/>
 		</div>
 	);
 }
