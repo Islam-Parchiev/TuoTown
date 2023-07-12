@@ -139,8 +139,8 @@ const Footer:FC = () => {
 					</div>
 					<div className="Footer__column Footer__column--third">
 						<h4>Контактная информация</h4>
-						<a href="tel:79811201117">+7 (981) 120-11-17</a>
-						<a href="mailto:tuotown@mail.ru">tuotown@mail.ru</a>
+						<a className="Footer__link-phone" href="tel:79811201117">+7 (981) 120-11-17</a>
+						<a className="Footer__link-email" href="mailto:tuotown@mail.ru">tuotown@mail.ru</a>
 						<span>08:00 — 18:00, ежедневно</span>
 						<address>Россия, Москва, МКАД, 19-й километр,
 вл20с1, вход Ф, 22-68-70</address>
