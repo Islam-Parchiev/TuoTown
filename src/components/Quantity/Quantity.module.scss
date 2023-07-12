@@ -22,7 +22,7 @@
     background-size: cover;
 }
 .quantity__title {
-    color: #fff;
+    color: var(--light-color);
 font-size: 41px;
 font-family: Jura;
 font-style: normal;
@@ -30,7 +30,7 @@ font-weight: 400;
 line-height: 48px;
 }
 .quantity__descr {
-    color: #fff;
+    color: var(--light-color);
 font-size: 19px;
 font-family: Montserrat;
 font-style: normal;
@@ -42,7 +42,7 @@ line-height: 23px;
 padding: 15px 37px;
     border-radius: 27px;
 border: 2px solid #C80000;
-    color: #FFF;
+    color: var(--light-color);
 font-size: 14px;
 font-family: Montserrat;
 font-style: normal;
@@ -57,8 +57,8 @@ line-height: 23px;
     position: relative;
 }
 .slider-prev {
-    border: 1px solid #fff;
+    border: 1px solid var(--light-color);
 }
 .slider-next {
-    border: 1px solid #fff;
+    border: 1px solid var(--light-color);
 }
