@@ -81,6 +81,7 @@ opacity: 0.5;
         }
     }
     &__logo {
+        
         display: flex;
         gap:15px;
         span {
@@ -90,6 +91,9 @@ font-size: 13px;
 font-style: normal;
 font-weight: 600;
 line-height: 17px;
+        }
+        img {
+            cursor: pointer;
         }
     }
     &__descr {
@@ -119,13 +123,20 @@ font-weight: 600;
 line-height: 28px;
         }
         li {
+            cursor: pointer;
+        a {
             color: var(--light-color);
-font-family: Montserrat;
-font-size: 14px;
-font-style: normal;
-font-weight: 500;
-opacity: 0.5;
-line-height: 24px;
+            font-family: Montserrat;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            opacity: 0.5;
+            line-height: 24px;
+            &:hover {
+                opacity: 1;
+            }
+        }
+
         }
     }
     &__social {
@@ -147,6 +158,15 @@ font-style: normal;
 font-weight: 600;
 line-height: 28px;
         }
+        li {
+            cursor: pointer;
+        }
+        svg {
+            fill: var(--light-color);
+            &:hover {
+                fill:var(--hover-color);
+            }
+        }
     }
     &__link {
         &-phone {
@@ -156,6 +176,9 @@ font-size: 20px;
 font-style: normal;
 font-weight: 600;
 line-height: 28px;
+&:hover {
+    color:var(--hover-color);
+}
         }
         &-email {
             color: var(--light-color);
@@ -164,6 +187,9 @@ line-height: 28px;
             font-style: normal;
             font-weight: 400;
             line-height: 19px;
+            &:hover {
+                color:var(--hover-color);
+            }
         }
     }
 }

@@ -18,5 +18,13 @@ line-height: 28px;
         display: flex;
         align-items: center;
         gap: 90px;
+        svg {
+            fill: var(--light-color);
+            cursor: pointer;
+            &:hover {
+                fill: var(--hover-color);
+                
+            }
+        }
     }
 }

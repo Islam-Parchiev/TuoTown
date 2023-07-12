@@ -17,6 +17,15 @@
     align-items: center;
     justify-content: center;
 text-align: center;
+svg {
+    fill: var(--light-color);
+}
+&:hover {
+    border: 1px solid var(--hover-color);
+    svg {
+        fill: var(--hover-color);
+    }
+}
 }
 .slider-next {
     border: 1px solid var(--light-color);
@@ -27,4 +36,13 @@ text-align: center;
     align-items: center;
     justify-content: center;
     text-align: center;
+    svg {
+        fill: var(--light-color);
+    }
+    &:hover {
+        border: 1px solid var(--hover-color);
+        svg {
+            fill: var(--hover-color);
+        }
+    }
 }
