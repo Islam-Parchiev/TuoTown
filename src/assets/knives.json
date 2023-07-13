@@ -4,21 +4,183 @@
         
         {
             "id":1,
+            "title":"SOG Specialty Knives ",
+            "price":2500,
+            "descr":"KNIFE 1 description",
+            "new":true,
+            "img":"./img/1.png",
+            "type":["folding",1]
+        },
+        {
+            "id":2,
+            "title":"Швейцарский армейский нож",
+            "price":1470,
+            "descr":"KNIFE 1 description",
+            "new":false,
+            "img":"./img/1.png",
+            "type":["folding",1]
+        },
+        {
+            "id":3,
             "title":"Складной нож Alpha Miu SQ-0018",
             "price":2500,
             "descr":"KNIFE 1 description",
             "new":true,
-            "img":"https://avatars.mds.yandex.net/get-mpic/5255974/img_id990581179838483869.jpeg/orig",
-            "type":"folding"
+            "img":"./img/1.png",
+            "type":["folding",1]
         },
         {
-            "id":2,
-            "title":"Нож складной Скаут серый/черный пластик Кизляр",
+            "id":4,
+            "title":"Moxie Black",
+            "price":6470,
+            "descr":"Полуавтоматический складной нож Moxie Black, CRKT 1100, сталь 8Cr14MoV Black Oxide, рукоять термопластик/резина",
+            "new":false,
+            "img":"./img/1.png",
+            "type":["folding",1]
+        },
+        {
+            "id":5,
+            "title":"Нож метательный, складной нож Радуга",
+            "price":1500,
+            "descr":"KNIFE 1 description",
+            "new":true,
+            "img":"./img/1.png",
+            "type":["folding",1]
+        },
+        {
+            "id":6,
+            "title":"Нож Switchblade Law",
             "price":1470,
             "descr":"KNIFE 1 description",
             "new":false,
-            "img":"https://avatars.mds.yandex.net/get-mpic/4356316/img_id2095041281656689840.jpeg/orig"
+            "img":"./img/1.png",
+            "type":["folding",1]
+        },
+        {
+            "id":7,
+            "title":"нож Лезвие Бабочка",
+            "price":5555,
+            "descr":"KNIFE 1 description",
+            "new":true,
+            "img":"./img/1.png",
+            "type":["folding",1]
+        },
+        {
+            "id":8,
+            "title":"Нож Cleaver Кухонные ножи",
+            "price":2970,
+            "descr":"KNIFE 1 description",
+            "new":false,
+            "img":"./img/1.png",
+            "type":["kitchen",2]
+        },
+        {
+            "id":9,
+            "title":"Нож Кухонные ножи",
+            "price":2500,
+            "descr":"KNIFE 1 description",
+            "new":true,
+            "img":"./img/2.png",
+            "type":["kitchen",2]
+        },
+        {
+            "id":10,
+            "title":"Карманный нож Blade Ontario Knife",
+            "price":1470,
+            "descr":"KNIFE 1 description",
+            "new":false,
+            "img":"./img/2.png",
+            "type":["folding",1]
+        },
+        {
+            "id":11,
+            "title":"Заточка ножей Хонинговальная сталь",
+            "price":500,
+            "descr":"KNIFE 1 description",
+            "new":true,
+            "img":"./img/1.png",
+            "type":["sharpener",3]
+        },
+        {
+            "id":12,
+            "title":"Заточка ножей Кухонные ножи Arcos",
+            "price":1770,
+            "descr":"KNIFE 1 description",
+            "new":false,
+            "img":"./img/2.png",
+            "type":["sharpener",3]
+        },
+        {
+            "id":13,
+            "title":"Заточка ножей SOG Specialty Knives & Tools",
+            "price":2500,
+            "descr":"KNIFE 1 description",
+            "new":true,
+            "img":"./img/1.png",
+            "type":["sharpener",3]
+        },
+        {
+            "id":14,
+            "title":"Заточка ножей Инструмент ",
+            "price":370,
+            "descr":"KNIFE 1 description",
+            "new":false,
+            "img":"./img/2.png",
+            "type":["sharpener",3]
+        },
+        {
+            "id":15,
+            "title":" Carl Walther GmbH",
+            "price":970,
+            "descr":"KNIFE 1 description",
+            "new":false,
+            "img":"./img/1.png",
+            "type":["sharpener",3]
+        },
+        {
+            "id":16,
+            "title":"Точилка",
+            "price":1170,
+            "descr":"KNIFE 1 description",
+            "new":false,
+            "img":"./img/2.png",
+            "type":["sharpener",3]
+        },
+        {
+            "id":17,
+            "title":"Подставка для ножей",
+            "price":1170,
+            "descr":"KNIFE 1 description",
+            "new":false,
+            "img":"./img/1.png",
+            "type":["accessories",4]
+        },
+        {
+            "id":18,
+            "title":"dsa",
+            "price":1170,
+            "descr":"KNIFE 1 description",
+            "new":false,
+            "img":"./img/2.png",
+            "type":["accessories",4]
+        },
+        {
+            "id":19,
+            "title":"Венчик",
+            "price":1170,
+            "descr":"KNIFE 1 description",
+            "new":false,
+            "img":"./img/1.png",
+            "type":["accessories",4]
+        },
+        {
+            "id":20,
+            "title":"Скалка",
+            "price":1170,
+            "descr":"KNIFE 1 description",
+            "new":false,
+            "img":"./img/2.png",
+            "type":["accessories",4]
         }
-
     ]
 }

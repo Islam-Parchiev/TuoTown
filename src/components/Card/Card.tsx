@@ -1,7 +1,16 @@
 import React from 'react'
 
 import styles from './Card.module.scss'
-const Card:React.FC = () => {
+interface ICard{
+	// id:number,
+    // title:string,
+    // price:number,
+    // descr:string,
+    // new:boolean,
+    img:string,
+    // type:any[]
+}
+const Card:React.FC<ICard> = ({img}) => {
 	return (  
 	 <li className={styles.Card}>
 			<div className={styles.Card__top}>
@@ -67,7 +76,8 @@ const Card:React.FC = () => {
 
 
 				<div className={styles.Card__img}>
-					<img src="/img/Card/12.png" alt="" />
+					
+					<img src={img} alt="" />
 				</div>
 			</div>
 			<div className={styles.Card__bottom}>

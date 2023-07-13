@@ -351,12 +351,12 @@ const Categories = () => {
 				<div className={`${styles.Categories__bottom}`}>
 					<ul className={`list-reset ${styles.Categories__goods}`}>
 						<Collection otherClass={'dd'} />
+						<Card img="./img/1.png"/>
+						{/* <Card />
 						<Card />
 						<Card />
 						<Card />
-						<Card />
-						<Card />
-						<Card />
+						<Card /> */}
 					</ul>
 					<Form />
 				</div>
