@@ -9,7 +9,7 @@
             "descr":"KNIFE 1 description",
             "new":true,
             "img":"./img/1.png",
-            "type":["folding",1]
+            "type":1
         },
         {
             "id":2,
@@ -18,7 +18,7 @@
             "descr":"KNIFE 1 description",
             "new":false,
             "img":"./img/1.png",
-            "type":["folding",1]
+            "type":1
         },
         {
             "id":3,
@@ -27,7 +27,7 @@
             "descr":"KNIFE 1 description",
             "new":true,
             "img":"./img/1.png",
-            "type":["folding",1]
+            "type":1
         },
         {
             "id":4,
@@ -36,7 +36,7 @@
             "descr":"Полуавтоматический складной нож Moxie Black, CRKT 1100, сталь 8Cr14MoV Black Oxide, рукоять термопластик/резина",
             "new":false,
             "img":"./img/1.png",
-            "type":["folding",1]
+            "type":1
         },
         {
             "id":5,
@@ -45,7 +45,7 @@
             "descr":"KNIFE 1 description",
             "new":true,
             "img":"./img/1.png",
-            "type":["folding",1]
+            "type":1
         },
         {
             "id":6,
@@ -54,7 +54,7 @@
             "descr":"KNIFE 1 description",
             "new":false,
             "img":"./img/1.png",
-            "type":["folding",1]
+            "type":1
         },
         {
             "id":7,
@@ -63,7 +63,7 @@
             "descr":"KNIFE 1 description",
             "new":true,
             "img":"./img/1.png",
-            "type":["folding",1]
+            "type":1
         },
         {
             "id":8,
@@ -72,7 +72,7 @@
             "descr":"KNIFE 1 description",
             "new":false,
             "img":"./img/1.png",
-            "type":["kitchen",2]
+            "type":2
         },
         {
             "id":9,
@@ -81,7 +81,7 @@
             "descr":"KNIFE 1 description",
             "new":true,
             "img":"./img/2.png",
-            "type":["kitchen",2]
+            "type":2
         },
         {
             "id":10,
@@ -90,7 +90,7 @@
             "descr":"KNIFE 1 description",
             "new":false,
             "img":"./img/2.png",
-            "type":["folding",1]
+            "type":1
         },
         {
             "id":11,
@@ -99,7 +99,7 @@
             "descr":"KNIFE 1 description",
             "new":true,
             "img":"./img/1.png",
-            "type":["sharpener",3]
+            "type":3
         },
         {
             "id":12,
@@ -108,7 +108,7 @@
             "descr":"KNIFE 1 description",
             "new":false,
             "img":"./img/2.png",
-            "type":["sharpener",3]
+            "type":3
         },
         {
             "id":13,
@@ -117,7 +117,7 @@
             "descr":"KNIFE 1 description",
             "new":true,
             "img":"./img/1.png",
-            "type":["sharpener",3]
+            "type":3
         },
         {
             "id":14,
@@ -126,7 +126,7 @@
             "descr":"KNIFE 1 description",
             "new":false,
             "img":"./img/2.png",
-            "type":["sharpener",3]
+            "type":3
         },
         {
             "id":15,
@@ -135,7 +135,7 @@
             "descr":"KNIFE 1 description",
             "new":false,
             "img":"./img/1.png",
-            "type":["sharpener",3]
+            "type":3
         },
         {
             "id":16,
@@ -144,7 +144,7 @@
             "descr":"KNIFE 1 description",
             "new":false,
             "img":"./img/2.png",
-            "type":["sharpener",3]
+            "type":3
         },
         {
             "id":17,
@@ -153,7 +153,7 @@
             "descr":"KNIFE 1 description",
             "new":false,
             "img":"./img/1.png",
-            "type":["accessories",4]
+            "type":4
         },
         {
             "id":18,
@@ -162,7 +162,7 @@
             "descr":"KNIFE 1 description",
             "new":false,
             "img":"./img/2.png",
-            "type":["accessories",4]
+            "type":4
         },
         {
             "id":19,
@@ -171,7 +171,7 @@
             "descr":"KNIFE 1 description",
             "new":false,
             "img":"./img/1.png",
-            "type":["accessories",4]
+            "type":4
         },
         {
             "id":20,
@@ -180,7 +180,7 @@
             "descr":"KNIFE 1 description",
             "new":false,
             "img":"./img/2.png",
-            "type":["accessories",4]
+            "type":4
         }
     ]
 }

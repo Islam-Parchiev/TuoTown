@@ -1,22 +1,35 @@
-import React from 'react'
+import React, { useState,useEffect } from 'react'
+
 
 import Card from '../Card/Card'
 import Collection from '../Collection/Collection'
 import Form from '../Form/Form'
+import { ICard } from '../../types/Card'
 
-import styles from './Categories.module.scss'
+
+
+import './Categories.scss'
+
 
 const Categories = () => {
-	const [category, setCategory] = React.useState(0);
+	const [knives,setKnives] = useState<ICard[]>([]);
+	const [category, setCategory] = React.useState(1);
+	// console.log(category);
+	useEffect(()=> {
+		fetch(`http://localhost:4200/knives?_limit=6&type=${category}`).then(res => res.json())
+	   .then(data => setKnives(data))
+	},[category])
+
+
 	return (
-		<section className={`${styles.Categories}`}>
+		<section className="Categories">
 			{category}
-			<div className={`container ${styles.Categories__container}`}>
-				<div className={`${styles.Categories__top}`}>
-					<ul className={`list-reset ${styles.categories__list}`}>
+			<div className="container Categories__container">
+				<div className="Categories__top">
+					<ul className="list-reset categories__list">
 						<li
-							onClick={() => setCategory(0)}
-							className={`${styles.Categories__listItem}`}>
+							onClick={() => setCategory(1)}
+							className={`Categories__listItem ${category === 1 ? 'active':''}`}>
 							<svg
 								width="43"
 								height="46"
@@ -60,14 +73,14 @@ const Categories = () => {
 									</clipPath>
 								</defs>
 							</svg>
-							<h4 className={`${styles.Categories__listItemTitle}`}>
+							<h4 className="Categories__listItemTitle">
 								Кухонные ножи
 							</h4>
 						</li>
 
 						<li
-							onClick={() => setCategory(1)}
-							className={`${styles.Categories__listItem}`}>
+							onClick={() => setCategory(2)}
+							className={`Categories__listItem ${category === 2 ? 'active':''}`}>
 							<svg
 								width="54"
 								height="46"
@@ -148,13 +161,13 @@ const Categories = () => {
 								</defs>
 							</svg>
 
-							<h4 className={`${styles.Categories__listItemTitle}`}>
+							<h4 className="Categories__listItemTitle">
 								Кухонные ножи
 							</h4>
 						</li>
 						<li
-							onClick={() => setCategory(2)}
-							className={`${styles.Categories__listItem}`}>
+							onClick={() => setCategory(3)}
+							className={`Categories__listItem ${category === 3 ? 'active':''}`}>
 							<svg
 								width="46"
 								height="46"
@@ -259,13 +272,13 @@ const Categories = () => {
 								</defs>
 							</svg>
 
-							<h4 className={`${styles.Categories__listItemTitle}`}>
+							<h4 className="Categories__listItemTitle">
 								Кухонные ножи
 							</h4>
 						</li>
 						<li
-							onClick={() => setCategory(3)}
-							className={`${styles.Categories__listItem}`}>
+							onClick={() => setCategory(4)}
+							className={`Categories__listItem ${category === 4 ? 'active':''}`}>
 							<svg
 								width="46"
 								height="46"
@@ -342,21 +355,29 @@ const Categories = () => {
 								</defs>
 							</svg>
 
-							<h4 className={`${styles.Categories__listItemTitle}`}>
+							<h4 className="Categories__listItemTitle">
 								Кухонные ножи
 							</h4>
 						</li>
 					</ul>
 				</div>
-				<div className={`${styles.Categories__bottom}`}>
-					<ul className={`list-reset ${styles.Categories__goods}`}>
+				<div className="Categories__bottom">
+					<ul className="list-reset Categories__goods">
 						<Collection otherClass={'dd'} />
-						<Card img="./img/1.png"/>
-						{/* <Card />
-						<Card />
-						<Card />
-						<Card />
-						<Card /> */}
+						{
+					  		
+					  		knives.map((knive:ICard):any => (
+								<Card key={knive.id} 
+									id={knive.id} 
+									descr={knive.descr} 
+									title={knive.title} 
+									new={knive.new}
+									newItem={knive.new}
+									price={knive.price}
+									img={knive.img}
+									type={knive.type}/>
+							))
+						}
 					</ul>
 					<Form />
 				</div>

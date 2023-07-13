@@ -31,7 +31,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-
+ 
+    &.active {
+        svg {
+            fill:var(--red-color);
+        }
+        .Categories__listItemTitle {
+            color:var(--red-color) ;
+        }
+    }
 
 }
 
@@ -55,3 +63,8 @@
         color:var(--red-color) ;
     }
 }
+
+// .Categories__listItem.active svg {
+//         fill:var(--red-color);
+//     }
+   

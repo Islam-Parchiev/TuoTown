@@ -1,16 +1,11 @@
 import React from 'react'
 
+import { ICard } from '../../types/Card'
+
 import styles from './Card.module.scss'
-interface ICard{
-	// id:number,
-    // title:string,
-    // price:number,
-    // descr:string,
-    // new:boolean,
-    img:string,
-    // type:any[]
-}
-const Card:React.FC<ICard> = ({img}) => {
+
+
+const Card:React.FC<ICard> = ({img,title,price,newItem}) => {
 	return (  
 	 <li className={styles.Card}>
 			<div className={styles.Card__top}>
@@ -82,15 +77,19 @@ const Card:React.FC<ICard> = ({img}) => {
 			</div>
 			<div className={styles.Card__bottom}>
 				<h4 className={styles.Card__title}>
-            Складной нож SQ01-B
+           			 {title}
 				</h4>
 				<div className={styles.Card__info}>
 					<span className={styles.Card__price}>
-            850 р.
+            	{price} р.
 					</span>
+					{
+						newItem && 
+					
 					<span className={styles.Card__new}>
                 Новинка
 					</span>
+					}
 				</div>
 			</div>
 		</li>
