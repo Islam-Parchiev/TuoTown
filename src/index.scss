@@ -46,18 +46,26 @@ border: 1px solid var(--light-color);
   border-radius: 100%;
   border: 1px solid var(--light-color);
 }
-// .swiper-pagination {
-//   position: absolute;
-//   z-index: 100;
-//   bottom: 0;
-//   right: 50%;
-//   display: flex;
-//   gap:15px;
+.swiper-pagination {
+  position: absolute;
+  z-index: 1000;
+  bottom:60px;
+  right: 50%;
+  display: flex;
+  gap:15px;
   
-// }
-// .swiper-pagination span {
-//   display: block;
-//   width: 10px;
-//   height: 10px;
-//   background-color: red;
-// }
+}
+.swiper-pagination-bullet {
+  cursor: pointer;
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  background-color: var(--light-color);
+  &:hover {
+    background-color:var(--hover-color);
+  }
+  &-active {
+    background-color:var(--hover-color);
+  }
+}
