@@ -1,6 +1,9 @@
 import React,{FC} from 'react'
 
+import Sidebar from '../Sidebar/Sidebar';
+
 import styles from './Header.module.scss';
+
 
 const Header:FC = () => {
 	return (
@@ -104,6 +107,7 @@ const Header:FC = () => {
 					</button>
 				 </div>
 			</div>
+			<Sidebar/>
 		</header>
 	)
 }
