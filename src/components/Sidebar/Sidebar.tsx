@@ -1,12 +1,20 @@
-import React,{FC} from 'react'
+import React,{FC, useEffect} from 'react'
 
 import './Sidebar.scss';
 
-const Sidebar:FC = () => {
+const Sidebar:FC<any> = ({toggleSidebar,setToggleSidebar}) => {
+
+	useEffect(()=> {
+		document.body.style.overflow = 'hidden'
+		return () => {
+			document.body.style.overflow = 'unset'
+		}
+	},[])
+
 	return (
 		<div className="overlay">
 			<div className="Sidebar">
-				<button className="btn-reset Sidebar__back">
+				<button onClick={()=> setToggleSidebar(!toggleSidebar)} className="btn-reset Sidebar__back">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						width="8"

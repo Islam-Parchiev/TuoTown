@@ -1,16 +1,17 @@
 import React,{FC} from 'react'
 
-import Sidebar from '../Sidebar/Sidebar';
+
 
 import styles from './Header.module.scss';
 
 
-const Header:FC = () => {
+const Header:FC<any> = ({toggleSidebar ,setToggleSidebar}) => {
+	
 	return (
 		<header className={styles.header}>
 			<div className={`container ${styles.header__container}`}>
 				 <div className={styles.header__column}>
-					<button className={`btn-reset ${styles.header__sidebarBtn}`}>
+					<button onClick={()=> setToggleSidebar(!toggleSidebar)} className={`btn-reset ${styles.header__sidebarBtn}`}>
 						<svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<circle cx="3.5" cy="3.5" r="3"/>
 							<circle cx="3.5" cy="11.5" r="3"/>
@@ -107,7 +108,7 @@ const Header:FC = () => {
 					</button>
 				 </div>
 			</div>
-			<Sidebar/>
+			
 		</header>
 	)
 }

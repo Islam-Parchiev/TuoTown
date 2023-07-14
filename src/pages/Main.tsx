@@ -6,10 +6,11 @@ import AboutUs from '../components/AboutUs/AboutUs'
 import Interesting from '../components/Interesting/Interesting'
 import Sidebar from '../components/Sidebar/Sidebar'
 
-const Main:FC = () => {
+const Main:FC<any> = ({toggleSidebar,setToggleSidebar}) => {
+	
 	return (
 		<main className="Main">
-			<Sidebar/>
+			{toggleSidebar === true ? <Sidebar toggleSidebar={toggleSidebar} setToggleSidebar={setToggleSidebar}/>:null}
 			<Quantity/>
 			<Categories/>
 			<AboutUs/>

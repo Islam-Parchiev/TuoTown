@@ -6,11 +6,12 @@ import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 
 const  App:React.FC = () => {
+	const [toggleSidebar,setToggleSidebar] = React.useState<boolean>(false);
 	return (
 		<div className="App">
-			<Header/>
+			<Header toggleSidebar={toggleSidebar} setToggleSidebar={setToggleSidebar}/>
 			
-			<Main/>
+			<Main toggleSidebar={toggleSidebar} setToggleSidebar={setToggleSidebar}/>
 			
 			<Footer/>
 		</div>

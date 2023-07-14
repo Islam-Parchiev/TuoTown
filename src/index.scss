@@ -72,3 +72,6 @@ border: 1px solid var(--light-color);
 .Main {
   position: relative;
 }
+.disableScroll {
+  overflow-y: hidden;
+}
