@@ -1,20 +1,21 @@
-import React,{FC, useEffect} from 'react'
+import React, { FC, useEffect } from 'react'
 
-import './Sidebar.scss';
+import './Sidebar.scss'
 
-const Sidebar:FC<any> = ({toggleSidebar,setToggleSidebar}) => {
-
-	useEffect(()=> {
+const Sidebar: FC<any> = ({ toggleSidebar, setToggleSidebar }) => {
+	useEffect(() => {
 		document.body.style.overflow = 'hidden'
 		return () => {
 			document.body.style.overflow = 'unset'
 		}
-	},[])
+	}, [])
 
 	return (
 		<div className="overlay">
 			<div className="Sidebar">
-				<button onClick={()=> setToggleSidebar(!toggleSidebar)} className="btn-reset Sidebar__back">
+				<button
+					onClick={() => setToggleSidebar(!toggleSidebar)}
+					className="btn-reset Sidebar__back">
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						width="8"
@@ -62,7 +63,7 @@ const Sidebar:FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 							<a href="/"> О компании </a>
 						</li>
 						<li className="nav__list-item">
-							<a href="/">Контакты  </a>
+							<a href="/">Контакты </a>
 						</li>
 						<li className="nav__list-item">
 							<a href="/">Как проехать </a>

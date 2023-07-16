@@ -1,52 +1,77 @@
-import React,{FC} from 'react'
+import React, { FC } from 'react'
 
+import styles from './Header.module.scss'
 
-
-import styles from './Header.module.scss';
-
-
-const Header:FC<any> = ({toggleSidebar ,setToggleSidebar}) => {
-	
+const Header: FC<any> = ({ toggleSidebar, setToggleSidebar }) => {
 	return (
 		<header className={styles.header}>
 			<div className={`container ${styles.header__container}`}>
-				 <div className={styles.header__column}>
-					<button onClick={()=> setToggleSidebar(!toggleSidebar)} className={`btn-reset ${styles.header__sidebarBtn}`}>
-						<svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<circle cx="3.5" cy="3.5" r="3"/>
-							<circle cx="3.5" cy="11.5" r="3"/>
-							<circle cx="3.5" cy="19.5" r="3"/>
-							<circle cx="11.5" cy="3.5" r="3"/>
-							<circle cx="11.5" cy="11.5" r="3"/>
-							<circle cx="11.5" cy="19.5" r="3"/>
-							<circle cx="19.5" cy="3.5" r="3"/>
-							<circle cx="19.5" cy="11.5" r="3"/>
-							<circle cx="19.5" cy="19.5" r="3"/>
+				<div className={styles.header__column}>
+					<button
+						onClick={() => setToggleSidebar(!toggleSidebar)}
+						className={`btn-reset ${styles.header__sidebarBtn}`}>
+						<svg
+							width="23"
+							height="23"
+							viewBox="0 0 23 23"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<circle cx="3.5" cy="3.5" r="3" />
+							<circle cx="3.5" cy="11.5" r="3" />
+							<circle cx="3.5" cy="19.5" r="3" />
+							<circle cx="11.5" cy="3.5" r="3" />
+							<circle cx="11.5" cy="11.5" r="3" />
+							<circle cx="11.5" cy="19.5" r="3" />
+							<circle cx="19.5" cy="3.5" r="3" />
+							<circle cx="19.5" cy="11.5" r="3" />
+							<circle cx="19.5" cy="19.5" r="3" />
 						</svg>
 					</button>
 					<button className={`btn-reset ${styles.header__positionBtn}`}>
-						<svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M20.125 9.58333C20.125 16.2917 11.5 22.0417 11.5 22.0417C11.5 
+						<svg
+							width="23"
+							height="23"
+							viewBox="0 0 23 23"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M20.125 9.58333C20.125 16.2917 11.5 22.0417 11.5 22.0417C11.5 
 									22.0417 2.875 16.2917 2.875 9.58333C2.875 7.29584 3.7837 5.10203 5.4012
 									3.48453C7.0187 1.86703 9.21251 0.958328 11.5 0.958328C13.7875 0.958328 
 									15.9813 1.86703 17.5988 3.48453C19.2163 5.10203 20.125 7.29584 20.125 
-									9.58333Z"  stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
-							<path d="M11.5 12.4583C13.0878 12.4583 14.375 11.1711 14.375 9.58333C14.375 7.99551 
+									9.58333Z"
+								stroke-width="1.3"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							/>
+							<path
+								d="M11.5 12.4583C13.0878 12.4583 14.375 11.1711 14.375 9.58333C14.375 7.99551 
 									13.0878 6.70833 11.5 6.70833C9.91218 6.70833 8.625 7.99551 8.625 9.58333C8.625 
-									11.1711 9.91218 12.4583 11.5 12.4583Z" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+									11.1711 9.91218 12.4583 11.5 12.4583Z"
+								stroke-width="1.3"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							/>
 						</svg>
-
 					</button>
-					<a href="tel:89811201117" className={styles.header__phone}>8 981 120-11-17</a>
-				 </div>
-				 <a href="/" className={styles.header__column}>
+					<a href="tel:89811201117" className={styles.header__phone}>
+						8 981 120-11-17
+					</a>
+				</div>
+				<a href="/" className={styles.header__column}>
 					<img src="img/header/logo.png" alt="logo" />
-				 </a>
-				 <div className={styles.header__column}>
+				</a>
+				<div className={styles.header__column}>
 					<button className={`btn-reset ${styles.header__basket}`}>
-						<svg width="19" height="23" viewBox="0 0 19 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<svg
+							width="19"
+							height="23"
+							viewBox="0 0 19 23"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg">
 							<g clip-path="url(#clip0_67_4242)">
-								<path d="M9.72182 0C10.0481 0.076412 10.3862 0.129313 10.7065 0.235114C12.5512 0.864043 
+								<path
+									d="M9.72182 0C10.0481 0.076412 10.3862 0.129313 10.7065 0.235114C12.5512 0.864043 
 								13.7198 2.39816 13.8443 4.33197C13.8443 4.36724 13.8562 4.4025 13.8621 4.47304C13.9452 
 								4.47304 14.0282 4.47304 14.1053 4.47304C14.8883 4.47304 15.6772 4.47304 16.4602 
 								4.47304C16.9466 4.47304 17.1839 4.68464 17.2313 5.16075C17.3915 6.9241 17.5457 
@@ -77,38 +102,69 @@ const Header:FC<any> = ({toggleSidebar ,setToggleSidebar}) => {
 										7.57066 4.69768 7.45898 4.69768 7.3473C4.68581 6.8183 4.68581 6.29517 4.68581 5.76029ZM12.575 
 										4.46128C12.4919 3.23281 11.9521 2.29236 10.8844 1.6987C9.72775 1.05801 8.55921 1.10503 7.44998 
 										1.82213C6.50684 2.43343 6.02638 3.33274 5.96706 4.46128C8.17958 4.46128 10.3684 4.46128 12.575 
-										4.46128Z"/>
+										4.46128Z"
+								/>
 							</g>
 							<defs>
 								<clipPath id="clip0_67_4242">
-									<rect width="18.5484" height="23" fill="white"/>
+									<rect
+										width="18.5484"
+										height="23"
+										fill="white"
+									/>
 								</clipPath>
 							</defs>
 						</svg>
 					</button>
 
 					<button className={`btn-reset ${styles.header__mail}`}>
-						<svg width="24" height="23" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M4.38175 3.83333H19.7151C20.7693 3.83333 21.6318 4.69583 21.6318 5.74999V17.25C21.6318 
+						<svg
+							width="24"
+							height="23"
+							viewBox="0 0 24 23"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M4.38175 3.83333H19.7151C20.7693 3.83333 21.6318 4.69583 21.6318 5.74999V17.25C21.6318 
 								18.3042 20.7693 19.1667 19.7151 19.1667H4.38175C3.32759 19.1667 2.46509 18.3042 2.46509 
-								17.25V5.74999C2.46509 4.69583 3.32759 3.83333 4.38175 3.83333Z" stroke-width="1.3" 
-					  stroke-linecap="round" stroke-linejoin="round"/>
-							<path d="M21.6318 5.75L12.0484 12.4583L2.46509 5.75"  stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+								17.25V5.74999C2.46509 4.69583 3.32759 3.83333 4.38175 3.83333Z"
+								stroke-width="1.3"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							/>
+							<path
+								d="M21.6318 5.75L12.0484 12.4583L2.46509 5.75"
+								stroke-width="1.3"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							/>
 						</svg>
-
 					</button>
 					<button className={`btn-reset ${styles.header__search}`}>
-						<svg width="24" height="23" viewBox="0 0 24 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-							<path d="M11.09 18.2083C15.3242 18.2083 18.7567 14.7759 18.7567 10.5417C18.7567 6.30748 15.3242 
+						<svg
+							width="24"
+							height="23"
+							viewBox="0 0 24 23"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M11.09 18.2083C15.3242 18.2083 18.7567 14.7759 18.7567 10.5417C18.7567 6.30748 15.3242 
 							2.875 11.09 2.875C6.85582 2.875 3.42334 6.30748 3.42334 10.5417C3.42334 14.7759 6.85582 18.2083 
-							11.09 18.2083Z"  stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
-							<path d="M20.6734 20.125L16.5046 15.9563" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+							11.09 18.2083Z"
+								stroke-width="1.3"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							/>
+							<path
+								d="M20.6734 20.125L16.5046 15.9563"
+								stroke-width="1.3"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							/>
 						</svg>
-
 					</button>
-				 </div>
+				</div>
 			</div>
-			
 		</header>
 	)
 }

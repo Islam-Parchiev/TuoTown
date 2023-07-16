@@ -1,21 +1,18 @@
-import React,{FC} from 'react'
+import React, { FC } from 'react'
 
 import InterestingItem from '../InterestingItem/InterestingItem'
 
-import './Interesting.scss';
+import './Interesting.scss'
 
-const Interesting:FC = () => {
+const Interesting: FC = () => {
 	return (
 		<section className="Interesting">
 			<div className="container Interesting__container">
-				<h2 className="Interesting__title">
-
-				Всё самое интересное о ножах
-				</h2>
+				<h2 className="Interesting__title">Всё самое интересное о ножах</h2>
 				<ul className="list-reset Interesting__items">
-					<InterestingItem/>
-					<InterestingItem/>
-					<InterestingItem/>
+					<InterestingItem />
+					<InterestingItem />
+					<InterestingItem />
 				</ul>
 			</div>
 		</section>

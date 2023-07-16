@@ -5,68 +5,82 @@
     right: 0;
     width: 100%;
     height: 71px;
-    background-color: rgba(#212121,0.8);
+    background-color: rgba(#212121, 0.8);
+
     &__sidebarBtn {
         svg {
             stroke: var(--light-color);
-            &:hover {
-                stroke: var(--hover-color);  
-            }
-        }
-    }
-    &__positionBtn {
-        svg {
-            stroke: var(--light-color);
-            &:hover {
-                stroke: var(--hover-color);  
-            }
-        }
-    }
-    &__basket {
-        svg {
-            fill: var(--light-color);
-            &:hover {
-                fill: var(--hover-color);
-            }
-        }
-    }
-    &__mail {
-        svg {
-            stroke: var(--light-color);
+
             &:hover {
                 stroke: var(--hover-color);
             }
         }
     }
-    &__search {
+
+    &__positionBtn {
         svg {
             stroke: var(--light-color);
+
             &:hover {
-                stroke: var(--hover-color);  
+                stroke: var(--hover-color);
             }
         }
     }
-}
-.header__container {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.header__column {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-}
-.header__phone {
-    color: var(--light-color);
-font-size: 20px;
-font-family: Montserrat;
-font-style: normal;
-font-weight: 500;
-line-height: normal;
-text-transform: uppercase;
-&:hover {
-    color:var(--hover-color);
-}
+
+    &__basket {
+        svg {
+            fill: var(--light-color);
+
+            &:hover {
+                fill: var(--hover-color);
+            }
+        }
+    }
+
+    &__mail {
+        svg {
+            stroke: var(--light-color);
+
+            &:hover {
+                stroke: var(--hover-color);
+            }
+        }
+    }
+
+    &__search {
+        svg {
+            stroke: var(--light-color);
+
+            &:hover {
+                stroke: var(--hover-color);
+            }
+        }
+    }
+
+    &__container {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__column {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+    }
+
+    &__phone {
+        color: var(--light-color);
+        font-size: 20px;
+        font-family: Montserrat;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
+        text-transform: uppercase;
+
+        &:hover {
+            color: var(--hover-color);
+        }
+    }
 }

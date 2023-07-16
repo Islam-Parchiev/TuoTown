@@ -1,7 +1,7 @@
-import React,{FC} from 'react'
-import './InterestingItem.scss';
+import React, { FC } from 'react'
+import './InterestingItem.scss'
 
-const InterestingItem:FC = () => {
+const InterestingItem: FC = () => {
 	return (
 		<li className="InterestingItem">
 			<div className="InterestingItem__top">
@@ -10,7 +10,7 @@ const InterestingItem:FC = () => {
 
 			<div className="InterestingItem__bottom">
 				<h3 className="InterestingItem__title">
-				Традиционные виды японских кухонных ножей
+					Традиционные виды японских кухонных ножей
 				</h3>
 			</div>
 		</li>

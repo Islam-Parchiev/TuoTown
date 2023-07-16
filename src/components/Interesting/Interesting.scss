@@ -1,14 +1,16 @@
 .Interesting {
     padding-top: 50px;
     padding-bottom: 50px;
+
     &__title {
         color: var(--light-color);
-font-family: Jura;
-font-size: 35px;
-font-style: normal;
-font-weight: 500;
-line-height: normal;
+        font-family: Jura;
+        font-size: 35px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: normal;
     }
+
     &__items {
         display: flex;
         align-items: center;

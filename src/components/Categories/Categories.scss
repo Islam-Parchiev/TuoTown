@@ -1,70 +1,74 @@
 .Categories {
     padding-bottom: 150px;
+
     &__goods {
         margin-bottom: 70px;
         padding-top: 80px;
-     
+
         display: grid;
-        grid-template-columns: repeat(4,1fr);
+        grid-template-columns: repeat(4, 1fr);
         column-gap: 20px;
         row-gap: 40px;
     }
+
     &__bottom {
         display: flex;
         flex-direction: column;
         align-items: center;
     }
-  
-}
-.categories__list {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-   
-    
-}
-.Categories__top {
-    padding-top: 100px;
-}
-.Categories__listItem {
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
- 
-    &.active {
+
+    &__list {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+
+    }
+
+    &__top {
+        padding-top: 100px;
+    }
+
+    &__listItem {
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &.active {
+            svg {
+                fill: var(--red-color);
+            }
+
+            .Categories__listItemTitle {
+                color: var(--red-color);
+            }
+        }
+
         svg {
-            fill:var(--red-color);
+            fill: var(--light-color);
         }
-        .Categories__listItemTitle {
-            color:var(--red-color) ;
+
+        &Title {
+            color: var(--light-color);
+            font-family: Montserrat;
+            font-size: 17px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            opacity: 0.3;
+        }
+
+        &:hover {
+            svg {
+                fill: var(--red-color);
+            }
+
+            .Categories__listItemTitle {
+                color: var(--red-color);
+            }
         }
     }
 
-}
 
-.Categories__listItem svg {
-    fill: var(--light-color);
 }
-.Categories__listItemTitle {
-    color: var(--light-color);
-    font-family: Montserrat;
-    font-size: 17px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    opacity: 0.3;
- }
- .Categories__listItem:hover {
-     svg {
-        fill:var(--red-color);
-    }
-    .Categories__listItemTitle {
-        color:var(--red-color) ;
-    }
-}
-
-// .Categories__listItem.active svg {
-//         fill:var(--red-color);
-//     }
-   

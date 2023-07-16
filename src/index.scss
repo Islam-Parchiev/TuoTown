@@ -8,13 +8,14 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-background-color: var(--body-bg);
+  background-color: var(--body-bg);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
 .swiper-button-next {
   cursor: pointer;
   position: absolute;
@@ -24,12 +25,13 @@ code {
   background-image: url("./components/Quantity/arrow-right.svg");
   background-size: contain;
   background-repeat: no-repeat;
-  background-position:center;
+  background-position: center;
   width: 50px;
   height: 50px;
   border-radius: 100%;
-border: 1px solid var(--light-color);
+  border: 1px solid var(--light-color);
 }
+
 .swiper-button-prev {
   cursor: pointer;
   position: absolute;
@@ -40,21 +42,23 @@ border: 1px solid var(--light-color);
   background-image: url("./components/Quantity/arrow-left.svg");
   background-size: contain;
   background-repeat: no-repeat;
-  background-position:center;
+  background-position: center;
   width: 40px;
   height: 40px;
   border-radius: 100%;
   border: 1px solid var(--light-color);
 }
+
 .swiper-pagination {
   position: absolute;
   z-index: 1000;
-  bottom:60px;
+  bottom: 60px;
   right: 50%;
   display: flex;
-  gap:15px;
-  
+  gap: 15px;
+
 }
+
 .swiper-pagination-bullet {
   cursor: pointer;
   display: block;
@@ -62,16 +66,20 @@ border: 1px solid var(--light-color);
   height: 15px;
   border-radius: 100%;
   background-color: var(--light-color);
+
   &:hover {
-    background-color:var(--hover-color);
+    background-color: var(--hover-color);
   }
+
   &-active {
-    background-color:var(--hover-color);
+    background-color: var(--hover-color);
   }
 }
+
 .Main {
   position: relative;
 }
+
 .disableScroll {
   overflow-y: hidden;
 }
