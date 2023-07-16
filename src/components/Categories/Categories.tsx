@@ -162,7 +162,7 @@ const Categories = () => {
 							</svg>
 
 							<h4 className="Categories__listItemTitle">
-								Кухонные ножи
+							Складные ножи
 							</h4>
 						</li>
 						<li
@@ -273,7 +273,7 @@ const Categories = () => {
 							</svg>
 
 							<h4 className="Categories__listItemTitle">
-								Кухонные ножи
+							Точилки для ножей
 							</h4>
 						</li>
 						<li
@@ -356,7 +356,7 @@ const Categories = () => {
 							</svg>
 
 							<h4 className="Categories__listItemTitle">
-								Кухонные ножи
+							Аксессуары для кухни
 							</h4>
 						</li>
 					</ul>
