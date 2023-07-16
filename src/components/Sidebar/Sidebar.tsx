@@ -35,22 +35,22 @@ const Sidebar:FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 						<a href="/">Кухонные ножи TUOTOWN </a>
 					</li>
 					<li className="Sidebar__list-item">
-						<a href="/">Кухонные ножи TUOTOWN </a>
+						<a href="/">Складные ножи TUOTOWN </a>
 					</li>
 					<li className="Sidebar__list-item">
-						<a href="/">Кухонные ножи TUOTOWN </a>
+						<a href="/">Кухонные ножи QXF </a>
 					</li>
 					<li className="Sidebar__list-item">
-						<a href="/">Кухонные ножи TUOTOWN </a>
+						<a href="/">Точильные камни </a>
 					</li>
 					<li className="Sidebar__list-item">
-						<a href="/">Кухонные ножи TUOTOWN </a>
+						<a href="/">Наборы для BBQ </a>
 					</li>
 					<li className="Sidebar__list-item">
-						<a href="/">Кухонные ножи TUOTOWN </a>
+						<a href="/">Кухонные принадлежности </a>
 					</li>
 					<li className="Sidebar__list-item">
-						<a href="/">Кухонные ножи TUOTOWN </a>
+						<a href="/">Туристические товары</a>
 					</li>
 				</ul>
 				<nav className="Sidebar__nav">
@@ -59,13 +59,13 @@ const Sidebar:FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 							<a href="/">Новости </a>
 						</li>
 						<li className="nav__list-item">
-							<a href="/">Новости </a>
+							<a href="/"> О компании </a>
 						</li>
 						<li className="nav__list-item">
-							<a href="/">Новости </a>
+							<a href="/">Контакты  </a>
 						</li>
 						<li className="nav__list-item">
-							<a href="/">Новости </a>
+							<a href="/">Как проехать </a>
 						</li>
 					</ul>
 				</nav>
