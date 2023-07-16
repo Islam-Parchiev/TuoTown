@@ -2,7 +2,7 @@
     width: 286px;
     height: 475px;
     grid-column: 1 span;
-
+    cursor: pointer;
     &__top {
         display: flex;
         flex-direction: column;
@@ -73,6 +73,12 @@
 
     }
 
+    &:hover {
+        .Card__plusIcon {
+            background-color: var(--red-color);
+            border-radius: 100%;
+        }
+    }
 }
 
 .Card__icons:hover .Card__basketIcon {
