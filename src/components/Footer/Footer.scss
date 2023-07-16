@@ -108,10 +108,12 @@ line-height: 20px;
         display: flex;
         flex-direction: column;
         align-items: start;
+        flex-wrap: wrap;
         ul {
             display: flex;
             align-items: center;
             gap: 20px;
+            flex-wrap: wrap;
         }
         h4 {
             margin: 0;
