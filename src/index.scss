@@ -9,6 +9,17 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--body-bg);
+  &::-webkit-scrollbar {
+    width: 12px;               /* ширина scrollbar */
+  }
+  &::-webkit-scrollbar-track {
+    background: rgb(61, 61, 61);        /* цвет дорожки */
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: rgb(255, 0, 0);    /* цвет плашки */
+    border-radius: 20px;       /* закругления плашки */
+    cursor: pointer;
+  }
 }
 
 code {
