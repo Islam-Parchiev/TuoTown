@@ -6,6 +6,8 @@ import { Navigation, Pagination, A11y } from 'swiper/modules'
 import 'swiper/css'
 import SliderNavigation from '../SliderNavigation/SliderNavigation'
 
+import Button from '../Button/Button'
+
 import styles from './Quantity.module.scss'
 
 const Quantity: FC = () => {
@@ -27,9 +29,14 @@ const Quantity: FC = () => {
 								секрет кулинарного мастерства
 							</div>
 						</div>
-						<button className={`btn-reset ${styles.quantity__btn}`}>
+						{/* <button className={`btn-reset ${styles.quantity__btn}`}>
 							ПОДРОБНЕЕ
-						</button>
+						</button> */}
+						<Button 
+							size="medium" 
+							variant="secondary" 
+							type="two"
+							onclick={()=> console.log('click')}>Подронее</Button>
 					</div>
 				</SwiperSlide>
 				<SwiperSlide>
@@ -43,9 +50,11 @@ const Quantity: FC = () => {
 								секрет кулинарного мастерства
 							</div>
 						</div>
-						<button className={`btn-reset ${styles.quantity__btn}`}>
-							ПОДРОБНЕЕ
-						</button>
+						<Button 
+							size="medium" 
+							variant="secondary" 
+							type="two"
+							onclick={()=> console.log('click')}>Подронее</Button>
 					</div>
 				</SwiperSlide>
 				<SwiperSlide>
@@ -59,9 +68,11 @@ const Quantity: FC = () => {
 								секрет кулинарного мастерства
 							</div>
 						</div>
-						<button className={`btn-reset ${styles.quantity__btn}`}>
-							ПОДРОБНЕЕ
-						</button>
+						<Button 
+							size="medium" 
+							variant="secondary" 
+							type="two"
+							onclick={()=> console.log('click')}>Подронее</Button>
 					</div>
 				</SwiperSlide>
 				<SliderNavigation />
