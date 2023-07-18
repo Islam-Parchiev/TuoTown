@@ -1,18 +1,22 @@
 import React from 'react';
 
-import Main from './pages/Main';
+import {Route,Routes} from 'react-router-dom'
+
+import Main from './pages/Main/Main';
 import './App.scss';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+import Catalog from './pages/Catalog/Catalog';
 
 const  App:React.FC = () => {
 	const [toggleSidebar,setToggleSidebar] = React.useState<boolean>(false);
 	return (
 		<div className="App">
 			<Header toggleSidebar={toggleSidebar} setToggleSidebar={setToggleSidebar}/>
-			
-			<Main toggleSidebar={toggleSidebar} setToggleSidebar={setToggleSidebar}/>
-			
+			<Routes>
+				<Route path="/" element={<Main toggleSidebar={toggleSidebar} setToggleSidebar={setToggleSidebar}/> }/>
+				<Route path="/catalog" element={<Catalog toggleSidebar={toggleSidebar} setToggleSidebar={setToggleSidebar}/>}/>
+			</Routes>
 			<Footer/>
 		</div>
 	);

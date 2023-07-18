@@ -1,5 +1,7 @@
 import React, { FC, useEffect } from 'react'
 
+import {Link} from 'react-router-dom';
+
 import './Sidebar.scss'
 
 const Sidebar: FC<any> = ({ toggleSidebar, setToggleSidebar }) => {
@@ -33,40 +35,40 @@ const Sidebar: FC<any> = ({ toggleSidebar, setToggleSidebar }) => {
 				</button>
 				<ul className="list-reset Sidebar__list">
 					<li className="Sidebar__list-item">
-						<a href="/">Кухонные ножи TUOTOWN </a>
+						<Link to="/catalog">Каталог </Link>
 					</li>
 					<li className="Sidebar__list-item">
-						<a href="/">Складные ножи TUOTOWN </a>
+						<Link to="/">Складные ножи TUOTOWN </Link>
 					</li>
 					<li className="Sidebar__list-item">
-						<a href="/">Кухонные ножи QXF </a>
+						<Link to="/">Кухонные ножи QXF </Link>
 					</li>
 					<li className="Sidebar__list-item">
-						<a href="/">Точильные камни </a>
+						<Link to="/">Точильные камни </Link>
 					</li>
 					<li className="Sidebar__list-item">
-						<a href="/">Наборы для BBQ </a>
+						<Link to="/">Наборы для BBQ </Link>
 					</li>
 					<li className="Sidebar__list-item">
-						<a href="/">Кухонные принадлежности </a>
+						<Link to="/">Кухонные принадлежности </Link>
 					</li>
 					<li className="Sidebar__list-item">
-						<a href="/">Туристические товары</a>
+						<Link to="/">Туристические товары</Link>
 					</li>
 				</ul>
 				<nav className="Sidebar__nav">
 					<ul className="list-reset Sidebar__nav-list nav__list">
 						<li className="nav__list-item">
-							<a href="/">Новости </a>
+							<Link to="/">Новости </Link>
 						</li>
 						<li className="nav__list-item">
-							<a href="/"> О компании </a>
+							<Link to="/"> О компании </Link>
 						</li>
 						<li className="nav__list-item">
-							<a href="/">Контакты </a>
+							<Link to="/">Контакты </Link>
 						</li>
 						<li className="nav__list-item">
-							<a href="/">Как проехать </a>
+							<Link to="/">Как проехать </Link>
 						</li>
 					</ul>
 				</nav>
