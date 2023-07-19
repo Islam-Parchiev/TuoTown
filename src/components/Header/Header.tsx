@@ -1,6 +1,10 @@
 import React, { FC } from 'react'
 
+import { Link } from 'react-router-dom'
+
 import styles from './Header.module.scss'
+
+
 
 const Header: FC<any> = ({ toggleSidebar, setToggleSidebar }) => {
 	return (
@@ -58,9 +62,9 @@ const Header: FC<any> = ({ toggleSidebar, setToggleSidebar }) => {
 						8 981 120-11-17
 					</a>
 				</div>
-				<a href="/" className={styles.header__column}>
+				<Link to="/" className={styles.header__column}>
 					<img src="img/header/logo.png" alt="logo" />
-				</a>
+				</Link>
 				<div className={styles.header__column}>
 					<button className={`btn-reset ${styles.header__basket}`}>
 						<svg
