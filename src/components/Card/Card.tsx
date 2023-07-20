@@ -4,9 +4,9 @@ import { ICard } from '../../types/Card'
 
 import styles from './Card.module.scss'
 
-const Card: React.FC<ICard> = ({ img, title, price, newItem }) => {
+const Card: React.FC<ICard> = ({ img, title, price, newItem,id }) => {
 	return (
-		<li className={styles.Card}>
+		<li onClick={() => console.log(id)} className={styles.Card}>
 			<div className={styles.Card__top}>
 				<div className={styles.Card__icons}>
 					<svg

@@ -16,7 +16,8 @@ const Categories = () => {
 			.then(res => res.json())
 			.then(data => setKnives(data))
 	}, [category])
-
+ 
+	
 	return (
 		<section className="Categories">
 			{category}
