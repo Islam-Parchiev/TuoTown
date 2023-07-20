@@ -8,15 +8,17 @@ import './Catalog.scss';
 import { ICard } from '../../types/Card';
 import Card from '../../components/Card/Card';
 import Form from '../../components/Form/Form';
+import Pagination from '../../components/Pagination/Pagination';
 
 
 const Catalog:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 	const [knives, setKnives] = useState<ICard[]>([])
+	const [page,setPage] = useState<number>(1);
 	useEffect(() => {
-		fetch('http://localhost:4200/knives?_limit=8')
+		fetch(`http://localhost:4200/knives?_page=${page}&_limit=6`)
 			.then(res => res.json())
 			.then(data => setKnives(data))
-	}, [])
+	}, [page])
 	return (
 		<main className="Catalog">
 			{toggleSidebar === true ? (
@@ -48,7 +50,10 @@ const Catalog:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 							/>
 						))}
 					</ul>
+
+					
 				</div>
+				<Pagination setPage={setPage} page={page}/>
 				<Form/>
 			</div>
 		</main>

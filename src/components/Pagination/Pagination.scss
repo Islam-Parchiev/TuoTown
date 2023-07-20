@@ -1,0 +1,18 @@
+.Pagination {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    li {
+        cursor: pointer;
+      padding: 2px 7px;
+        border-radius: 100%;
+        color: var(--light-color);
+        &:hover {
+            background-color: var(--red-color);
+        }
+        
+    }
+}
+.Pagination li.active {
+    background-color: var(--red-color);
+}
