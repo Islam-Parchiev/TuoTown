@@ -66,7 +66,7 @@ const Header: FC<any> = ({ toggleSidebar, setToggleSidebar }) => {
 					<img src="img/header/logo.png" alt="logo" />
 				</Link>
 				<div className={styles.header__column}>
-					<button className={`btn-reset ${styles.header__basket}`}>
+					<Link to="/basket" className={`btn-reset ${styles.header__basket}`}>
 						<svg
 							width="19"
 							height="23"
@@ -119,7 +119,7 @@ const Header: FC<any> = ({ toggleSidebar, setToggleSidebar }) => {
 								</clipPath>
 							</defs>
 						</svg>
-					</button>
+					</Link>
 
 					<button className={`btn-reset ${styles.header__mail}`}>
 						<svg

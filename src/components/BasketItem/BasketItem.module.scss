@@ -1,0 +1,26 @@
+.BasketItem {
+    padding: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: #303030;
+    border-bottom: 1px solid #4F4F4F;
+    &__left {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+    &__right {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+    &__price {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+    &__count {
+        display: flex;
+    }
+}

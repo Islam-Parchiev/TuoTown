@@ -7,6 +7,7 @@ import './App.scss';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Catalog from './pages/Catalog/Catalog';
+import Basket from './pages/Basket/Basket';
 
 const  App:React.FC = () => {
 	const [toggleSidebar,setToggleSidebar] = React.useState<boolean>(false);
@@ -16,6 +17,7 @@ const  App:React.FC = () => {
 			<Routes>
 				<Route path="/" element={<Main toggleSidebar={toggleSidebar} setToggleSidebar={setToggleSidebar}/> }/>
 				<Route path="/catalog" element={<Catalog toggleSidebar={toggleSidebar} setToggleSidebar={setToggleSidebar}/>}/>
+				<Route path="/basket" element={<Basket toggleSidebar={toggleSidebar} setToggleSidebar={setToggleSidebar}/>}/>
 			</Routes>
 			<Footer/>
 		</div>
