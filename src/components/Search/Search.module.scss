@@ -1,0 +1,15 @@
+.Search {
+    display: block;
+    margin-top: 20px;
+    width: 100%;
+    height: 60px;
+    border-radius: 15px;
+    background-color: var(--charleston-color);
+    input {
+        width: 100%;
+        height: 100%;
+        border-radius: 15px;
+        padding: 0 10px;
+        color:var(--light-color)
+    }
+}

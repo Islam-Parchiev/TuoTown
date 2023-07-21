@@ -9,6 +9,7 @@ import { ICard } from '../../types/Card';
 import Card from '../../components/Card/Card';
 import Form from '../../components/Form/Form';
 import Pagination from '../../components/Pagination/Pagination';
+import Search from '../../components/Search/Search';
 
 
 const Catalog:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
@@ -34,7 +35,10 @@ const Catalog:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 				Ножи
 				</h1>
 				<div className="Catalog__wrapper">
-					<Filter />
+					<div className="Catalog__left">
+						<Filter />
+						<Search/>
+					</div>
 					<ul className="list-reset Catalog__goods">
 						{knives.map((knive: ICard): any => (
 							<Card
