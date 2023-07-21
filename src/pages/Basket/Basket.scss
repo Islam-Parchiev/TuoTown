@@ -42,9 +42,33 @@ text-transform: uppercase;
             height: 100px;
             background-color: var(--raisin-black);
             border-radius: 0 0 15px 15px;
+            &--topay {
+                color: var(--text-light, #ADACAC);
+/* p / medium */
+font-family: Montserrat;
+font-size: 19px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+            }
         }
         li:first-child {
             border-radius: 15px 15px 0 0 ;
+        }
+        &-price {
+            display: flex;
+            align-items: center;
+            color:var(--light-color);
+/* H3 */
+font-family: Jura;
+font-size: 24px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+text-transform: uppercase;
+        }
+        &-value {
+            margin-left: 10px;
         }
     }
 }

@@ -5,6 +5,9 @@
     justify-content: space-between;
     background-color: #303030;
     border-bottom: 1px solid #4F4F4F;
+    &__title {
+        color:var(--light-color);
+    }
     &__left {
         display: flex;
         align-items: center;
@@ -13,14 +16,31 @@
     &__right {
         display: flex;
         align-items: center;
-        gap: 5px;
+        gap: 15px;
     }
     &__price {
         display: flex;
         align-items: center;
         gap: 5px;
+        span {
+            color:var(--light-color);
+        }
     }
     &__count {
+        color:var(--light-color);
         display: flex;
+        align-items: center;
+        gap: 10px;
+        border-bottom:1px solid var(--light-color);
+        &_plus {
+            transform: rotate(180deg);
+        }
+    }
+    &__btns {
+        button {
+            display: block;
+
+        }
+        
     }
 }

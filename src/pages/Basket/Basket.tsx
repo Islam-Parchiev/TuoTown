@@ -44,7 +44,7 @@ const Basket:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 						<BasketItem/>
 					</ul>
 					<div className="Basket__cart-footer">
-						<span>К оплате:</span>
+						<span className="Basket__cart-footer--topay">К оплате:</span>
 						<div className="Basket__cart-price">
 							<span>700</span>
 							<div className="Basket__cart-value">
@@ -54,6 +54,7 @@ const Basket:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 						</div>
 					</div>
 				</div>
+				
 			</div>
 		</main>
 	)
