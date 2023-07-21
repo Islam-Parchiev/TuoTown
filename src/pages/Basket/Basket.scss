@@ -1,12 +1,18 @@
 .Basket {
     &__container {
+        max-width: 850px;
+        margin: 0 auto;
         padding-top: 120px;
+       display: flex;
+       flex-direction: column;
+       align-items: start;
     }
     &__heading {
         display: flex;
         align-items: center;
         justify-content: start;
-        gap: 470px;
+        gap: 250px;
+       width: 100%;
         a {
             display: flex;
             align-items: center;
@@ -70,5 +76,101 @@ text-transform: uppercase;
         &-value {
             margin-left: 10px;
         }
+    }
+    &__services {
+        padding-top: 40px;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+      
+        
+    }
+    &__form {
+        border-radius: 15px;
+        background-color: #232323;
+        &-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        &-label {
+            padding: 15px;
+            width: 335px;
+            height: 100px;
+            background-color: #303030;
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            span {
+                color: var(--gray-color);
+/* label */
+font-family: Montserrat;
+font-size: 12px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+            }
+            input {
+                padding: 0;
+                height: 40px;
+                width: 300px;
+                border-bottom: 2px solid var( --gray-color);
+            }
+        }
+    }
+}
+.services__item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    &-img {
+        width: 80px;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #232323;
+        border-radius: 15px;
+        
+    }
+    &-text {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+      
+        h4 {
+            position: relative;
+            margin: 0;
+            color: var(--light-color);
+            font-family: Jura;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: -5px;
+                left: 0;
+                width: 50%;
+                height: 1px;
+                background-color: var(--red-color);
+
+            }
+        }
+        span {
+            color:  #ADACAC;
+
+            font-family: Montserrat;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 140%; 
+        }
+
     }
 }
