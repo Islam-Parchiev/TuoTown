@@ -1,37 +1,125 @@
 import React from 'react'
 
-import styles from './Form.module.scss'
-const Form: React.FC = () => {
+import { useForm,SubmitHandler } from 'react-hook-form';
+
+import './Form.scss';
+interface IShippingFields {
+	email:string
+	name:string
+	phone:string
+}
+const Form:React.FC = () => {
+	const {
+		register,
+		// control,
+		handleSubmit,
+		formState: { errors },
+		reset,
+		// setValue,
+	} = useForm<IShippingFields>({
+		mode: 'onChange',
+	})
+	const onSubmit:SubmitHandler<IShippingFields> = (data) => {
+		console.log(data);
+	 reset()
+	}
+	// /^\+?(\d{1,3})?[- .]?\(?(?:\d{2,3})\)?[- .]?\d\d\d[- .]?\d\d\d\d$/
 	return (
-		<div className="form">
-			<h2 className={`${styles.form__title}`}>
-				Узнавайте первым о новинках и новостях
+		<div className="Form">
+			<h2 className="Form-title">
+				Для подтверждения заказа - введите ваши данные и мы перезвоним вам
 			</h2>
-			<form className={styles.form__form}>
-				<label className={`${styles.form__label}`}>
-					<input
-						className={`input-reset ${styles.form__input}`}
-						type="text"
-						placeholder="Ваш e-mail"
-					/>
-					<button className={`btn-reset ${styles.form__btn}`}>
-						<svg
-							width="18"
-							height="18"
-							viewBox="0 0 18 18"
-							fill="none"
-							xmlns="http://www.w3.org/2000/svg">
-							<path
-								d="M6.75 13.5L11.25 9L6.75 4.5"
-								stroke="white"
-								stroke-width="2"
-								stroke-linecap="round"
-								stroke-linejoin="round"
+			<div className="Form-wrapper">
+				<form onSubmit={handleSubmit(onSubmit)} className="Form-form">
+					<div className="Form-inputs">
+						<label className="Form-label">
+							<span>Получатель</span>
+							<input
+								{
+									...(register('name',
+										{required:'Name is require field!',
+											maxLength:{
+												value:15,
+												message:'Максимальная длина имени 15 сиволов',
+											},
+											minLength:{
+												value:3,
+												message:'Минимальная длина имени 3 сивола',
+											}}))
+								}
+								className="input-reset"
+								type="text"
+								placeholder="Имя Фамилия"
 							/>
-						</svg>
-					</button>
-				</label>
-			</form>
+							  {errors.name && <div style={{color:'red'}}>{errors?.name?.message}</div>}
+						</label>
+						<label className="Form-label">
+							<span>Мобильный телефон</span>
+							<input
+								{
+									...(register('phone',{
+										required:'Phone is require field!',
+									
+										maxLength:{
+											value:25,
+											message:'Максимальная длина телефона 15 сиволов',
+										},
+										minLength:{
+											value:9,
+											message:'Минимальная длина телефона 3 сивола',
+										},
+										pattern: {
+											value:/^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/,
+											message:'Please enter valid phone',
+										}}))
+								}
+								className="input-reset"
+								type="text"
+								placeholder="+7 (___) ___-__-__"
+							/>
+							{errors.phone && <div style={{color:'red'}}>{errors?.phone?.message}</div>}
+						</label>
+						<label className="Form-label">
+							<span>E-mail</span>
+							<input
+								{
+									...(register('email',{
+										required:'Email is require field!',
+										maxLength:30,
+										minLength:10,
+										pattern:{
+										// eslint-disable-next-line max-len
+											value:/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/,
+
+											message:'Please enter valid email!',
+										},
+									}))
+								}
+								className="input-reset"
+								type="text"
+								placeholder="Ваша почта"
+							/>
+							{errors.email && <div style={{color:'red'}}>{errors?.email?.message}</div>}
+						</label>
+					</div>
+					<div className="Form-info">
+						<p>
+							Нажимая «Выбрать способ доставки», подтверждаю, что я
+							ознакомлен с условиями{' '}
+							<a href="/">
+								Публичного договора оферты и Политикой
+								конфиденциальности
+							</a>
+							, а также согласен получать информационную рассылку
+						</p>
+						<button
+							className="btn-reset Form-btn"
+							type="submit">
+							Отправить форму
+						</button>
+					</div>
+				</form>
+			</div>
 		</div>
 	)
 }

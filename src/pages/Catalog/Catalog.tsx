@@ -7,7 +7,7 @@ import Filter from '../../components/Filter/Filter'
 import './Catalog.scss';
 import { ICard } from '../../types/Card';
 import Card from '../../components/Card/Card';
-import Form from '../../components/Form/Form';
+import Send from '../../components/Send/Send';
 import Pagination from '../../components/Pagination/Pagination';
 import Search from '../../components/Search/Search';
 
@@ -58,7 +58,7 @@ const Catalog:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 					
 				</div>
 				<Pagination setPage={setPage} page={page}/>
-				<Form/>
+				<Send/>
 			</div>
 		</main>
 	)

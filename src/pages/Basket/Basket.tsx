@@ -2,11 +2,13 @@ import React from 'react'
 
 import { Link } from 'react-router-dom'
 
-import Form from '../../components/Form/Form'
+import Send from '../../components/Send/Send'
 import Sidebar from '../../components/Sidebar/Sidebar'
+import Form from '../../components/Form/Form'
+import BasketItem from '../../components/BasketItem/BasketItem'
 
 import './Basket.scss'
-import BasketItem from '../../components/BasketItem/BasketItem'
+
 
 const Basket: React.FC<any> = ({ toggleSidebar, setToggleSidebar }) => {
 	return (
@@ -126,7 +128,7 @@ const Basket: React.FC<any> = ({ toggleSidebar, setToggleSidebar }) => {
 							</div>
 						</li>
 					</ul>
-					<div className="Basket__form">
+					{/* <div className="Basket__form">
 						<h2 className="Basket__form-title">
 							Для подтверждения заказа - введите ваши данные и мы
 							перезвоним вам
@@ -179,9 +181,10 @@ const Basket: React.FC<any> = ({ toggleSidebar, setToggleSidebar }) => {
 								</div>
 							</form>
 						</div>
-					</div>
+					</div> */}
+					<Form/>
 				</div>
-				<Form />
+				<Send />
 			</div>
 		</main>
 	)

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 import Card from '../Card/Card'
 import Collection from '../Collection/Collection'
-import Form from '../Form/Form'
+import Send from '../Send/Send'
 import { ICard } from '../../types/Card'
 
 import './Categories.scss'
@@ -411,7 +411,7 @@ const Categories = () => {
 							/>
 						))}
 					</ul>
-					<Form />
+					<Send />
 				</div>
 			</div>
 		</section>
