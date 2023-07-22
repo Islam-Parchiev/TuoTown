@@ -1,5 +1,7 @@
 import React,{useState,useEffect} from 'react'
 
+import { useDebounce } from '../../hooks/debounce'
+
 import Sidebar from '../../components/Sidebar/Sidebar'
 import Home from '../../components/Home/Home'
 import Filter from '../../components/Filter/Filter'
@@ -15,11 +17,14 @@ import Search from '../../components/Search/Search';
 const Catalog:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 	const [knives, setKnives] = useState<ICard[]>([])
 	const [page,setPage] = useState<number>(1);
+	const [searchValue,setSearchValue] = useState<string>('');
+	const debouncedValue = useDebounce(searchValue,600);
+	const search = `&q=${debouncedValue}`;
 	useEffect(() => {
-		fetch(`http://localhost:4200/knives?_page=${page}&_limit=6`)
+		fetch(`http://localhost:4200/knives?_page=${page}&_limit=6${searchValue.length > 0 ? search : null}`)
 			.then(res => res.json())
 			.then(data => setKnives(data))
-	}, [page])
+	}, [page,searchValue,search])
 	return (
 		<main className="Catalog">
 			{toggleSidebar === true ? (
@@ -37,7 +42,7 @@ const Catalog:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 				<div className="Catalog__wrapper">
 					<div className="Catalog__left">
 						<Filter />
-						<Search/>
+						<Search setSearchValue={setSearchValue} searchValue={searchValue}/>
 					</div>
 					<ul className="list-reset Catalog__goods">
 						{knives.map((knive: ICard): any => (

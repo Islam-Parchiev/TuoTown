@@ -5,9 +5,10 @@ import { Link } from 'react-router-dom'
 import Send from '../../components/Send/Send'
 import Sidebar from '../../components/Sidebar/Sidebar'
 import Form from '../../components/Form/Form'
-import BasketItem from '../../components/BasketItem/BasketItem'
+
 
 import './Basket.scss'
+import Cart from '../../components/Cart/Cart'
 
 
 const Basket: React.FC<any> = ({ toggleSidebar, setToggleSidebar }) => {
@@ -41,7 +42,7 @@ const Basket: React.FC<any> = ({ toggleSidebar, setToggleSidebar }) => {
 						</Link>
 						<h1 className="Basket__title">Корзина</h1>
 					</div>
-					<div className="Basket__cart">
+					{/* <div className="Basket__cart">
 						<ul className="list-reset Basket__cart-items">
 							<BasketItem />
 							<BasketItem />
@@ -59,8 +60,9 @@ const Basket: React.FC<any> = ({ toggleSidebar, setToggleSidebar }) => {
 								</div>
 							</div>
 						</div>
-					</div>
-					<ul className="list-reset Basket__services">
+					</div> */}
+					<Cart/>
+ 					<ul className="list-reset Basket__services">
 						<li className="Basket__services-item services__item">
 							<div className="services__item-img">
 								<svg

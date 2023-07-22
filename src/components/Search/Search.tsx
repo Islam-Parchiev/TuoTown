@@ -2,8 +2,8 @@ import React from 'react'
 
 import styles from './Search.module.scss';
 
-const Search:React.FC = () => {
-	const [searchValue,setSearchValue] = React.useState('');
+const Search:React.FC<any> = ({setSearchValue,searchValue}) => {
+	
 	const handleInput = (e:any) => {
 		setSearchValue(e.target.value);
 	}
