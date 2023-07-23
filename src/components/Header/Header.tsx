@@ -13,6 +13,7 @@ import styles from './Header.module.scss'
 
 const Header: FC<any> = ({ toggleSidebar, setToggleSidebar }) => {
 	const {items} = useSelector(selectCart)
+	console.log(items);
 	return (
 		<header className={styles.header}>
 			<div className={`container ${styles.header__container}`}>

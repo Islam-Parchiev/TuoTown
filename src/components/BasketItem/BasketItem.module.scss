@@ -13,6 +13,15 @@
         align-items: center;
         gap: 20px;
     }
+    &__img {
+        width: 100px;
+        height: 100px;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
     &__right {
         display: flex;
         align-items: center;

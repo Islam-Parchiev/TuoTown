@@ -1,17 +1,30 @@
 import React,{useState} from 'react'
 
+import { useSelector } from 'react-redux';
+
+import { useDispatch } from 'react-redux';
+
+import { selectCart,removeItem } from '../../redux/slices/cartSlice';
+
 import styles from './BasketItem.module.scss';
 
-const BasketItem:React.FC = () => {
+const BasketItem:React.FC<any> = ({id,price,title,imageUrl}) => {
 	const [count,setCount] = useState<number>(1);
+	const {items} = useSelector(selectCart)
+
+	const dispatch = useDispatch();
+
+	const deleteItem = (id:any) => {
+      	dispatch(removeItem(id))
+	}
 	return (
 		<li className={styles.BasketItem}>
 			<div className={styles.BasketItem__left}>
 				<div className={styles.BasketItem__img}>
-					<img src="/img/b1.png" alt="" />
+					<img src={imageUrl} alt="" />
 				</div>
 				<h3 className={styles.BasketItem__title}>
-			Нож классного качества Knight light C653
+					{title}
 				</h3>
 			</div>
       	<div className={styles.BasketItem__right}>
@@ -39,13 +52,13 @@ const BasketItem:React.FC = () => {
 					</div>
 				</div>
 				<div className={styles.BasketItem__price}>
-					<span>700</span>
+					<span>{price}</span>
 					<div className={styles.BasketItem__value}>
 						<span>тыс.</span>
 						<span>р.</span>
 					</div>
 				</div>
-				<button className="btn-reset BasketItem__remove">
+				<button onClick={() => deleteItem(id)} className="btn-reset BasketItem__remove">
 					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
 						<path fill-rule="evenodd" clip-rule="evenodd" d="M3.33833 2.55929C3.12376 2.34682 2.77588
 						 2.34682 2.56131 2.55929C2.34675 2.77176 2.34675 3.11624 2.56131 3.32872L7.27873 
