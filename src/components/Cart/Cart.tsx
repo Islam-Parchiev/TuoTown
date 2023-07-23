@@ -10,7 +10,7 @@ import BasketItem from '../BasketItem/BasketItem'
 import './Cart.scss'
 
 const Cart: React.FC = () => {
-	const {items} = useSelector(selectCart)
+	const {items,price} = useSelector(selectCart)
 	return (
 		<div className="Cart">
 			<ul className="list-reset Cart-items">
@@ -28,7 +28,7 @@ const Cart: React.FC = () => {
 			<div className="Cart-footer">
 				<span className="Cart-footer--topay">К оплате:</span>
 				<div className="Cart-price">
-					<span>700</span>
+					<span>{price}</span>
 					<div className="Cart-value">
 						<span>тыс.</span>
 						<span>р.</span>

@@ -4,9 +4,13 @@ import { useDispatch } from 'react-redux';
 
 import cart from './slices/cartSlice';
 
+
+
 export const store = configureStore({
 	reducer: {
 		cart,
+		
+
 	},
 });
 
