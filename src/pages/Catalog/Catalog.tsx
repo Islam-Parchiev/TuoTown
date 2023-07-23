@@ -1,4 +1,5 @@
 import React,{useState,useEffect} from 'react'
+import axios from 'axios'
 
 import { useDebounce } from '../../hooks/debounce'
 
@@ -12,18 +13,42 @@ import Card from '../../components/Card/Card';
 import Send from '../../components/Send/Send';
 import Pagination from '../../components/Pagination/Pagination';
 import Search from '../../components/Search/Search';
+import CardSkeleton from '../../components/Card/CardSkeleton'
 
+
+const fakeArr = [...Array(10)];
 
 const Catalog:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
+	const [loading,setLoading] = useState<boolean>(true);
 	const [knives, setKnives] = useState<ICard[]>([])
 	const [page,setPage] = useState<number>(1);
 	const [searchValue,setSearchValue] = useState<string>('');
 	const debouncedValue = useDebounce(searchValue,600);
 	const search = `&q=${debouncedValue}`;
 	useEffect(() => {
-		fetch(`http://localhost:4200/knives?_page=${page}&_limit=6${searchValue.length > 0 ? search : null}`)
-			.then(res => res.json())
-			.then(data => setKnives(data))
+		// setLoading(true)
+		// fetch(`http://localhost:4200/knives?_page=${page}&_limit=6${searchValue.length > 0 ? search : null}`)
+		// 	.then(res => res.json())
+		// 	.then(data => setKnives(data))
+			
+		// setLoading(false);
+	  async	function fetchData() {
+           	 try {
+				setLoading(true)
+             	
+				const {data} = await axios.get(`http://localhost:4200/knives?_page=${page}&_limit=6${searchValue.length > 0 ? search : null}`)
+				setKnives(data)
+					
+			
+			     
+			}catch(e) {
+ 
+				alert(e);
+			}finally {
+				setLoading(false);
+			}
+		}
+		fetchData()
 	}, [page,searchValue,search])
 	return (
 		<main className="Catalog">
@@ -45,7 +70,24 @@ const Catalog:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 						<Search setSearchValue={setSearchValue} searchValue={searchValue}/>
 					</div>
 					<ul className="list-reset Catalog__goods">
-						{knives.map((knive: ICard): any => (
+						{
+							loading === true ? fakeArr.map(i => (
+								<CardSkeleton/>
+							)):knives.map((knive: ICard): any => (
+								<Card
+									key={knive.id}
+									id={knive.id}
+									descr={knive.descr}
+									title={knive.title}
+									new={knive.new}
+									newItem={knive.new}
+									price={knive.price}
+									img={knive.img}
+									type={knive.type}
+								/>
+							))
+						}
+						{/* {knives.map((knive: ICard): any => (
 							<Card
 								key={knive.id}
 								id={knive.id}
@@ -57,7 +99,7 @@ const Catalog:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 								img={knive.img}
 								type={knive.type}
 							/>
-						))}
+						))} */}
 					</ul>
 
 					
