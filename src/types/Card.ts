@@ -4,7 +4,7 @@ export interface ICard{
     price:number,
     descr:string,
     new:boolean,
-    img:string,
+    imageUrl:string,
     type:any[],
     newItem?:boolean
 }

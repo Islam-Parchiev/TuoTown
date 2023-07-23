@@ -1,12 +1,18 @@
 import React, { FC } from 'react'
 
+import { useSelector } from 'react-redux'
+
 import { Link } from 'react-router-dom'
+
+import { selectCart } from '../../redux/slices/cartSlice'
 
 import styles from './Header.module.scss'
 
 
 
+
 const Header: FC<any> = ({ toggleSidebar, setToggleSidebar }) => {
+	const {items} = useSelector(selectCart)
 	return (
 		<header className={styles.header}>
 			<div className={`container ${styles.header__container}`}>
@@ -67,6 +73,7 @@ const Header: FC<any> = ({ toggleSidebar, setToggleSidebar }) => {
 				</Link>
 				<div className={styles.header__column}>
 					<Link to="/basket" className={`btn-reset ${styles.header__basket}`}>
+						<span className={styles.header__basketCount}>{items.length}</span>
 						<svg
 							width="19"
 							height="23"

@@ -1,6 +1,8 @@
 import React,{useState,useEffect} from 'react'
 import axios from 'axios'
 
+import { useSelector } from 'react-redux'
+
 import { useDebounce } from '../../hooks/debounce'
 
 import Sidebar from '../../components/Sidebar/Sidebar'
@@ -14,11 +16,13 @@ import Send from '../../components/Send/Send';
 import Pagination from '../../components/Pagination/Pagination';
 import Search from '../../components/Search/Search';
 import CardSkeleton from '../../components/Card/CardSkeleton'
+import { selectCart } from '../../redux/slices/cartSlice'
 
 
 const fakeArr = [...Array(10)];
 
 const Catalog:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
+	const {items} = useSelector(selectCart);
 	const [loading,setLoading] = useState<boolean>(true);
 	const [knives, setKnives] = useState<ICard[]>([])
 	const [page,setPage] = useState<number>(1);
@@ -82,7 +86,7 @@ const Catalog:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 									new={knive.new}
 									newItem={knive.new}
 									price={knive.price}
-									img={knive.img}
+									imageUrl={knive.imageUrl}
 									type={knive.type}
 								/>
 							))
@@ -101,7 +105,12 @@ const Catalog:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 							/>
 						))} */}
 					</ul>
+  
 
+        
+		                {/* {items.map(item => (
+							<li>{item.price}</li>
+						))} */}
 					
 				</div>
 				<Pagination setPage={setPage} page={page}/>

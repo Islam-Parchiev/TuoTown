@@ -1,13 +1,29 @@
 import React, { useState } from 'react'
 
+import { useSelector,useDispatch } from 'react-redux'
+
+import { addItem } from '../../redux/slices/cartSlice'
+
 import { ICard } from '../../types/Card'
 
 import styles from './Card.module.scss'
 
-const Card: React.FC<ICard> = ({ img, title, price, newItem,id }) => {
+const Card: React.FC<ICard> = ({ imageUrl, title, price, newItem,id }) => {
+	const dispatch = useDispatch();
+
+	const onClickAdd = () => {
+		const item = {
+			id,
+			price,
+			title,
+			imageUrl,
+		}
+		dispatch(addItem(item))	
+		console.log('click')
+	}
 	
 	return (
-		<li onClick={() => console.log(id)} className={styles.Card}>
+		<li className={styles.Card}>
 			<div className={styles.Card__top}>
 				<div className={styles.Card__icons}>
 					<svg
@@ -15,7 +31,8 @@ const Card: React.FC<ICard> = ({ img, title, price, newItem,id }) => {
 						width="24"
 						height="24"
 						viewBox="0 0 24 24"
-						xmlns="http://www.w3.org/2000/svg">
+						xmlns="http://www.w3.org/2000/svg"
+						onClick={onClickAdd}>
 						<path
 							d="M12 5V19"
 							stroke-linecap="round"
@@ -88,7 +105,7 @@ const Card: React.FC<ICard> = ({ img, title, price, newItem,id }) => {
 				</div>
 
 				<div className={styles.Card__img}>
-					<img src={img} alt="" />
+					<img src={imageUrl} alt="" />
 				</div>
 			</div>
 			<div className={styles.Card__bottom}>

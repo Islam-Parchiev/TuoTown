@@ -406,7 +406,7 @@ const Categories = () => {
 								new={knive.new}
 								newItem={knive.new}
 								price={knive.price}
-								img={knive.img}
+								imageUrl={knive.imageUrl}
 								type={knive.type}
 							/>
 						))}
