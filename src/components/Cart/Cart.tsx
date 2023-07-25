@@ -28,6 +28,8 @@ const Cart: React.FC = () => {
 			<div className="Cart-footer">
 				<span className="Cart-footer--topay">К оплате:</span>
 				<div className="Cart-price">
+					
+					{/* TODO: Сделать подсчет общей стоимости товаров*/}
 					<span>{price}</span>
 					<div className="Cart-value">
 						<span>тыс.</span>
