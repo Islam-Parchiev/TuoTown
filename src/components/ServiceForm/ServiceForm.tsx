@@ -11,39 +11,53 @@ const ServiceForm:React.FC = () => {
 						<span>Тема</span>
 						<input
 						 type="text" 
-						 className="input-reset" 
+						 className={`input-reset ${styles.focus}`} 
 						 placeholder="Неполадки с ножом" 
 						 />
-						
+						<span className={styles.focusBorder}></span>
 					</label>
 					<label className={styles.ServiceForm__input}>
-						<span>Тема</span>
+						<span>Email</span>
 						<input
-						 type="text" 
-						 className="input-reset" 
-						 placeholder="Неполадки с ножом" 
+						 type="email" 
+						 className={`input-reset ${styles.focus}`} 
+						 placeholder="Ваша почта" 
 						 />
-						
+						<span className={styles.focusBorder}></span>
 					</label>
 					<label className={styles.ServiceForm__input}>
-						<span>Тема</span>
+						<span>Имя</span>
 						<input
 						 type="text" 
-						 className="input-reset" 
-						 placeholder="Неполадки с ножом" 
+						 className={`input-reset ${styles.focus}`} 
+						 placeholder="Алексей" 
 						 />
-						
+						<span className={styles.focusBorder}></span>
 					</label>
 					<label className={styles.ServiceForm__input}>
-						<span>Тема</span>
+						<span>Телефон</span>
 						<input
-						 type="text" 
-						 className="input-reset" 
-						 placeholder="Неполадки с ножом" 
+						 type="phone" 
+						 className={`input-reset ${styles.focus}`} 
+						 placeholder="+7 (___) ___-__-__" 
 						 />
-						
+						<span className={styles.focusBorder}></span>
 					</label>
 				</div>
+				<div className={styles.ServiceForm__bottom}>
+					<span>Комментарий</span>
+					<div className={styles.ServiceForm__textarea}>
+						<textarea className={`input-reset ${styles.focuss}`} placeholder="Впишите ваше сообщение">
+                        
+						</textarea>
+						<span className={styles.focusBorder}>
+            	<i></i>
+            			</span>
+					</div>
+				</div>
+				<button className={`btn-reset ${styles.ServiceForm__btn}`}>
+					Отправить
+				</button>
 			</form>
 		</div>
 	)
