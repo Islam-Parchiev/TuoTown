@@ -3,7 +3,7 @@ import React from 'react'
 import styles from './Send.module.scss'
 const Send: React.FC = () => {
 	return (
-		<div className="Send">
+		<div className={styles.Send}>
 			<h2 className={`${styles.Send__title}`}>
 				Узнавайте первым о новинках и новостях
 			</h2>

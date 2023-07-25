@@ -3,6 +3,9 @@ import React from 'react'
 import Sidebar from '../../components/Sidebar/Sidebar'
 import ServiceHeader from '../../components/ServiceHeader/ServiceHeader'
 import ServiceForm from '../../components/ServiceForm/ServiceForm'
+import Send from '../../components/Send/Send'
+
+import './Service.scss';
 
 const Service:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 	return (
@@ -13,9 +16,10 @@ const Service:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 					setToggleSidebar={setToggleSidebar}
 				/>
 			) : null}
-			<div className="container">
+			<div className="container Service__container">
 				<ServiceHeader/>
 				<ServiceForm/>
+				<Send/>
 			</div>
 		</div>
 	)
