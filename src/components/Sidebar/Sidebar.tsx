@@ -38,7 +38,7 @@ const Sidebar: FC<any> = ({ toggleSidebar, setToggleSidebar }) => {
 						<Link to="/catalog">Каталог </Link>
 					</li>
 					<li className="Sidebar__list-item">
-						<Link to="/">Складные ножи TUOTOWN </Link>
+						<Link to="/service">Сервис </Link>
 					</li>
 					<li className="Sidebar__list-item">
 						<Link to="/">Кухонные ножи QXF </Link>
