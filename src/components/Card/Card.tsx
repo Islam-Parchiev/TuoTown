@@ -18,7 +18,7 @@ const Card: React.FC<ICard> = ({ imageUrl, title, price, newItem,id }) => {
 			title,
 			imageUrl,
 		}
-		dispatch(addItem(item))	
+		dispatch(addItem({...item, count:1}))	
 		console.log('click')
 	}
 	
