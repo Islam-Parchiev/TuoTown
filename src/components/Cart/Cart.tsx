@@ -11,6 +11,7 @@ import './Cart.scss'
 
 const Cart: React.FC = () => {
 	const {items,price} = useSelector(selectCart)
+	console.log(items)
 	return (
 		<div className="Cart">
 			<ul className="list-reset Cart-items">
@@ -19,11 +20,10 @@ const Cart: React.FC = () => {
 						id={item.id} 
 						imageUrl={item.imageUrl} 
 						price={item.price} 
-						title={item.title}/>
+						title={item.title}
+						count={item.count}/>
 				))}
-				{/* <BasketItem />
-				<BasketItem />
-				<BasketItem /> */}
+			
 			</ul>
 			<div className="Cart-footer">
 				<span className="Cart-footer--topay">К оплате:</span>
