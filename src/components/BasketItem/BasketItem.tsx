@@ -41,7 +41,7 @@ const BasketItem:React.FC<any> = ({id,price,title,imageUrl,count}) => {
 							</svg>
 						</button>
 						
-						<button disabled={count<= 1 ? true :false} onClick={()=> dispatch(onClickMinus({price,id}))} className={`btn-reset ${styles.BasketItem__count_minus}`}>
+						<button disabled={count<= 1 ? true :false} onClick={()=> dispatch(onClickMinus(id))} className={`btn-reset ${styles.BasketItem__count_minus}`}>
 							<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
 								<path fill-rule="evenodd" clip-rule="evenodd" d="M11.6947 5.39507L7.49468 9.59508C7.22098 
 								9.86878 6.77858 9.86878 6.50488 9.59508L2.30488 5.39507C2.03118 5.12137 2.03118 4.67897 
@@ -53,7 +53,7 @@ const BasketItem:React.FC<any> = ({id,price,title,imageUrl,count}) => {
 					</div>
 				</div>
 				<div className={styles.BasketItem__price}>
-					<span>{price}</span>
+					<span>{price * count}</span>
 					<div className={styles.BasketItem__value}>
 						<span>тыс.</span>
 						<span>р.</span>

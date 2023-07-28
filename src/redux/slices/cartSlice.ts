@@ -50,21 +50,19 @@ export const cartSlice = createSlice({
 			if(findItem) {
 			   //@ts-ignore
 			   findItem.count++
-				//@ts-ignore
-			   findItem.price = findItem.price * findItem.count
+			
 			}
-			state.price = state.items.reduce((acc,obj) => acc+ obj.price,0);
+			state.price = calcTotalPrice(state.items);
 		},
 		onClickMinus(state,action:PayloadAction<any>) {
-			const findItem = state.items.find(obj => obj.id === action.payload.id);
-            
+			const findItem = state.items.find(obj => obj.id === action.payload);
+
 			if(findItem) {
 			   //@ts-ignore
 			   findItem.count--
-				//@ts-ignore
-			   findItem.price = findItem.price - findItem.price
+			
 			}
-			state.price = state.items.reduce((acc,obj) => acc+ obj.price,0);
+			state.price = calcTotalPrice(state.items);
 		},
 	},
 })
