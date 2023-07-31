@@ -1,15 +1,10 @@
 import React from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
+import { IServiceFormFields } from '../../types/Form'
+
 import styles from './ServiceForm.module.scss'
 
-interface IServiceFormFields {
-	name: string
-	theme: string
-	email: string
-	phone: number
-	text: string
-}
 
 const ServiceForm: React.FC = () => {
 	const {

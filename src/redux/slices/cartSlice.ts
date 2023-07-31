@@ -1,19 +1,11 @@
 import {createSlice,PayloadAction} from '@reduxjs/toolkit';
 
 import { RootState } from '../store';
+
 import { calcTotalPrice } from '../../utils/totalPrice';
 
-export interface CartItem {
-	id:number
-	title:string
-	price:number
-	imageUrl:string
-	count?:number
-}
-interface CartSliceState {
-	items:CartItem[]
-	price:number
-}
+import { CartItem,CartSliceState } from '../../types/cartItem';
+
 const initialState:CartSliceState = {
 	items:[],
 	price:0,

@@ -10,6 +10,7 @@ import Catalog from './pages/Catalog/Catalog';
 import Basket from './pages/Basket/Basket';
 import Service from './pages/Service/Service';
 
+
 const  App:React.FC = () => {
 	const [toggleSidebar,setToggleSidebar] = React.useState<boolean>(false);
 	return (

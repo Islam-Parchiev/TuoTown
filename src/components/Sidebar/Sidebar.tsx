@@ -2,9 +2,11 @@ import React, { FC, useEffect } from 'react'
 
 import {Link} from 'react-router-dom';
 
+import { IToggleSidebar } from '../../types/Sidebar';
+
 import './Sidebar.scss'
 
-const Sidebar: FC<any> = ({ toggleSidebar, setToggleSidebar }) => {
+const Sidebar: FC<IToggleSidebar> = ({ toggleSidebar, setToggleSidebar }) => {
 	useEffect(() => {
 		document.body.style.overflow = 'hidden'
 		return () => {

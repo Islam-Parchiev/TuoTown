@@ -2,12 +2,10 @@ import React from 'react'
 
 import { useForm,SubmitHandler } from 'react-hook-form';
 
+import { IShippingFields } from '../../types/Form';
+
 import './Form.scss';
-interface IShippingFields {
-	email:string
-	name:string
-	phone:string
-}
+
 const Form:React.FC = () => {
 	const {
 		register,
