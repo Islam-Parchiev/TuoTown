@@ -1,14 +1,18 @@
 import React from 'react';
 
 import MapNav from '../MapNav/MapNav'
+import MapContent from '../MapContent/MapContent';
+
+import styles from './MapBody.module.scss';
 
 const MapBody: React.FC = () => {
 	return (
-		<div className="Map__body">
+		<section className={styles.Map__body}>
 			<div className="container">
 				<MapNav/>
+				<MapContent/>
 			</div>
-		</div>
+		</section>
 	)
 }
 

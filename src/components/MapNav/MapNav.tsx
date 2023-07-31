@@ -1,13 +1,15 @@
-import React from 'react'
 
 import styles from './MapNav.module.scss'
 
 const MapNav = () => {
 	return (
-		<div className="Map__nav">
-			<label className="Map__search">
-				<input type="text" className="input-reset" />
-				<button className="btn-reset Map__search-btn">
+		<div className={styles.MapNav}>
+			<label className={styles.MapNav__search}>
+				<input 
+					type="text" 
+					className="input-reset" 
+					placeholder="Страна, город, улица..."/>
+				<button className={`btn-reset ${styles.MapNav__search_btn}`}>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						width="20"
@@ -26,20 +28,20 @@ const MapNav = () => {
 					</svg>
 				</button>
 			</label>
-			<ul className="list-reset Map__categories">
-				<li className="Map__categories-item">
+			<ul className={`list-reset ${styles.MapNav__categories}`}>
+				<li className={`${styles.MapNav__categories_item}`}>
 					<img src="/img/Map/categories1.png" alt="" />
 				</li>
-				<li className="Map__categories-item">
+				<li className={`${styles.MapNav__categories_item}`}>
 					<img src="/img/Map/categories1.png" alt="" />
 				</li>
-				<li className="Map__categories-item">
+				<li className={`${styles.MapNav__categories_item}`}>
 					<img src="/img/Map/categories1.png" alt="" />
 				</li>
-				<li className="Map__categories-item">
+				<li className={`${styles.MapNav__categories_item}`}>
 					<img src="/img/Map/categories1.png" alt="" />
 				</li>
-				<li className="Map__categories-item">
+				<li className={`${styles.MapNav__categories_item}`}>
 					<img src="/img/Map/categories1.png" alt="" />
 				</li>
 			</ul>
