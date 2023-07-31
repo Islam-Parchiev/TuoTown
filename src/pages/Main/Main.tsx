@@ -1,4 +1,4 @@
-import React,{FC} from 'react'
+import {FC} from 'react'
 
 import Quantity from '../../components/Quantity/Quantity'
 import Categories from '../../components/Categories/Categories'

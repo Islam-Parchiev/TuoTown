@@ -38,7 +38,7 @@ const Header: FC<any> = ({ toggleSidebar, setToggleSidebar }) => {
 							<circle cx="19.5" cy="19.5" r="3" />
 						</svg>
 					</button>
-					<button className={`btn-reset ${styles.header__positionBtn}`}>
+					<Link to="/map" className={styles.header__positionBtn}>
 						<svg
 							width="23"
 							height="23"
@@ -64,7 +64,7 @@ const Header: FC<any> = ({ toggleSidebar, setToggleSidebar }) => {
 								stroke-linejoin="round"
 							/>
 						</svg>
-					</button>
+					</Link>
 					<a href="tel:89811201117" className={styles.header__phone}>
 						8 981 120-11-17
 					</a>
