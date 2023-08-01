@@ -1,5 +1,7 @@
 import React from 'react'
 
+import {Helmet} from 'react-helmet';
+
 import Sidebar from '../../components/Sidebar/Sidebar'
 import ServiceHeader from '../../components/ServiceHeader/ServiceHeader'
 import ServiceForm from '../../components/ServiceForm/ServiceForm'
@@ -13,19 +15,25 @@ import './Service.scss';
 
 const Service:React.FC<IToggleSidebar> = ({toggleSidebar,setToggleSidebar}) => {
 	return (
-		<div className="Service">
-			{toggleSidebar === true ? (
-				<Sidebar
-					toggleSidebar={toggleSidebar}
-					setToggleSidebar={setToggleSidebar}
-				/>
-			) : null}
-			<div className="container Service__container">
-				<ServiceHeader/>
-				<ServiceForm/>
-				<Send/>
+		<>
+			<Helmet>
+				<meta charSet="utf-8"/>
+				<title>Service</title>
+			</Helmet>
+			<div className="Service">
+				{toggleSidebar === true ? (
+					<Sidebar
+						toggleSidebar={toggleSidebar}
+						setToggleSidebar={setToggleSidebar}
+					/>
+				) : null}
+				<div className="container Service__container">
+					<ServiceHeader/>
+					<ServiceForm/>
+					<Send/>
+				</div>
 			</div>
-		</div>
+		</>		
 	)
 }
 

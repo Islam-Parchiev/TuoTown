@@ -3,11 +3,14 @@ import axios from 'axios'
 
 import { useSelector } from 'react-redux'
 
+import { Helmet } from 'react-helmet'
+
 import { useDebounce } from '../../hooks/debounce'
 
 import Sidebar from '../../components/Sidebar/Sidebar'
 import Home from '../../components/Home/Home'
 import Filter from '../../components/Filter/Filter'
+
 
 import './Catalog.scss';
 import { ICard } from '../../types/Card';
@@ -55,43 +58,49 @@ const Catalog:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 		fetchData()
 	}, [page,searchValue,search])
 	return (
-		<main className="Catalog">
-			{toggleSidebar === true ? (
-				<Sidebar
-					toggleSidebar={toggleSidebar}
-					setToggleSidebar={setToggleSidebar}
-				/>
-			) : null}
-			<Home />
+		<>
+			<Helmet>
+				<meta charSet="utf-8"/>
+				<title>Catalog</title>
+				
+			</Helmet>
+			<main className="Catalog">
+				{toggleSidebar === true ? (
+					<Sidebar
+						toggleSidebar={toggleSidebar}
+						setToggleSidebar={setToggleSidebar}
+					/>
+				) : null}
+				<Home />
 
-			<div className="Catalog__container">
-				<h1 className="Catalog__title">
+				<div className="Catalog__container">
+					<h1 className="Catalog__title">
 				Ножи
-				</h1>
-				<div className="Catalog__wrapper">
-					<div className="Catalog__left">
-						<Filter />
-						<Search setSearchValue={setSearchValue} searchValue={searchValue}/>
-					</div>
-					<ul className="list-reset Catalog__goods">
-						{
-							loading === true ? fakeArr.map(i => (
-								<CardSkeleton/>
-							)):knives.map((knive: ICard): any => (
-								<Card
-									key={knive.id}
-									id={knive.id}
-									descr={knive.descr}
-									title={knive.title}
-									new={knive.new}
-									newItem={knive.new}
-									price={knive.price}
-									imageUrl={knive.imageUrl}
-									type={knive.type}
-								/>
-							))
-						}
-						{/* {knives.map((knive: ICard): any => (
+					</h1>
+					<div className="Catalog__wrapper">
+						<div className="Catalog__left">
+							<Filter />
+							<Search setSearchValue={setSearchValue} searchValue={searchValue}/>
+						</div>
+						<ul className="list-reset Catalog__goods">
+							{
+								loading === true ? fakeArr.map(i => (
+									<CardSkeleton/>
+								)):knives.map((knive: ICard): any => (
+									<Card
+										key={knive.id}
+										id={knive.id}
+										descr={knive.descr}
+										title={knive.title}
+										new={knive.new}
+										newItem={knive.new}
+										price={knive.price}
+										imageUrl={knive.imageUrl}
+										type={knive.type}
+									/>
+								))
+							}
+							{/* {knives.map((knive: ICard): any => (
 							<Card
 								key={knive.id}
 								id={knive.id}
@@ -104,7 +113,7 @@ const Catalog:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 								type={knive.type}
 							/>
 						))} */}
-					</ul>
+						</ul>
   
 
         
@@ -112,11 +121,12 @@ const Catalog:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 							<li>{item.price}</li>
 						))} */}
 					
+					</div>
+					<Pagination setPage={setPage} page={page}/>
+					<Send/>
 				</div>
-				<Pagination setPage={setPage} page={page}/>
-				<Send/>
-			</div>
-		</main>
+			</main>
+		</>
 	)
 }
 

@@ -129,7 +129,7 @@ const Header: FC<any> = ({ toggleSidebar, setToggleSidebar }) => {
 						</svg>
 					</Link>
 
-					<button className={`btn-reset ${styles.header__mail}`}>
+					<Link to="/service" className={`btn-reset ${styles.header__mail}`}>
 						<svg
 							width="24"
 							height="23"
@@ -151,7 +151,7 @@ const Header: FC<any> = ({ toggleSidebar, setToggleSidebar }) => {
 								stroke-linejoin="round"
 							/>
 						</svg>
-					</button>
+					</Link>
 					<button className={`btn-reset ${styles.header__search}`}>
 						<svg
 							width="24"

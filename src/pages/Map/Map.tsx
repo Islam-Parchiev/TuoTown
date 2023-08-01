@@ -14,6 +14,7 @@ const Map:React.FC<IToggleSidebar> = ({toggleSidebar,setToggleSidebar}) => {
 			<Helmet>
 				<meta charSet="utf-8"/>
 				<title>Map</title>
+				
 			</Helmet>
 			<main className="Map">
 				{toggleSidebar === true ? (
