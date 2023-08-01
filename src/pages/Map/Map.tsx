@@ -1,5 +1,7 @@
 import React from 'react'
 
+import {Helmet} from 'react-helmet';
+
 import './Map.scss';
 import { IToggleSidebar } from '../../types/Sidebar';
 import Sidebar from '../../components/Sidebar/Sidebar';
@@ -8,18 +10,24 @@ import MapBody from '../../components/MapBody/MapBody';
 
 const Map:React.FC<IToggleSidebar> = ({toggleSidebar,setToggleSidebar}) => {
 	return (
-		<main className="Map">
-			{toggleSidebar === true ? (
-				<Sidebar
-					toggleSidebar={toggleSidebar}
-					setToggleSidebar={setToggleSidebar}
-				/>
-			) : null}
+		<>
+			<Helmet>
+				<meta charSet="utf-8"/>
+				<title>Map</title>
+			</Helmet>
+			<main className="Map">
+				{toggleSidebar === true ? (
+					<Sidebar
+						toggleSidebar={toggleSidebar}
+						setToggleSidebar={setToggleSidebar}
+					/>
+				) : null}
 			
-			<MapHeader/>
-			<MapBody/>
+				<MapHeader/>
+				<MapBody/>
 	
-		</main>
+			</main>
+		</>
 	)
 }
 
