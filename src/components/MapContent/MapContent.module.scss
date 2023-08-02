@@ -21,7 +21,17 @@ color:var(--light-color);
 	&__items {
 		height: 700px;
 		overflow-y: scroll;
-		overflow-x: hidden;
+		&::-webkit-scrollbar {
+			width: 12px;               /* ширина scrollbar */
+		  }
+		  &::-webkit-scrollbar-track {
+			  background: rgb(61, 61, 61); /* цвет дорожки */  
+			  border-radius: 20px;        
+		  }
+		  &::-webkit-scrollbar-thumb {
+			background-color: rgb(255, 0, 0);    /* цвет плашки */
+			border-radius: 20px;       /* закругления плашки */
+		  }
 	}
 	&__item {
 

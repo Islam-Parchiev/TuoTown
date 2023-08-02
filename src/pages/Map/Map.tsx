@@ -26,7 +26,7 @@ const Map:React.FC<IToggleSidebar> = ({toggleSidebar,setToggleSidebar}) => {
 			
 				<MapHeader/>
 				<MapBody/>
-	
+	             
 			</main>
 		</>
 	)

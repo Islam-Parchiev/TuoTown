@@ -42,25 +42,7 @@ const Basket: React.FC<any> = ({ toggleSidebar, setToggleSidebar }) => {
 						</Link>
 						<h1 className="Basket__title">Корзина</h1>
 					</div>
-					{/* <div className="Basket__cart">
-						<ul className="list-reset Basket__cart-items">
-							<BasketItem />
-							<BasketItem />
-							<BasketItem />
-						</ul>
-						<div className="Basket__cart-footer">
-							<span className="Basket__cart-footer--topay">
-								К оплате:
-							</span>
-							<div className="Basket__cart-price">
-								<span>700</span>
-								<div className="Basket__cart-value">
-									<span>тыс.</span>
-									<span>р.</span>
-								</div>
-							</div>
-						</div>
-					</div> */}
+					
 					<Cart/>
  					<ul className="list-reset Basket__services">
 						<li className="Basket__services-item services__item">
@@ -130,60 +112,7 @@ const Basket: React.FC<any> = ({ toggleSidebar, setToggleSidebar }) => {
 							</div>
 						</li>
 					</ul>
-					{/* <div className="Basket__form">
-						<h2 className="Basket__form-title">
-							Для подтверждения заказа - введите ваши данные и мы
-							перезвоним вам
-						</h2>
-						<div className="Basket__form-wrapper">
-							<form action="/" className="Basket__form-form">
-								<div className="Basket__form-inputs">
-									<label className="Basket__form-label">
-										<span>Получатель</span>
-										<input
-											className="input-reset"
-											type="text"
-											placeholder="Имя Фамилия"
-										/>
-									</label>
-									<label className="Basket__form-label">
-										<span>Мобильный телефон</span>
-										<input
-											className="input-reset"
-											type="text"
-											placeholder="+7 (___) ___-__-__"
-										/>
-									</label>
-									<label className="Basket__form-label">
-										<span>E-mail</span>
-										<input
-											className="input-reset"
-											type="text"
-											placeholder="Ваша почта"
-										/>
-									</label>
-								</div>
-								<div className="Basket__form-info">
-									<p>
-										Нажимая «Выбрать способ доставки»,
-										подтверждаю, что я ознакомлен с
-										условиями{' '}
-										<a href="/">
-											Публичного договора оферты и
-											Политикой конфиденциальности
-										</a>
-										, а также согласен получать
-										информационную рассылку
-									</p>
-									<button
-										className="btn-reset Basket__form-btn"
-										type="submit">
-										Отправить форму
-									</button>
-								</div>
-							</form>
-						</div>
-					</div> */}
+				
 					<Form/>
 				</div>
 				<Send />

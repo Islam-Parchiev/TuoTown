@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { ToastContainer,toast } from 'react-toastify';
+
 import { useForm,SubmitHandler } from 'react-hook-form';
 
 import { IShippingFields } from '../../types/Form';
@@ -7,6 +9,7 @@ import { IShippingFields } from '../../types/Form';
 import './Form.scss';
 
 const Form:React.FC = () => {
+	const notify = () => toast('Wow');
 	const {
 		register,
 		// control,
@@ -118,6 +121,8 @@ const Form:React.FC = () => {
 					</div>
 				</form>
 			</div>
+			<button onClick={notify}>csad</button>
+			<ToastContainer/>
 		</div>
 	)
 }
