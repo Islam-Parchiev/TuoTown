@@ -1,5 +1,7 @@
 .Map {
-     padding-top: 50px;
+     &__wrapper {
+        padding-top: 50px;
+     }
     
     &__header {
         text-align: center;

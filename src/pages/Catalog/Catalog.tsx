@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import axios from 'axios'
 
-import { useSelector } from 'react-redux'
+// import { useSelector } from 'react-redux'
 
 import { Helmet } from 'react-helmet'
 
@@ -19,13 +19,13 @@ import Send from '../../components/Send/Send';
 import Pagination from '../../components/Pagination/Pagination';
 import Search from '../../components/Search/Search';
 import CardSkeleton from '../../components/Card/CardSkeleton'
-import { selectCart } from '../../redux/slices/cartSlice'
+// import { selectCart } from '../../redux/slices/cartSlice'
 
 
 const fakeArr = [...Array(10)];
 
 const Catalog:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
-	const {items} = useSelector(selectCart);
+	// const {items} = useSelector(selectCart);
 	const [loading,setLoading] = useState<boolean>(true);
 	const [knives, setKnives] = useState<ICard[]>([])
 	const [page,setPage] = useState<number>(1);
@@ -33,21 +33,12 @@ const Catalog:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 	const debouncedValue = useDebounce(searchValue,600);
 	const search = `&q=${debouncedValue}`;
 	useEffect(() => {
-		// setLoading(true)
-		// fetch(`http://localhost:4200/knives?_page=${page}&_limit=6${searchValue.length > 0 ? search : null}`)
-		// 	.then(res => res.json())
-		// 	.then(data => setKnives(data))
-			
-		// setLoading(false);
 	  async	function fetchData() {
            	 try {
 				setLoading(true)
              	
-				const {data} = await axios.get(`http://localhost:4200/knives?_page=${page}&_limit=6${searchValue.length > 0 ? search : null}`)
+				const {data} = await axios.get(`http://localhost:4200/knives?_page=${page}&_limit=6${search.length > 0 ? search : null}`)
 				setKnives(data)
-					
-			
-			     
 			}catch(e) {
  
 				alert(e);
@@ -55,8 +46,12 @@ const Catalog:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 				setLoading(false);
 			}
 		}
+
 		fetchData()
-	}, [page,searchValue,search])
+	
+		
+
+	}, [page,search])
 	return (
 		<>
 			<Helmet>
@@ -122,7 +117,7 @@ const Catalog:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 						))} */}
 					
 					</div>
-					<Pagination setPage={setPage} page={page}/>
+					<Pagination  knives={knives} setPage={setPage} page={page}/>
 					<Send/>
 				</div>
 			</main>

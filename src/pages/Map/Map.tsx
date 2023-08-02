@@ -23,10 +23,10 @@ const Map:React.FC<IToggleSidebar> = ({toggleSidebar,setToggleSidebar}) => {
 						setToggleSidebar={setToggleSidebar}
 					/>
 				) : null}
-			
+			  <div className="Map__wrapper">
 				<MapHeader/>
 				<MapBody/>
-	             
+				</div>
 			</main>
 		</>
 	)

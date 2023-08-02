@@ -138,7 +138,7 @@ const Form:React.FC = () => {
 							</a>
 							, а также согласен получать информационную рассылку
 						</p>
-						<button className="btn-reset Form-btn" type="submit">
+						<button disabled={items.length === 0}  className="btn-reset Form-btn" type="submit">
 							Отправить форму
 						</button>
 					</div>

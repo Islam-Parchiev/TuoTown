@@ -36,16 +36,19 @@ line-height: 140%; /* 19.6px */
         }
     }
     &__items {
+        padding-top: 10px;
         height: 100%;
     }
     &__body {
-        display: none;
+        max-height: 1px;
         overflow: hidden;
         padding-bottom: 10px;
+        transition: all 0.3s ease-in-out;
     }
 }
 .Accordion.active .Accordion__body {
-    display: block;
+    max-height: 100px;
+    transition: all 0.3s ease-in-out;
 }
 .Accordion.active .Accordion__header svg {
     transform: rotate(180deg);
