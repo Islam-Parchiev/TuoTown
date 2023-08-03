@@ -1,5 +1,5 @@
 import React from 'react'
-import { YMaps,Map, Placemark, Clusterer } from '@pbe/react-yandex-maps';
+import { YMaps,Map,Placemark, Clusterer } from '@pbe/react-yandex-maps';
 
 import styles from './MapContent.module.scss';
 

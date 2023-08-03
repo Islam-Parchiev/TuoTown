@@ -23,6 +23,9 @@ const Form:React.FC = () => {
 		progress: undefined,
 		theme: 'dark',
 	});
+
+	
+  
 	const {
 		register,
 		// control,
@@ -38,6 +41,7 @@ const Form:React.FC = () => {
 			...items,
 		}
 		notify()
+	
 		console.log('Ваш заказ:',order);
 	 reset()
 	}
@@ -53,6 +57,7 @@ const Form:React.FC = () => {
 						<label className="Form-label">
 							<span>Получатель</span>
 							<input
+								
 								{...register('name', {
 									required: 'Name is require field!',
 									maxLength: {
