@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from 'react'
+import React, { FC, useEffect,useRef } from 'react'
 
 import {Link} from 'react-router-dom';
 
@@ -7,16 +7,39 @@ import { IToggleSidebar } from '../../types/Sidebar';
 import './Sidebar.scss'
 
 const Sidebar: FC<IToggleSidebar> = ({ toggleSidebar, setToggleSidebar }) => {
+	const ref = useRef<any>()
+	useEffect(() => {
+		/**
+		 * Alert if clicked on outside of element
+		 */
+		function handleClickOutside(event:any) {
+			// @ts-ignore
+		  if (ref.current && !ref.current.contains(event.target)) {
+				
+				console.log('You clicked outside of me!');
+				setToggleSidebar(false);
+		  }
+		}
+		// Bind the event listener
+		document.addEventListener('mousedown', handleClickOutside);
+		return () => {
+		  // Unbind the event listener on clean up
+		  document.removeEventListener('mousedown', handleClickOutside);
+		};
+		// eslint-disable-next-line
+	  }, [ref]);
 	useEffect(() => {
 		document.body.style.overflow = 'hidden'
+		console.log('sidebar mount')
 		return () => {
+			console.log('sidebar unmount')
 			document.body.style.overflow = 'unset'
 		}
 	}, [])
 
 	return (
 		<div className="overlay">
-			<div className="Sidebar">
+			<div ref={ref} className="Sidebar">
 				<button
 					onClick={() => setToggleSidebar(!toggleSidebar)}
 					className="btn-reset Sidebar__back">
