@@ -12,7 +12,7 @@ const Categories = () => {
 	const [category, setCategory] = React.useState(1)
 	// console.log(category);
 	useEffect(() => {
-		fetch(`http://localhost:4200/knives?_limit=6&type=${category}`)
+		fetch(`https://64cc9c882eafdcdc851a0655.mockapi.io/knives/items?page=1&limit=6&type=${category}`)
 			.then(res => res.json())
 			.then(data => setKnives(data))
 	}, [category])

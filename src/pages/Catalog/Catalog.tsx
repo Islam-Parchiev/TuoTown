@@ -31,13 +31,14 @@ const Catalog:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 	const [page,setPage] = useState<number>(1);
 	const [searchValue,setSearchValue] = useState<string>('');
 	const debouncedValue = useDebounce(searchValue,600);
-	const search = `&q=${debouncedValue}`;
+	const search = `&title=${debouncedValue}`;
 	useEffect(() => {
 	  async	function fetchData() {
            	 try {
 				setLoading(true)
-             	
-				const {data} = await axios.get(`http://localhost:4200/knives?_page=${page}&_limit=6${search.length > 0 ? search : null}`)
+	
+				// http://localhost:4200/knives?_page=${page}&_limit=6${search.length > 0 ? search : null}
+				const {data} = await axios.get(`https://64cc9c882eafdcdc851a0655.mockapi.io/knives/items?page=${page}&limit=6${search.length > 0 ? search :null}`)
 				setKnives(data)
 			}catch(e) {
  
