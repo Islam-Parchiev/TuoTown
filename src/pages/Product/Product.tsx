@@ -20,7 +20,7 @@ const Product:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 			<main className="Product">
 				{toggleSidebar === true ? <Sidebar toggleSidebar={toggleSidebar} setToggleSidebar={setToggleSidebar}/> :null}
 
-         <ProductQuantity/>
+         	<ProductQuantity/>
 			</main>
 		</>
 	)
