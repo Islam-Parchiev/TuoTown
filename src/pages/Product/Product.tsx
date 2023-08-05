@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom';
 
 import Sidebar from '../../components/Sidebar/Sidebar';
 import ProductQuantity from '../../components/ProductQuantity/ProductQuantity';
+import ProductInfo from '../../components/ProductInfo/ProductInfo';
 
 const Product:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 	const {id} = useParams()
@@ -21,6 +22,7 @@ const Product:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 				{toggleSidebar === true ? <Sidebar toggleSidebar={toggleSidebar} setToggleSidebar={setToggleSidebar}/> :null}
 
          	<ProductQuantity/>
+				<ProductInfo/>
 			</main>
 		</>
 	)
