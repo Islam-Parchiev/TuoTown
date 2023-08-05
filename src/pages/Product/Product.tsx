@@ -1,9 +1,29 @@
 import React from 'react'
 
-const Product = () => {
-  return (
-    <div>Product</div>
-  )
+import {Helmet} from 'react-helmet';
+
+import { useParams } from 'react-router-dom';
+
+import Sidebar from '../../components/Sidebar/Sidebar';
+import ProductQuantity from '../../components/ProductQuantity/ProductQuantity';
+
+const Product:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
+	const {id} = useParams()
+	console.log(id);
+	return(
+		 <>
+			<Helmet>
+				<meta charSet="utf-8"/>
+				<title>Product</title>
+			</Helmet>
+
+			<main className="Product">
+				{toggleSidebar === true ? <Sidebar toggleSidebar={toggleSidebar} setToggleSidebar={setToggleSidebar}/> :null}
+
+         <ProductQuantity/>
+			</main>
+		</>
+	)
 }
 
 export default Product

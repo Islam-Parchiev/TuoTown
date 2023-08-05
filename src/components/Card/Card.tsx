@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 import { useSelector,useDispatch } from 'react-redux'
+import { Link } from 'react-router-dom'
 
 import { addItem } from '../../redux/slices/cartSlice'
 
@@ -26,30 +27,32 @@ const Card: React.FC<ICard> = ({ imageUrl, title, price, newItem,id }) => {
 		<li className={styles.Card}>
 			<div className={styles.Card__top}>
 				<div className={styles.Card__icons}>
-					<svg
-						className={styles.Card__plusIcon}
-						width="24"
-						height="24"
-						viewBox="0 0 24 24"
-						xmlns="http://www.w3.org/2000/svg"
-						onClick={onClickAdd}>
-						<path
-							d="M12 5V19"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-						/>
-						<path
-							d="M5 12H19"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-						/>
-					</svg>
+					<Link to={`/product/${id}`}>
+						<svg
+							className={styles.Card__plusIcon}
+							width="24"
+							height="24"
+							viewBox="0 0 24 24"
+							xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M12 5V19"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							/>
+							<path
+								d="M5 12H19"
+								stroke-linecap="round"
+								stroke-linejoin="round"
+							/>
+						</svg>
+					</Link>
 					<svg
 						className={styles.Card__basketIcon}
 						width="15"
 						height="19"
 						viewBox="0 0 15 19"
-						xmlns="http://www.w3.org/2000/svg">
+						xmlns="http://www.w3.org/2000/svg"
+						onClick={onClickAdd}>
 						<g clip-path="url(#clip0_67_4364)">
 							<path
 								d="M7.86207 0C8.12591 0.0631229 8.39933 0.106823 8.65837 0.194224C10.1502 

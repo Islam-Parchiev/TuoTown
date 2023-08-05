@@ -10,6 +10,7 @@ import Catalog from './pages/Catalog/Catalog';
 import Basket from './pages/Basket/Basket';
 import Service from './pages/Service/Service';
 import Map from './pages/Map/Map';
+import Product from './pages/Product/Product';
 
 const  App:React.FC = () => {
 	const [toggleSidebar,setToggleSidebar] = React.useState<boolean>(false);
@@ -22,6 +23,7 @@ const  App:React.FC = () => {
 				<Route path="/basket" element={<Basket toggleSidebar={toggleSidebar} setToggleSidebar={setToggleSidebar}/>}/>
 				<Route path="/service" element={<Service toggleSidebar={toggleSidebar} setToggleSidebar={setToggleSidebar}/>}/>
 				<Route path="/map" element={<Map toggleSidebar={toggleSidebar} setToggleSidebar={setToggleSidebar}/>}/>
+				<Route path="/product/:id" element={<Product toggleSidebar={toggleSidebar} setToggleSidebar={setToggleSidebar}/>}/>
 			</Routes>
 			<Footer/>
 		</div>
