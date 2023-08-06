@@ -1,0 +1,16 @@
+.ProductSlider {
+    display: flex;
+    justify-content: center;
+   background-color: var(--charleston-color);
+}
+
+.ProductSlider__slide {
+    width: 1200px !important;
+    border-radius: 15px;
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 15px;
+    }
+}
