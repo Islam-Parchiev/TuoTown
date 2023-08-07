@@ -18,7 +18,7 @@ const ProductVideo: FC = () => {
 		<section className={styles.ProductVideo}>
 			<div className={styles.ProductVideo__video}>
 				<video onClick={onStop} ref={videoRef} poster="/img/Product/preview.jpg">
-					<source src="/video.mp4" />
+					<source src="/vidtou.mp4" />
 					Тег video не поддерживается вашим браузером.
 					<a href="video/duel.mp4">Скачайте видео</a>.
 				</video>
