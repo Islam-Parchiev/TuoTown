@@ -9,6 +9,7 @@ import ProductQuantity from '../../components/ProductQuantity/ProductQuantity';
 import ProductInfo from '../../components/ProductInfo/ProductInfo';
 import ProductSlider from '../../components/ProductSlider/ProductSlider';
 import ProductVideo from '../../components/ProductVideo/ProductVideo';
+import Specifications from '../../components/Specifications/Specifications';
 
 const Product:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 	const {id} = useParams()
@@ -27,6 +28,7 @@ const Product:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 				<ProductInfo/>
 				<ProductSlider/>
 				<ProductVideo/>
+				<Specifications/>
 			</main>
 		</>
 	)

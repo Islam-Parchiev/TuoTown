@@ -1,0 +1,50 @@
+.Specifications {
+    height: 80vh;
+    background-color: var(--charleston-color);
+    &__container {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        gap: 200px;
+        
+    }
+    &__img {
+        width: 370px;
+        height: 600px;
+        border-radius: 15px;
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+            object-fit: cover;
+        }
+    }
+    &__info {
+        color:var(--light-color);
+        h3 {
+            color:var(--light-color);
+font-family: Jura;
+font-size: 34px;
+font-style: normal;
+font-weight: 500;
+line-height: normal;
+        }
+        &_item {
+            padding: 5px 0;
+            display: flex;
+            align-items: center;
+            gap: 200px;
+            border-bottom: 1px solid var(--hover-color);
+        }
+    }
+    &__more_btn {
+
+        margin-top: 10px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        text-transform: uppercase;
+        color:var(--hover-color)
+    }
+}
