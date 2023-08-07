@@ -24,4 +24,4 @@ yarn-error.log*
 
 .vscode
 
-video.mp4
+public/video.mp4
