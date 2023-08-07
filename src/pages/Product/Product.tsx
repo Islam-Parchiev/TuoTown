@@ -12,7 +12,7 @@ import ProductVideo from '../../components/ProductVideo/ProductVideo';
 
 const Product:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 	const {id} = useParams()
-	console.log(id);
+	console.log(id,'rrrrr');
 	return(
 		 <>
 			<Helmet>
