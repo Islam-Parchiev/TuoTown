@@ -23,5 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 
 .vscode
-
-public/video.mp4
+.gitignore
+*.mp4
