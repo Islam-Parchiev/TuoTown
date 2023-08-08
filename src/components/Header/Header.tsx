@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, useEffect } from 'react'
 
 import { useSelector } from 'react-redux'
 
@@ -13,6 +13,21 @@ import styles from './Header.module.scss'
 
 const Header: FC<any> = ({ toggleSidebar, setToggleSidebar }) => {
 	const {items} = useSelector(selectCart)
+	const isMounted = React.useRef(false);
+
+	useEffect(()=> {
+ 
+		if(isMounted.current) {
+			const json = JSON.stringify(items);
+			localStorage.setItem('cartItems',json);
+
+			console.log('aaaaaaaaaaaaaaaaaaaaaaaaa',json);
+			// @ts-ignore
+			// console.log('ls',JSON.parse(localStorage.getItem('cartItems')))
+		}
+		isMounted.current = true;
+ 	},[items])
+
 	console.log(items);
 	return (
 		<header className={styles.header}>

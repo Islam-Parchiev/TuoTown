@@ -5,10 +5,13 @@ import { RootState } from '../store';
 import { calcTotalPrice } from '../../utils/totalPrice';
 
 import { CartItem,CartSliceState } from '../../types/cartItem';
+import { getCartFromLS } from '../../utils/cartLocalStorage';
+
+const cartData = getCartFromLS()
 
 const initialState:CartSliceState = {
-	items:[],
-	price:0,
+	items:cartData.items,
+	price:cartData.totalPrice,
 }
 console.log(initialState)
 
