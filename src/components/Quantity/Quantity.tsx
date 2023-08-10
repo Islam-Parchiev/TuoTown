@@ -36,7 +36,8 @@ const Quantity: FC = () => {
 							size="medium" 
 							variant="secondary" 
 							type="two"
-							onclick={()=> console.log('click')}>Подронее</Button>
+							onclick={()=> console.log('click')}
+							otherClass={styles.quantity__btn}>Подронее</Button>
 					</div>
 				</SwiperSlide>
 				<SwiperSlide>
@@ -54,7 +55,8 @@ const Quantity: FC = () => {
 							size="medium" 
 							variant="secondary" 
 							type="two"
-							onclick={()=> console.log('click')}>Подронее</Button>
+							onclick={()=> console.log('click')}
+							otherClass={styles.quantity__btn}>Подронее</Button>
 					</div>
 				</SwiperSlide>
 				<SwiperSlide>
@@ -72,7 +74,8 @@ const Quantity: FC = () => {
 							size="medium" 
 							variant="secondary" 
 							type="two"
-							onclick={()=> console.log('click')}>Подронее</Button>
+							onclick={()=> console.log('click')}
+							otherClass={styles.quantity__btn}>Подронее</Button>
 					</div>
 				</SwiperSlide>
 				<SliderNavigation />

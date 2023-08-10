@@ -1,7 +1,8 @@
 export interface IButton {
 	onclick:() => void
-	variant:string
-	size:string	
-	type:string
+	variant:'primary' | 'secondary'
+	size:'small'|'medium'|'large'	
+	type:'one'|'two'
 	children:any
+	otherClass?:string
 }

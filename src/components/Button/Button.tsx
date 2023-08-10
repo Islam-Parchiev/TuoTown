@@ -8,7 +8,7 @@ import styles from './Button.module.scss';
 
 
 
-const Button:React.FC<IButton> = ({onclick,variant='',size='medium',type='one',children}) => {
+const Button:React.FC<IButton> = ({onclick,variant='',size='medium',type='one',children,otherClass}) => {
   			
 	const mainCh = cn(
 		styles.button,
@@ -18,7 +18,7 @@ const Button:React.FC<IButton> = ({onclick,variant='',size='medium',type='one',c
 	)
 
 	return (
-		<button onClick={onclick} className={`btn-reset ${mainCh}`}>
+		<button onClick={onclick} className={`btn-reset ${mainCh} ${otherClass}`}>
 			{children}
 		</button>
 	)
