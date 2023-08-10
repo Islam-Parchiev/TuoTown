@@ -50,9 +50,10 @@ const Catalog:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 
 		fetchData()
 	
-		
+		search.length > 1 ? setPage(1):setPage(1)
 
 	}, [page,search])
+	
 	return (
 		<>
 			<Helmet>

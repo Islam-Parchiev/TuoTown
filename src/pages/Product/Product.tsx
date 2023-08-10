@@ -61,7 +61,7 @@ const Product:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 			<Helmet>
 				<meta charSet="utf-8"/>
 				{/* @ts-ignore */}
-				<title>a</title>
+				<title>{product?.title}</title>
 			</Helmet>
 
 			<main className="Product">
