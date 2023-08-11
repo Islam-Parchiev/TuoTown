@@ -55,6 +55,7 @@ const HeaderSearch = ({setHeaderSearch}:any) => {
 				 value={headerSearchValue}
 
 				 onChange={(e) => setHeaderSearchValue(e.target.value)}
+				 placeholder="Введите что-нибудь..."
 
 				/>
 			</label>
