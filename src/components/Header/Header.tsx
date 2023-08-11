@@ -170,7 +170,7 @@ const Header: FC<any> = ({ toggleSidebar, setToggleSidebar }) => {
 						</svg>
 					</Link>
 
-					<button onClick={()=> setHeaderSearch(true)} className={`btn-reset ${styles.header__search}`}>
+					<button onClick={()=> setHeaderSearch(!headerSearch)} className={`btn-reset ${styles.header__search}`}>
 						<svg
 							width="24"
 							height="23"
