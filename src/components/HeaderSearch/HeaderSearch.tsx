@@ -1,5 +1,6 @@
 import {useEffect, useRef, useState} from 'react'
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 import Button from '../Button/Button';
 import { useDebounce } from '../../hooks/debounce';
@@ -71,7 +72,12 @@ const HeaderSearch = ({setHeaderSearch}:any) => {
 								<h3 className={styles.HeaderSearch__item_title}>{item.title}</h3>
 								<span className={styles.HeaderSearch__item_price}>{item.price} р.</span>
 							</div>
-							<Button type={'two'} size={'small'} variant={'primary'} onclick={()=> console.log('clickHeaderSearchItem')}>A</Button>
+							<Button type={'two'} size={'small'} variant={'primary'} onclick={()=> console.log('clickHeaderSearchItem')}>
+								<Link to={`/product/${item.id}`} className={styles.HeaderSearch__item_link}>
+								Перейти
+
+								</Link>
+							</Button>
 						</li>
 					))
 				}
