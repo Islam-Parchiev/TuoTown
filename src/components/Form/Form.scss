@@ -1,75 +1,83 @@
 .Form {
     position: relative;
     margin: 30px 0;
-    padding: 40px 40px;
     border-radius: 15px;
+    padding: 40px 40px;
     background-color: #232323;
-    
+
     &-form {
         display: flex;
-       
+
         align-items: end;
         gap: 30px;
     }
+
     &-label {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
         margin-top: 10px;
+        border-radius: 5px;
         padding: 15px;
         width: 335px;
         height: 100px;
         background-color: #303030;
-        border-radius: 5px;
-        display: flex;
-        flex-direction: column;
-        align-items: start;
+
         span {
+            /* label */
+            font-family: Montserrat;
+            font-weight: 500;
+            font-style: normal;
+            font-size: 12px;
+            line-height: normal;
             color: var(--gray-color);
-/* label */
-font-family: Montserrat;
-font-size: 12px;
-font-style: normal;
-font-weight: 500;
-line-height: normal;
         }
+
         input {
+            border-bottom: 2px solid var(--gray-color);
             padding: 0;
-            height: 40px;
             width: 300px;
-            border-bottom: 2px solid var( --gray-color);
+            height: 40px;
         }
     }
+
     &-title {
+        /* H3 */
+        font-family: Jura;
+        font-weight: 500;
+        font-style: normal;
+        font-size: 24px;
+        line-height: normal;
+        text-transform: uppercase;
         color: #FFF;
-/* H3 */
-font-family: Jura;
-font-size: 24px;
-font-style: normal;
-font-weight: 500;
-line-height: normal;
-text-transform: uppercase;
     }
+
     &-info {
+        /* p small/regular */
+        font-family: Montserrat;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 16px;
+        line-height: 140%;
+        /* 19.6px */
         color: var(--text-light, #ADACAC);
-/* p small/regular */
-font-family: Montserrat;
-font-size: 16px;
-font-style: normal;
-font-weight: 400;
-line-height: 140%; /* 19.6px */
-a {
-color: var(--active-light, #ED0C0C);
-/* p small/regular */
-font-family: Montserrat;
-font-size: 16px;
-font-style: normal;
-font-weight: 400;
-line-height: 140%;
-}
+
+        a {
+            /* p small/regular */
+            font-family: Montserrat;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 16px;
+            line-height: 140%;
+            color: var(--active-light, #ED0C0C);
+        }
     }
+
     &-btn {
-        padding: 16px 34px;
         border-radius: 27px;
+        padding: 16px 34px;
+        color: var(--light-color);
         background-color: var(--red-color);
-        color:var(--light-color);
     }
-  
+
 }

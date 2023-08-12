@@ -3,10 +3,10 @@
     align-items: center;
     gap: 10px;
     li {
-        cursor: pointer;
-      padding: 2px 7px;
         border-radius: 100%;
+        padding: 2px 7px;
         color: var(--light-color);
+        cursor: pointer;
         &:hover {
             background-color: var(--red-color);
         }

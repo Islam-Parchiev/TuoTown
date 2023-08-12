@@ -1,40 +1,45 @@
 .Cart {
-    width: 100%;
     margin: 0 auto;
+    width: 100%;
+
     &-footer {
-        padding: 20px;
         display: flex;
         flex-direction: column;
         align-items: end;
+        border-radius: 0 0 15px 15px;
+        padding: 20px;
         width: 100%;
         height: 100px;
         background-color: var(--raisin-black);
-        border-radius: 0 0 15px 15px;
+
         &--topay {
+            font-family: Montserrat;
+            font-weight: 500;
+            font-style: normal;
+            font-size: 19px;
+            line-height: normal;
             color: var(--text-light, #ADACAC);
-/* p / medium */
-font-family: Montserrat;
-font-size: 19px;
-font-style: normal;
-font-weight: 500;
-line-height: normal;
+            /* p / medium */
         }
     }
+
     li:first-child {
-        border-radius: 15px 15px 0 0 ;
+        border-radius: 15px 15px 0 0;
     }
+
     &-price {
         display: flex;
         align-items: center;
-        color:var(--light-color);
-/* H3 */
-font-family: Jura;
-font-size: 24px;
-font-style: normal;
-font-weight: 500;
-line-height: normal;
-text-transform: uppercase;
+        font-family: Jura;
+        font-weight: 500;
+        font-style: normal;
+        font-size: 24px;
+        line-height: normal;
+        text-transform: uppercase;
+        color: var(--light-color);
+        /* H3 */
     }
+
     &-value {
         margin-left: 10px;
     }

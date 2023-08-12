@@ -3,85 +3,101 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    "Roboto",
+    "Oxygen",
+    "Ubuntu",
+    "Cantarell",
+    "Fira Sans",
+    "Droid Sans",
+    "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--body-bg);
+
   &::-webkit-scrollbar {
     width: 12px;               /* ширина scrollbar */
   }
+
   &::-webkit-scrollbar-track {
     background: rgb(61, 61, 61);        /* цвет дорожки */
   }
+
   &::-webkit-scrollbar-thumb {
-    background-color: rgb(255, 0, 0);    /* цвет плашки */
     border-radius: 20px;       /* закругления плашки */
+    background-color: rgb(255, 0, 0);    /* цвет плашки */
   }
 }
-/* dasd */
+
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family:
+    "source-code-pro",
+    "Menlo",
+    "Monaco",
+    "Consolas",
+    "Courier New",
     monospace;
 }
 
 .swiper-button-next {
-  cursor: pointer;
   position: absolute;
-  top: 182px;
   right: 29px;
+  top: 182px;
   z-index: 100;
-  background-image: url("./components/Quantity/arrow-right.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
+  border: 1px solid var(--light-color);
+  border-radius: 100%;
   width: 50px;
   height: 50px;
-  border-radius: 100%;
-  border: 1px solid var(--light-color);
+  background-image: url("./components/Quantity/arrow-right.svg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
 }
 
 .swiper-button-prev {
-  cursor: pointer;
   position: absolute;
-  top: 182px;
   left: 29px;
+  top: 182px;
   z-index: 100;
+  border: 1px solid var(--light-color);
+  border-radius: 100%;
   padding: 13px;
-  background-image: url("./components/Quantity/arrow-left.svg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
   width: 40px;
   height: 40px;
-  border-radius: 100%;
-  border: 1px solid var(--light-color);
+  background-image: url("./components/Quantity/arrow-left.svg");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
 }
 
 .swiper-pagination {
   position: absolute;
-  z-index: 1000;
-  bottom: 60px;
   right: 50%;
+  bottom: 60px;
+  z-index: 1000;
   display: flex;
   gap: 15px;
-
 }
 
 .swiper-pagination-bullet {
-  cursor: pointer;
   display: block;
+  border-radius: 100%;
   width: 15px;
   height: 15px;
-  border-radius: 100%;
   background-color: var(--light-color);
+  cursor: pointer;
 
-  &:hover {
+  &-active {
     background-color: var(--hover-color);
   }
 
-  &-active {
+  &:hover {
     background-color: var(--hover-color);
   }
 }
@@ -95,9 +111,5 @@ code {
 }
 
 .ymaps-layers-pane {
-	filter: invert(100%) !important;
-	-ms-filter: invert(100%)!important;
-	-webkit-filter: invert(100%)!important;
-	-moz-filter: invert(100%)!important;
-	-o-filter: invert(100%)!important;
+  filter: invert(100%) !important;
 }

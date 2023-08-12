@@ -3,12 +3,12 @@
     padding-bottom: 50px;
 
     &__title {
-        color: var(--light-color);
         font-family: Jura;
-        font-size: 35px;
-        font-style: normal;
         font-weight: 500;
+        font-style: normal;
+        font-size: 35px;
         line-height: normal;
+        color: var(--light-color);
     }
 
     &__items {

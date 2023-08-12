@@ -1,32 +1,32 @@
 .Sidebar {
     position: absolute;
-    z-index: 1000;
     left: 0;
     top: 0;
+    z-index: 1000;
     display: flex;
     flex-direction: column;
     align-items: start;
-    gap: 40px;
+    padding: 45px;
     width: 444px;
     height: 100vh;
     background-image: url("./bg.jpg");
-    background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    padding: 45px;
+    background-repeat: no-repeat;
+    gap: 40px;
 
     &__list {
         &-item {
             margin-top: 30px;
 
             a {
-                color: var(--light-color);
                 font-family: Montserrat;
-                font-size: 18px;
-                font-style: normal;
                 font-weight: 500;
+                font-style: normal;
+                font-size: 18px;
                 line-height: normal;
                 text-transform: uppercase;
+                color: var(--light-color);
             }
         }
     }
@@ -38,13 +38,13 @@
             margin-top: 20px;
 
             a {
-                color: #FFF;
                 font-family: Montserrat;
-                font-size: 15px;
-                font-style: normal;
                 font-weight: 600;
+                font-style: normal;
+                font-size: 15px;
                 line-height: normal;
                 text-transform: uppercase;
+                color: #FFF;
             }
         }
     }

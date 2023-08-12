@@ -1,11 +1,11 @@
 .NotFound {
-    width: 100%;
-    height: 50vh;
-    // padding-top: 200px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50vh;
+    
     gap: 30px;
     &__title {
         font-size: 60px;
@@ -16,17 +16,17 @@
         color:var(--red-color);
     }
     &__back {
-        text-align: center;
-
         border: 1px solid var(--black-color);
         border-radius: 15px;
         padding: 15px 29px;
+        text-align: center;
+
         color: var(--black-color);
         transition: all 0.3s ease-in-out;
         &:hover  {
             border-radius: 0;
-            background-color: var(--red-color);
             color: var(--light-color);
+            background-color: var(--red-color);
         }
     }
 }

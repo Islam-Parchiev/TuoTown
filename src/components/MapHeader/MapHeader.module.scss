@@ -2,16 +2,18 @@
     padding-top: 30px;
     height: 110px;
     text-align: center;
-  
+
 }
+
 .Map__title {
-  
-        color:var(--light-color);
-font-family: Jura;
-font-size: 32px;
-font-style: normal;
-font-weight: 500;
-line-height: 120%; /* 38.4px */
-text-transform: uppercase;
-    
+
+    font-family: Jura;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 32px;
+    line-height: 120%;
+    /* 38.4px */
+    text-transform: uppercase;
+    color: var(--light-color);
+
 }

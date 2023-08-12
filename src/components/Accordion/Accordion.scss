@@ -1,55 +1,63 @@
 .Accordion {
     display: block;
- 
+    border-bottom: 1px solid #4F4F4F;
     padding-bottom: 10px;
     width: 300px;
-    border-bottom: 1px solid #4F4F4F;
+
     &__header {
         display: flex;
         align-items: center;
         justify-content: space-between;
         height: 40px;
         cursor: pointer;
+
         span {
+            font-family: Montserrat;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 16px;
+            line-height: normal;
             color: var(--text-light, #ADACAC);
-/* p / regular */
-font-family: Montserrat;
-font-size: 16px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
+            /* p / regular */
         }
-        
+
     }
+
     &__item {
         a {
+            font-family: Montserrat;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 14px;
+            line-height: 140%;
             color: var(--text-light, #ADACAC);
-/* p small/regular */
-font-family: Montserrat;
-font-size: 14px;
-font-style: normal;
-font-weight: 400;
-line-height: 140%; /* 19.6px */
-&:hover {
-    color:var(--light-color);
-}
+            /* p small/regular */
+
+            /* 19.6px */
+            &:hover {
+                color: var(--light-color);
+            }
         }
     }
+
     &__items {
         padding-top: 10px;
         height: 100%;
     }
+
     &__body {
-        max-height: 1px;
         overflow: hidden;
         padding-bottom: 10px;
+        max-height: 1px;
         transition: all 0.3s ease-in-out;
     }
 }
+
 .Accordion.active .Accordion__body {
     max-height: 100px;
     transition: all 0.3s ease-in-out;
 }
+
 .Accordion.active .Accordion__header svg {
     transform: rotate(180deg);
 }

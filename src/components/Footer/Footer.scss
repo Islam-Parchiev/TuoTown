@@ -1,12 +1,12 @@
 .Footer {
-    height: 462px;
     width: 100%;
+    height: 462px;
 
     &__top {
         display: block;
+        padding-top: 40px;
         width: 100%;
         height: 376px;
-        padding-top: 40px;
         background-color: var(--charleston-color);
 
         &-container {
@@ -20,19 +20,19 @@
         height: 85px;
 
         &-container {
-            height: 100%;
             display: flex;
             align-items: center;
             justify-content: space-between;
+            height: 100%;
         }
 
         span {
-            color: var(--light-color);
             font-family: Montserrat;
-            font-size: 12px;
-            font-style: normal;
             font-weight: 400;
+            font-style: normal;
+            font-size: 12px;
             line-height: 21px;
+            color: var(--light-color);
             opacity: 0.5;
         }
 
@@ -63,31 +63,31 @@
 
             h4 {
                 margin: 0;
-                color: var(--light-color);
                 font-family: Montserrat;
-                font-size: 17px;
-                font-style: normal;
                 font-weight: 600;
+                font-style: normal;
+                font-size: 17px;
                 line-height: 28px;
+                color: var(--light-color);
             }
 
             span {
-                color: var(--light-color);
                 font-family: Montserrat;
-                font-size: 14px;
-                font-style: normal;
                 font-weight: 400;
+                font-style: normal;
+                font-size: 14px;
                 line-height: 19px;
+                color: var(--light-color);
                 opacity: 0.5;
             }
 
             address {
-                color: var(--light-color);
                 font-family: Montserrat;
-                font-size: 14px;
-                font-style: normal;
                 font-weight: 400;
+                font-style: normal;
+                font-size: 14px;
                 line-height: 19px;
+                color: var(--light-color);
                 opacity: 0.5;
             }
         }
@@ -99,12 +99,12 @@
         gap: 15px;
 
         span {
-            color: var(--light-color);
             font-family: Montserrat;
-            font-size: 13px;
-            font-style: normal;
             font-weight: 600;
+            font-style: normal;
+            font-size: 13px;
             line-height: 17px;
+            color: var(--light-color);
         }
 
         img {
@@ -113,48 +113,48 @@
     }
 
     &__descr {
-        color: var(--light-color);
         font-family: Montserrat;
-        font-size: 13px;
-        font-style: normal;
         font-weight: 400;
+        font-style: normal;
+        font-size: 13px;
         line-height: 20px;
+        color: var(--light-color);
     }
 
     &__row {
         display: flex;
         flex-direction: column;
-        align-items: start;
         flex-wrap: wrap;
+        align-items: start;
 
         ul {
             display: flex;
+            flex-wrap: wrap;
             align-items: center;
             gap: 20px;
-            flex-wrap: wrap;
         }
 
         h4 {
             margin: 0;
-            color: var(--light-color);
             font-family: Montserrat;
-            font-size: 17px;
-            font-style: normal;
             font-weight: 600;
+            font-style: normal;
+            font-size: 17px;
             line-height: 28px;
+            color: var(--light-color);
         }
 
         li {
             cursor: pointer;
 
             a {
-                color: var(--light-color);
                 font-family: Montserrat;
-                font-size: 14px;
-                font-style: normal;
                 font-weight: 500;
-                opacity: 0.5;
+                font-style: normal;
+                font-size: 14px;
                 line-height: 24px;
+                color: var(--light-color);
+                opacity: 0.5;
 
                 &:hover {
                     opacity: 1;
@@ -166,8 +166,8 @@
 
     &__social {
         display: flex;
-        justify-content: start;
         align-items: center;
+        justify-content: start;
         gap: 10px;
 
         ul {
@@ -178,12 +178,12 @@
         }
 
         span {
-            color: var(--light-color);
             font-family: Montserrat;
-            font-size: 17px;
-            font-style: normal;
             font-weight: 600;
+            font-style: normal;
+            font-size: 17px;
             line-height: 28px;
+            color: var(--light-color);
         }
 
         li {
@@ -201,12 +201,12 @@
 
     &__link {
         &-phone {
-            color: var(--light-color);
             font-family: Montserrat;
-            font-size: 20px;
-            font-style: normal;
             font-weight: 600;
+            font-style: normal;
+            font-size: 20px;
             line-height: 28px;
+            color: var(--light-color);
 
             &:hover {
                 color: var(--hover-color);
@@ -214,12 +214,12 @@
         }
 
         &-email {
-            color: var(--light-color);
             font-family: Montserrat;
-            font-size: 14px;
-            font-style: normal;
             font-weight: 400;
+            font-style: normal;
+            font-size: 14px;
             line-height: 19px;
+            color: var(--light-color);
 
             &:hover {
                 color: var(--hover-color);

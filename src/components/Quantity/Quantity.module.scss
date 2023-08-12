@@ -1,24 +1,24 @@
 .quantity {
-    height: 500px;
-    width: 100%;
-    // background-color: var(--black-color);
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
+    height: 500px;
+    /* background-color: var(--black-color); */
 
     &__slide {
-        height: 590px;
-        padding: 0 450px;
         display: flex;
         flex-direction: column;
-
-        text-align: left;
         align-items: start;
         justify-content: center;
+        padding: 0 450px;
+        height: 590px;
+
+        text-align: left;
         background-image: url("./slide.jpg");
         background-position: center;
-        background-repeat: no-repeat;
         background-size: cover;
+        background-repeat: no-repeat;
 
         &_text {
             width: 500px;
@@ -26,26 +26,27 @@
     }
 
     &__title {
-        color: var(--light-color);
-        font-size: 41px;
         font-family: Jura;
-        font-style: normal;
         font-weight: 400;
+        font-style: normal;
+        font-size: 41px;
         line-height: 48px;
+        color: var(--light-color);
     }
 
     &__descr {
-        color: var(--light-color);
-        font-size: 19px;
         font-family: Montserrat;
-        font-style: normal;
         font-weight: 400;
+        font-style: normal;
+        font-size: 19px;
         line-height: 23px;
+        color: var(--light-color);
     }
 
     &__slider {
         position: relative;
     }
+
     &__btn {
         margin-top: 30px;
     }

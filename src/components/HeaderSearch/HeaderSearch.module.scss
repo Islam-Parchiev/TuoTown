@@ -1,51 +1,64 @@
 .HeaderSearch {
     position: absolute;
-    border-radius: 15px;
     right: 0;
     top: 50px;
     z-index: 1000;
-    background-color: var( --charleston-color);
+    overflow-y: scroll;
+    border-radius: 15px;
     width: 600px;
     max-height: 300px;
-    overflow-y: scroll;
+    background-color: var(--charleston-color);
+
     &::-webkit-scrollbar {
         border-radius: 15px;
-        width: 12px;               /* ширина scrollbar */
-      }
-      &::-webkit-scrollbar-track {
+        width: 12px;
+        /* ширина scrollbar */
+    }
+
+    &::-webkit-scrollbar-track {
         border-radius: 0 15px 15px 0;
-        background-color: var( --charleston-color);     /* цвет дорожки */
-      }
-      &::-webkit-scrollbar-thumb {
-        background-color: rgb(255, 0, 0);    /* цвет плашки */
-        border-radius: 20px;       /* закругления плашки */
-      }
+        background-color: var(--charleston-color);
+        /* цвет дорожки */
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 20px;
+        /* закругления плашки */
+        background-color: rgb(255, 0, 0);
+        /* цвет плашки */
+    }
+
     &__input {
         display: block;
+        border-bottom: 1px solid #000;
         width: 100%;
         height: 50px;
-        border-bottom: 1px solid #000;
+
         input {
-            color:var(--light-color);
-            padding: 0 10px;
             outline: none;
-            height: 100%;
+            padding: 0 10px;
             width: 100%;
+            height: 100%;
+            color: var(--light-color);
         }
     }
+
     &__items {
-        height: 100%;
         display: flex;
         flex-direction: column;
+        height: 100%;
 
     }
+
     &__item {
         display: flex;
         align-items: center;
         justify-content: space-around;
+
         &_img {
             width: 70px;
             height: 70px;
+
             img {
                 display: block;
                 width: 100%;
@@ -53,23 +66,27 @@
                 object-fit: cover;
             }
         }
+
         &_info {
             width: 30%;
-            // max-width: 100px;
+            /* max-width: 100px; */
             text-align: left;
             text-overflow: ellipsis;
         }
+
         &_title {
-            color:var(--light-color);
             margin: 0;
             padding: 0;
+            color: var(--light-color);
         }
+
         &_price {
-            color:var(--light-color);
+            color: var(--light-color);
         }
+
         &_link {
-            color:var(--light-color);
+            color: var(--light-color);
         }
-       
+
     }
 }

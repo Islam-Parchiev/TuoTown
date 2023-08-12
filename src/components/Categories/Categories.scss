@@ -2,12 +2,12 @@
     padding-bottom: 150px;
 
     &__goods {
+        display: grid;
+        column-gap: 20px;
+        grid-template-columns: repeat(4, 1fr);
         margin-bottom: 70px;
         padding-top: 80px;
 
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        column-gap: 20px;
         row-gap: 40px;
     }
 
@@ -30,32 +30,22 @@
     }
 
     &__listItem {
-        cursor: pointer;
         display: flex;
         flex-direction: column;
         align-items: center;
-
-        &.active {
-            svg {
-                fill: var(--red-color);
-            }
-
-            .Categories__listItemTitle {
-                color: var(--red-color);
-            }
-        }
+        cursor: pointer;
 
         svg {
             fill: var(--light-color);
         }
 
         &Title {
-            color: var(--light-color);
             font-family: Montserrat;
-            font-size: 17px;
-            font-style: normal;
             font-weight: 500;
+            font-style: normal;
+            font-size: 17px;
             line-height: normal;
+            color: var(--light-color);
             opacity: 0.3;
         }
 
@@ -68,6 +58,20 @@
                 color: var(--red-color);
             }
         }
+
+        &.active {
+            svg {
+                fill: var(--red-color);
+            }
+
+            .Categories__listItemTitle {
+                color: var(--red-color);
+            }
+        }
+
+
+
+
     }
 
 

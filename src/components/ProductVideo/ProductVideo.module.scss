@@ -1,28 +1,31 @@
 .ProductVideo {
     position: relative;
-    height: 70vh;
     width: 100%;
+    height: 70vh;
+
     &__video {
         width: 100%;
         height: 100%;
     }
+
     video {
-        object-fit: cover;
         width: 100%;
         height: 100%;
+        object-fit: cover;
     }
+
     &__play {
+        position: absolute;
+        right: 50%;
+        top: 50%;
+        z-index: 100;
         display: flex;
         align-items: center;
         justify-content: center;
+        border-radius: 100%;
         width: 75px;
         height: 75px;
-        border-radius: 100%;
         background-color: var(--red-color);
-        position: absolute;
-        z-index: 100;
-        top: 50%;
-        right: 50%;
-        transform: translate(-50%,-50%);
+        transform: translate(-50%, -50%);
     }
 }
