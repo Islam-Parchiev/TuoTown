@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 import {Helmet} from 'react-helmet';
 
@@ -16,10 +16,25 @@ import { ICard } from '../../types/Card';
 
 
 import { addItem } from '../../redux/slices/cartSlice';
+import ToTop from '../../components/ToTop/ToTop';
 
 const Product:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 	const {id} = useParams()
 	const [product,setProduct] = useState<ICard>();
+
+	const mainRef = useRef<any>()
+	const [scroll, setScroll] = useState<number>(0);
+	console.log(scroll)
+  	const handleScroll = () => {
+   	 setScroll(window.scrollY);
+ 	 };
+
+
+  	useEffect(() => {
+		// console.log(scroll);
+   	 window.addEventListener('scroll', handleScroll);
+   	 return () => window.removeEventListener('scroll', handleScroll);
+  	}, []);
 
 	useEffect(() => {
 		async	function fetchData() {
@@ -64,8 +79,9 @@ const Product:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 				<title>{product?.title}</title>
 			</Helmet>
 
-			<main className="Product">
+			<main ref={mainRef} className="Product">
 				{toggleSidebar === true ? <Sidebar toggleSidebar={toggleSidebar} setToggleSidebar={setToggleSidebar}/> :null}
+				{scroll > 1500 ? <ToTop/> :null}
 
 				{/* @ts-ignore */}
          	<ProductQuantity  productTitle={product?.title} productPrice={product?.price}onClickAdd={onClickAdd}/>
