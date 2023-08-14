@@ -1,28 +1,37 @@
-/* eslint-disable max-len */
-import { createSlice,createAsyncThunk } from '@reduxjs/toolkit';
 
+import { createSlice,createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
+import { ICard } from '../../types/Card';
+
+
+export enum  Status {
+	LOADING = 'loading',
+	SUCCESS='success',
+	ERROR = 'error'    
+ }
 
 
 export const fetchCatalogItems = createAsyncThunk(
   	'users/fetchCatalogItems',
   	async ({page,checked,check,searchValue,search}:any) => {
 			
-    	const {data} = await axios.get(`https://64cc9c882eafdcdc851a0655.mockapi.io/knives/items?page=${page}&limit=6${checked===true ? check :''}${searchValue.length > 0 ? search :''}`)
+    	// eslint-disable-next-line max-len
+    	const {data} = await axios.get(`https://64cc9c882eafdcdc851a0655.mockapi.io/knives/items?page=${page}&limit=6${searchValue.length>0?search:''}${checked===true ? check :''}`)
     	return data
   	},
 )
+
 interface UsersState {
-  knives: []
-  status: 'pending' | 'succeeded' | 'failed'
+  knives: ICard[]
+  status: Status.LOADING | Status.SUCCESS | Status.ERROR
 }
 
 
 
 const initialState = {
 	knives:[],
-	status:'pending',
+	status:Status.LOADING,
 } as UsersState
 
 export const catalogSlice = createSlice({
@@ -35,13 +44,28 @@ export const catalogSlice = createSlice({
 
 	},
 	extraReducers: (builder) => {
-   	 // Add reducers for additional action types here, and handle loading state as needed
+		builder.addCase(fetchCatalogItems.pending, (state) => {
+			
+			
+			state.knives=[]
+			state.status= Status.LOADING
+			console.log('catalogSLice',state.knives)
+		  })
+   	
     	builder.addCase(fetchCatalogItems.fulfilled, (state, action) => {
-     	 // Add user to the state array
+
 			//  @ts-ignore
     	  state.knives=action.payload
-				console.log('dddddaaaaadddddaaa',state.knives)
+		  state.status= Status.SUCCESS
+		  console.log('catalogSLice',state.knives)
    	 })
+		builder.addCase(fetchCatalogItems.rejected, (state) => {
+			
+			  
+			state.knives=[]
+			state.status= Status.ERROR
+			console.log('catalogSLice',state.knives)
+		  })
 	  },
 
 })

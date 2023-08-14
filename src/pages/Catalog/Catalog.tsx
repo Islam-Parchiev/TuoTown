@@ -13,7 +13,7 @@ import Sidebar from '../../components/Sidebar/Sidebar'
 import Home from '../../components/Home/Home'
 import Filter from '../../components/Filter/Filter'
 import { fetchCatalogItems } from '../../redux/slices/catalogSlice'
-
+import { Status } from '../../redux/slices/catalogSlice'
 import './Catalog.scss';
 import { ICard } from '../../types/Card';
 import Card from '../../components/Card/Card';
@@ -27,10 +27,9 @@ const fakeArr = [...Array(10)];
 
 const Catalog:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 	const dispatch =useAppDispatch();
-	const {knives} = useSelector((state:any)=> state.catalogSlice)
+	const {knives,status} = useSelector((state:any)=> state.catalogSlice)
 	console.log('catalog',knives);
-	// const {items} = useSelector(selectCart);
-	const [loading,setLoading] = useState<boolean>(true);
+	
 	// const [knives, setKnives] = useState<ICard[]>([])
 	const [page,setPage] = useState<number>(1);
 	const [checked,setChecked] = useState<boolean>(false);
@@ -39,32 +38,14 @@ const Catalog:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 	const search = `&title=${debouncedValue}`;
 	const check = `&new=${checked}`;
 	useEffect(() => {
-	// 	console.log('check',checked)
-	//   async	function fetchData() {
-    //        	 try {
-	// 			setLoading(true)
-	
-	// 			// http://localhost:4200/knives?_page=${page}&_limit=6${search.length > 0 ? search : null}
-	// 			// eslint-disable-next-line max-len
-	// 			const {data} = await axios.get(`https://64cc9c882eafdcdc851a0655.mockapi.io/knives/items?page=${page}&
-	// limit=6${checked===true ? check :''}${searchValue.length > 0 ? search :''}`)
-	// 			setKnives(data)
-	// 		}catch(e) {
- 
-	// 			alert(e);
-	// 		}finally {
-	// 			setLoading(false);
-	// 		}
-	// 	}
 
-	// 	fetchData()
+		// @ts-ignore
+		dispatch(fetchCatalogItems({page,checked,check,searchValue,search}))
+		
 	
-	// 	searchValue.length > 3 && setPage(1)
-    //     	knives.length >6 && setPage(1)
+		searchValue.length >= 3 && setPage(1)
+        	knives.length >6 && setPage(1)
 
-	// @ts-ignore
-	dispatch(fetchCatalogItems({page,checked,check,searchValue,search}))
-	setLoading(false)
 	}, [page,search,searchValue,checked,check])
 	
 	return (
@@ -94,7 +75,7 @@ const Catalog:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 						</div>
 						<ul className="list-reset Catalog__goods">
 							{
-								loading === true ? fakeArr.map(i => (
+								status === Status.LOADING ? fakeArr.map(i => (
 									<CardSkeleton/>
 								)):knives.map((knive: ICard): any => (
 									<Card
@@ -110,26 +91,12 @@ const Catalog:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 									/>
 								))
 							}
-							{/* {knives.map((knive: ICard): any => (
-							<Card
-								key={knive.id}
-								id={knive.id}
-								descr={knive.descr}
-								title={knive.title}
-								new={knive.new}
-								newItem={knive.new}
-								price={knive.price}
-								img={knive.img}
-								type={knive.type}
-							/>
-						))} */}
+						
 						</ul>
   
 
         
-		                {/* {items.map(item => (
-							<li>{item.price}</li>
-						))} */}
+	
 					
 					</div>
 					<Pagination  knives={knives} setPage={setPage} page={page}/>

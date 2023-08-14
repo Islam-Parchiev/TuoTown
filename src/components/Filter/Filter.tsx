@@ -11,9 +11,7 @@ const Filter:FC<any> = ({setChecked,checked}) => {
 			<Accordion title="Новинки">
 				<ul className="list-reset Accordion__items">
 					<li className="Accordion__item">
-						<a href="/">
-						Складной нож
-						</a>
+						Новинки <input type="checkbox" value={checked} onChange={()=> setChecked(!checked)} />
 					</li>
 					<li className="Accordion__item">
 						<a href="/">
@@ -32,7 +30,7 @@ const Filter:FC<any> = ({setChecked,checked}) => {
 					</li>
 					
 				</ul>
-				<input type="checkbox" value={checked} onChange={()=> setChecked(!checked)} />
+		
 			</Accordion>
 			<Accordion title="Новинки">
 				<ul className="list-reset Accordion__items">
