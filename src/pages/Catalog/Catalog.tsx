@@ -34,6 +34,7 @@ const Catalog:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 	const [page,setPage] = useState<number>(1);
 	const [checked,setChecked] = useState<boolean>(false);
 	const [searchValue,setSearchValue] = useState<string>('');
+	const [knivesPerPage] = useState(6);
 	const debouncedValue = useDebounce(searchValue,600);
 	const search = `&title=${debouncedValue}`;
 	const check = `&new=${checked}`;
@@ -44,10 +45,16 @@ const Catalog:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 		
 	
 		searchValue.length >= 3 && setPage(1)
-        	knives.length >6 && setPage(1)
+		// knives && knives.length >6 && setPage(1)
 
 	}, [page,search,searchValue,checked,check])
 	
+	const lastKniveIndex = page * knivesPerPage;
+	const firstKniveIndex = lastKniveIndex - knivesPerPage;
+	const currentKnives= knives.slice(firstKniveIndex,lastKniveIndex)
+
+	const paginate = (pageNumber:number) => setPage(pageNumber)
+
 	return (
 		<>
 			<Helmet>
@@ -77,7 +84,7 @@ const Catalog:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 							{
 								status === Status.LOADING ? fakeArr.map(i => (
 									<CardSkeleton/>
-								)):knives.map((knive: ICard): any => (
+								)):currentKnives.map((knive: ICard): any => (
 									<Card
 										key={knive.id}
 										id={knive.id}
@@ -99,7 +106,11 @@ const Catalog:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 	
 					
 					</div>
-					<Pagination  knives={knives} setPage={setPage} page={page}/>
+					<Pagination  
+						totalKnives={knives.length} 
+						paginate={paginate} 
+						page={page} 
+						knivesPerPage={knivesPerPage}/>
 					<Send/>
 				</div>
 			</main>

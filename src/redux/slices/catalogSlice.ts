@@ -17,7 +17,7 @@ export const fetchCatalogItems = createAsyncThunk(
   	async ({page,checked,check,searchValue,search}:any) => {
 			
     	// eslint-disable-next-line max-len
-    	const {data} = await axios.get(`https://64cc9c882eafdcdc851a0655.mockapi.io/knives/items?page=${page}&limit=6${searchValue.length>0?search:''}${checked===true ? check :''}`)
+    	const {data} = await axios.get<ICard[]>(`https://64cc9c882eafdcdc851a0655.mockapi.io/knives/items?limit=6${searchValue.length>0?search:''}${checked===true ? check :''}`)
     	return data
   	},
 )
