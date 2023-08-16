@@ -23,23 +23,28 @@ import CardSkeleton from '../../components/Card/CardSkeleton'
 const fakeArr = [...Array(10)];
 
 const Catalog:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
+
 	const dispatch =useAppDispatch();
 	const {knives,status} = useSelector((state:any)=> state.catalogSlice)
+	const { neww } =useSelector((state:any)=> state.filterSlice);
 	console.log('catalog',knives);
 	// console.log('newww',neww);
 	
-	// const [knives, setKnives] = useState<ICard[]>([])
 	const [page,setPage] = useState<number>(1);
 	const [checked,setChecked] = useState<boolean>(false);
 	const [searchValue,setSearchValue] = useState<string>('');
+
+
+	const [knivesPerPage] = useState(6);
+	
 	const debouncedValue = useDebounce(searchValue,600);
 	const search = `&title=${debouncedValue}`;
-	const check = `&new=${checked}`;
+	const check = `&new=${neww}`;
 	useEffect(() => {
 
 		// @ts-ignore
-		dispatch(fetchCatalogItems({page,checked,check,searchValue,search}))
-		
+		dispatch(fetchCatalogItems({page,checked,check,searchValue,search,neww}))
+		console.log('goodssss')
 	
 		searchValue.length >= 3 && setPage(1)
 		// knives && knives.length >6 && setPage(1)
@@ -81,7 +86,7 @@ const Catalog:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 							{
 								status === Status.LOADING ? fakeArr.map(i => (
 									<CardSkeleton/>
-								)):knives.map((knive: ICard): any => (
+								)):currentKnives.map((knive: ICard): any => (
 									<Card
 										key={knive.id}
 										id={knive.id}
@@ -103,7 +108,11 @@ const Catalog:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 	
 					
 					</div>
-					<Pagination  knives={knives} setPage={setPage} page={page}/>
+					<Pagination  
+						totalKnives={knives.length} 
+						paginate={paginate} 
+						page={page} 
+						knivesPerPage={knivesPerPage}/>
 					<Send/>
 				</div>
 			</main>
