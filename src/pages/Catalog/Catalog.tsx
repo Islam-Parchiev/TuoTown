@@ -28,7 +28,7 @@ const Catalog:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 	const {knives,status} = useSelector((state:any)=> state.catalogSlice)
 	const { neww } =useSelector((state:any)=> state.filterSlice);
 	console.log('catalog',knives);
-	console.log('newww',neww);
+	// console.log('newww',neww);
 	
 	const [page,setPage] = useState<number>(1);
 	const [checked,setChecked] = useState<boolean>(false);
@@ -47,10 +47,10 @@ const Catalog:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 		console.log('goodssss')
 	
 		searchValue.length >= 3 && setPage(1)
-		// knives && knives.length >6 && setPage(1)
+	
 
 	}, [page,search,searchValue,checked,check,neww])
-	// console.log('filterrrrrrrr',knives.filter((value:any) => value.new === true))
+	
 	const lastKniveIndex = page * knivesPerPage;
 	const firstKniveIndex = lastKniveIndex - knivesPerPage;
 	const currentKnives= knives.slice(firstKniveIndex,lastKniveIndex)
