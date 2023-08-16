@@ -22,8 +22,8 @@ const Pagination:FC<any> = ({paginate,page,knives,knivesPerPage,totalKnives}) =>
 		 */}
 		 {
 			 kniveNumbers.map(number => (
-				<li className={page === number ? 'active':''} onClick={()=> paginate(number)} key={number}>{number}</li>
-			))
+					<li className={page === number ? 'active':''} onClick={()=> paginate(number)} key={number}>{number}</li>
+				))
 		 }
 		</ul>
   	)

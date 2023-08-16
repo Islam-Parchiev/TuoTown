@@ -14,10 +14,10 @@ export enum  Status {
 
 export const fetchCatalogItems = createAsyncThunk(
   	'users/fetchCatalogItems',
-  	async ({page,checked,check,searchValue,search}:any) => {
+  	async ({check,searchValue,search,neww}:any) => {
 			
     	// eslint-disable-next-line max-len
-    	const {data} = await axios.get<ICard[]>(`https://64cc9c882eafdcdc851a0655.mockapi.io/knives/items?limit=6${searchValue.length>0?search:''}${checked===true ? check :''}`)
+		const {data} = await axios.get<ICard[]>(`https://64cc9c882eafdcdc851a0655.mockapi.io/knives/items?limit=6${searchValue.length>0?search:''}`)
     	return data
   	},
 )

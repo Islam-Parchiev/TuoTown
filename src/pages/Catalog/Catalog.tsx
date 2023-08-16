@@ -26,29 +26,34 @@ import CardSkeleton from '../../components/Card/CardSkeleton'
 const fakeArr = [...Array(10)];
 
 const Catalog:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
+
 	const dispatch =useAppDispatch();
 	const {knives,status} = useSelector((state:any)=> state.catalogSlice)
+	const { neww } =useSelector((state:any)=> state.filterSlice);
 	console.log('catalog',knives);
+	console.log('newww',neww);
 	
-	// const [knives, setKnives] = useState<ICard[]>([])
 	const [page,setPage] = useState<number>(1);
 	const [checked,setChecked] = useState<boolean>(false);
 	const [searchValue,setSearchValue] = useState<string>('');
+
+
 	const [knivesPerPage] = useState(6);
+	
 	const debouncedValue = useDebounce(searchValue,600);
 	const search = `&title=${debouncedValue}`;
-	const check = `&new=${checked}`;
+	const check = `&new=${neww}`;
 	useEffect(() => {
 
 		// @ts-ignore
-		dispatch(fetchCatalogItems({page,checked,check,searchValue,search}))
-		
+		dispatch(fetchCatalogItems({page,checked,check,searchValue,search,neww}))
+		console.log('goodssss')
 	
 		searchValue.length >= 3 && setPage(1)
 		// knives && knives.length >6 && setPage(1)
 
-	}, [page,search,searchValue,checked,check])
-	
+	}, [page,search,searchValue,checked,check,neww])
+	// console.log('filterrrrrrrr',knives.filter((value:any) => value.new === true))
 	const lastKniveIndex = page * knivesPerPage;
 	const firstKniveIndex = lastKniveIndex - knivesPerPage;
 	const currentKnives= knives.slice(firstKniveIndex,lastKniveIndex)
