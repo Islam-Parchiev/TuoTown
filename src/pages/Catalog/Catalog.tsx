@@ -1,7 +1,4 @@
 import React,{useState,useEffect} from 'react'
-// import axios from 'axios'
-
-// import { useSelector } from 'react-redux'
 
 import { Helmet } from 'react-helmet'
 import { useSelector } from 'react-redux'
@@ -29,6 +26,7 @@ const Catalog:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 	const dispatch =useAppDispatch();
 	const {knives,status} = useSelector((state:any)=> state.catalogSlice)
 	console.log('catalog',knives);
+	// console.log('newww',neww);
 	
 	// const [knives, setKnives] = useState<ICard[]>([])
 	const [page,setPage] = useState<number>(1);
@@ -44,10 +42,16 @@ const Catalog:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 		
 	
 		searchValue.length >= 3 && setPage(1)
-        	knives.length >6 && setPage(1)
+		// knives && knives.length >6 && setPage(1)
 
-	}, [page,search,searchValue,checked,check])
-	
+	}, [page,search,searchValue,checked,check,neww])
+	// console.log('filterrrrrrrr',knives.filter((value:any) => value.new === true))
+	const lastKniveIndex = page * knivesPerPage;
+	const firstKniveIndex = lastKniveIndex - knivesPerPage;
+	const currentKnives= knives.slice(firstKniveIndex,lastKniveIndex)
+
+	const paginate = (pageNumber:number) => setPage(pageNumber)
+
 	return (
 		<>
 			<Helmet>
