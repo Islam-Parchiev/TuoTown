@@ -1,12 +1,11 @@
+@import "../../scss/mixins/mini";
 .MapNav {
-    display: flex;
-    align-items: center;
+   @include flex-v-center;
     padding-top: 30px;
     gap: 30px;
 
     &__search {
-        display: flex;
-        align-items: center;
+        @include flex-v-center;
         border: 1px solid var(--gray-2, #4F4F4F);
         border-radius: 20px;
 
@@ -34,14 +33,11 @@
     }
 
     &__categories {
-        display: flex;
-        align-items: center;
+        @include flex-v-center;
         gap: 10px;
 
         &_item {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            @include  flex-all-center;
             border: 3px solid #4F4F4F;
             border-radius: 100%;
             width: 50px;

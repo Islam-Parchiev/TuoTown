@@ -1,10 +1,10 @@
+@import "../../scss/mixins/mini";
 .Specifications {
     height: 80vh;
     background-color: var(--charleston-color);
 
     &__container {
-        display: flex;
-        align-items: center;
+       @include flex-v-center;
         height: 100%;
         gap: 200px;
 
@@ -37,8 +37,7 @@
         }
 
         &_item {
-            display: flex;
-            align-items: center;
+            @include flex-v-center;
             border-bottom: 1px solid var(--hover-color);
             padding: 5px 0;
             gap: 200px;
@@ -47,8 +46,7 @@
 
     &__more_btn {
 
-        display: flex;
-        align-items: center;
+        @include flex-v-center;
         margin-top: 10px;
         text-transform: uppercase;
         color: var(--hover-color);

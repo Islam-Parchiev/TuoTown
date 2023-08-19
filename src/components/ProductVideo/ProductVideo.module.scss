@@ -1,3 +1,4 @@
+@import "../../scss/mixins/mini";
 .ProductVideo {
     position: relative;
     width: 100%;
@@ -15,13 +16,11 @@
     }
 
     &__play {
+        @include flex-all-center;
         position: absolute;
         right: 50%;
         top: 50%;
         z-index: 100;
-        display: flex;
-        align-items: center;
-        justify-content: center;
         border-radius: 100%;
         width: 75px;
         height: 75px;

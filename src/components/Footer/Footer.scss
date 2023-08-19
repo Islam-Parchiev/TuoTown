@@ -1,3 +1,4 @@
+@import "../../scss/mixins/mini";
 .Footer {
     width: 100%;
     height: 462px;
@@ -20,9 +21,7 @@
         height: 85px;
 
         &-container {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
+            @include flex-all-sb;
             height: 100%;
         }
 
@@ -42,23 +41,17 @@
         width: 33%;
 
         &--first {
-            display: flex;
-            flex-direction: column;
-            align-items: start;
+           @include flex-column-start;
             gap: 10px;
         }
 
         &--second {
-            display: flex;
-            flex-direction: column;
-            align-items: start;
+            @include flex-column-start;
             gap: 30px;
         }
 
         &--third {
-            display: flex;
-            flex-direction: column;
-            align-items: start;
+            @include flex-column-start;
             gap: 15px;
 
             h4 {
@@ -122,15 +115,13 @@
     }
 
     &__row {
-        display: flex;
-        flex-direction: column;
+        @include flex-column-start;
         flex-wrap: wrap;
-        align-items: start;
+        
 
         ul {
-            display: flex;
+            @include flex-v-center;
             flex-wrap: wrap;
-            align-items: center;
             gap: 20px;
         }
 
@@ -165,15 +156,14 @@
     }
 
     &__social {
-        display: flex;
-        align-items: center;
+        @include flex-v-center;
         justify-content: start;
         gap: 10px;
 
         ul {
-            display: flex;
+            @include flex-v-center;
             flex-wrap: wrap;
-            align-items: center;
+            
             gap: 15px;
         }
 

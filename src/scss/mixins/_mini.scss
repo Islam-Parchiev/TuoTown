@@ -34,7 +34,7 @@
 @mixin flex-column-start {
   display: flex;
  flex-direction: column;
- align-items: flex-start;
+ align-items:start;
 }
 @mixin flex-column-center {
   display: flex;

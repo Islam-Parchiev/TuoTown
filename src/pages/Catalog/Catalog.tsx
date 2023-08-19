@@ -18,7 +18,7 @@ import Send from '../../components/Send/Send';
 import Pagination from '../../components/Pagination/Pagination';
 import Search from '../../components/Search/Search';
 import CardSkeleton from '../../components/Card/CardSkeleton'
-
+import { setPage } from '../../redux/slices/filterSlice'
 
 const fakeArr = [...Array(10)];
 
@@ -26,36 +26,33 @@ const Catalog:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 
 	const dispatch =useAppDispatch();
 	const {knives,status} = useSelector((state:any)=> state.catalogSlice)
-	const { neww } =useSelector((state:any)=> state.filterSlice);
+	const { neww,page,searchValue,sort } =useSelector((state:any)=> state.filterSlice);
 	console.log('catalog',knives);
-	// console.log('newww',neww);
 	
-	const [page,setPage] = useState<number>(1);
-	const [checked,setChecked] = useState<boolean>(false);
-	const [searchValue,setSearchValue] = useState<string>('');
-
 
 	const [knivesPerPage] = useState(6);
 	
 	const debouncedValue = useDebounce(searchValue,600);
-	const search = `&title=${debouncedValue}`;
-	const check = `&new=${neww}`;
+	
+	const search = searchValue.length>0?`&title=${debouncedValue}`:'';
+	const check = neww===true?'&new=true':'';
+	const sortByPrice= sort===true?'&sortBy=price&order=asc':'';
 	useEffect(() => {
 
 		// @ts-ignore
-		dispatch(fetchCatalogItems({page,checked,check,searchValue,search,neww}))
+		dispatch(fetchCatalogItems({page,check,searchValue,search,neww,sortByPrice}))
 		console.log('goodssss')
 	
-		searchValue.length >= 3 && setPage(1)
+		searchValue.length > 3 && dispatch(setPage(1))
 		// knives && knives.length >6 && setPage(1)
 
-	}, [page,search,searchValue,checked,check,neww])
+	}, [page,search,searchValue,check,neww,sort])
 	// console.log('filterrrrrrrr',knives.filter((value:any) => value.new === true))
 	const lastKniveIndex = page * knivesPerPage;
 	const firstKniveIndex = lastKniveIndex - knivesPerPage;
 	const currentKnives= knives.slice(firstKniveIndex,lastKniveIndex)
 
-	const paginate = (pageNumber:number) => setPage(pageNumber)
+	const paginate = (pageNumber:number) => dispatch(setPage(pageNumber))
 
 	return (
 		<>
@@ -79,8 +76,8 @@ const Catalog:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 					</h1>
 					<div className="Catalog__wrapper">
 						<div className="Catalog__left">
-							<Filter setChecked={setChecked} checked={checked}/>
-							<Search setSearchValue={setSearchValue} searchValue={searchValue}/>
+							<Filter/>
+							<Search/>
 						</div>
 						<ul className="list-reset Catalog__goods">
 							{

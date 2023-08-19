@@ -1,3 +1,4 @@
+@import "../../scss/mixins/mini";
 .Cart {
     margin: 0 auto;
     width: 100%;
@@ -28,8 +29,7 @@
     }
 
     &-price {
-        display: flex;
-        align-items: center;
+      @include flex-v-center;
         font-family: Jura;
         font-weight: 500;
         font-style: normal;

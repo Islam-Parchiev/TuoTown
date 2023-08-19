@@ -1,3 +1,4 @@
+@import "../../scss/mixins/mini";
 .Categories {
     padding-bottom: 150px;
 
@@ -12,15 +13,11 @@
     }
 
     &__bottom {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+       @include flex-column-center;
     }
 
     &__list {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        @include flex-all-sb;
 
 
     }
@@ -30,9 +27,7 @@
     }
 
     &__listItem {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        @include flex-column-center;
         cursor: pointer;
 
         svg {

@@ -1,12 +1,11 @@
+@import "../../scss/mixins/mini";
 .Home {
     width: 100%;
     height: 60vh;
     background-image: url("./HomeBg.jpg");
 
     &__container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        @include flex-column-center;
         justify-content: center;
 
         height: 100%;

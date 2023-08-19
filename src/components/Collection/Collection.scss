@@ -1,4 +1,6 @@
+@import "../../scss/mixins/mini";
 .collection {
+    @include bg-cover;
     display: flex;
     align-items: end;
     justify-content: center;
@@ -6,7 +8,6 @@
     width: 590px;
     height: 480px;
     background-image: url("../../../public/img/collection/bg.png");
-
     &__title {
         font-family: Montserrat;
         font-weight: 600;
@@ -17,8 +18,7 @@
     }
 
     &__info {
-        display: flex;
-        align-items: center;
+       @include flex-v-center;
         gap: 90px;
 
         svg {

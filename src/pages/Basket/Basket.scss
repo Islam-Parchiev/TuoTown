@@ -1,27 +1,22 @@
+@import "../../scss/mixins/mini";
 .Basket {
     &__container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+      @include flex-column-center;
         margin: 0 auto;
         padding-bottom: 20px;
         max-width: 850px;
     }
     &__wrapper {
-        display: flex;
-        flex-direction: column;
-        align-items: start;
+        @include flex-column-start;
         padding-top: 120px;
     }
     &__heading {
-        display: flex;
-        align-items: center;
+        @include flex-v-center;
         justify-content: start;
         width: 100%;
         gap: 250px;
         a {
-            display: flex;
-            align-items: center;
+            @include flex-v-center;
             font-family: Montserrat;
             font-weight: 400;
             font-style: normal;
@@ -43,8 +38,7 @@
 /* H2 */
     }
     &__services {
-        display: flex;
-        align-items: center;
+        @include flex-v-center;
         padding-top: 40px;
         gap: 30px;
       
@@ -64,9 +58,7 @@
             gap: 30px;
         }
         &-label {
-            display: flex;
-            flex-direction: column;
-            align-items: start;
+            @include flex-column-start;
             margin-top: 10px;
             border-radius: 5px;
             padding: 15px;
@@ -127,13 +119,10 @@ a {
     }
 }
 .services__item {
-    display: flex;
-    align-items: center;
+    @include flex-v-center;
     gap: 20px;
     &-img {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flex-all-center;
         border-radius: 15px;
         width: 80px;
         height: 80px;
@@ -141,9 +130,9 @@ a {
         
     }
     &-text {
-        display: flex;
+        @include  flex-h-center;
         flex-direction: column;
-        justify-content: center;
+       
         gap: 10px;
       
         h4 {

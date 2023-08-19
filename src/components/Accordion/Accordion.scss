@@ -1,3 +1,4 @@
+@import "../../scss/mixins/mini";
 .Accordion {
     display: block;
     border-bottom: 1px solid #4F4F4F;
@@ -5,9 +6,7 @@
     width: 300px;
 
     &__header {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
+        @include flex-all-sb;
         height: 40px;
         cursor: pointer;
 

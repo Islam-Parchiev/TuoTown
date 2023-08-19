@@ -1,6 +1,6 @@
+@import "../../scss/mixins/mini";
 .Pagination {
-    display: flex;
-    align-items: center;
+    @include flex-v-center;
     gap: 10px;
     li {
         border-radius: 100%;

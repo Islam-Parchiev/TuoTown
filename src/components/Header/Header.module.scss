@@ -1,3 +1,4 @@
+@import "../../scss/mixins/mini";
 .header {
     position: absolute;
     right: 0;
@@ -39,13 +40,11 @@
     }
 
     &__basketCount {
+      @include flex-all-center;
       position: absolute;
       right: -9px;
       top: -9px;
       z-index: 10;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       border-radius: 100%;
       width: 17px;
       height: 17px;
@@ -73,16 +72,14 @@
     }
 
     &__container {
+        @include flex-all-sb;
         position: relative;
-        display: flex;
-        align-items: center;
         justify-content: space-between;
         height: 100%;
     }
 
     &__column {
-        display: flex;
-        align-items: center;
+        @include flex-v-center;
         gap: 25px;
     }
 

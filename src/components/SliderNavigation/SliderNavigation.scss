@@ -1,3 +1,4 @@
+@import "../../scss/mixins/mini";
 .SliderNavigation {
     position: absolute;
     right: 0;
@@ -10,9 +11,7 @@
 }
 
 .slider-prev {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+   @include flex-all-center;
     border: 1px solid var(--light-color);
     border-radius: 100%;
     width: 33px;
@@ -33,9 +32,7 @@
 }
 
 .slider-next {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex-all-center;
     border: 1px solid var(--light-color);
     border-radius: 100%;
     width: 33px;

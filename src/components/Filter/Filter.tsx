@@ -4,14 +4,14 @@ import { useSelector } from 'react-redux';
 
 import { useAppDispatch } from '../../redux/store';
 import Accordion from '../Accordion/Accordion';
-import { setFilter } from '../../redux/slices/filterSlice';
+import { setFilter,setSort } from '../../redux/slices/filterSlice';
 
 import styles from './Filter.module.scss';
 
 
-const Filter:FC<any> = ({setChecked,checked}) => {
+const Filter:FC<any> = () => {
     // @eslint-ignore
-	const { neww } =useSelector((state:any)=> state.filterSlice);
+	const { neww,sort } =useSelector((state:any)=> state.filterSlice);
 
 	const dispatch = useAppDispatch();
 	return (
@@ -19,12 +19,10 @@ const Filter:FC<any> = ({setChecked,checked}) => {
 			<Accordion title="Новинки">
 				<ul className="list-reset Accordion__items">
 					<li className="Accordion__item">
-						Новинки <input type="checkbox" value={neww} onChange={()=> dispatch(setFilter({neww:!neww}))} />
+						Новинки <input type="checkbox" value={neww} onChange={()=> dispatch(setFilter(!neww))} />
 					</li>
 					<li className="Accordion__item">
-						<a href="/">
-						Складной нож
-						</a>
+						По цене <input type="checkbox" value={sort} onChange={()=>dispatch(setSort(!sort))} />
 					</li>
 					<li className="Accordion__item">
 						<a href="/">

@@ -1,3 +1,4 @@
+@import "../../scss/mixins/mini";
 .Card {
     grid-column: 1 span;
     width: 286px;
@@ -53,9 +54,7 @@
     }
 
     &__icons {
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        @include flex-all-center;
         height: 37px;
         max-width: 72px;
         transition: all 0.3s ease-in-out;

@@ -1,18 +1,15 @@
+@import "../../scss/mixins/mini";
 .Sidebar {
+    @include flex-column-start;
+    @include bg-cover;
     position: absolute;
     left: 0;
     top: 0;
     z-index: 1000;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
     padding: 45px;
     width: 444px;
     height: 100vh;
     background-image: url("./bg.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
     gap: 40px;
 
     &__list {

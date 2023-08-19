@@ -1,5 +1,6 @@
+@import "../../scss/mixins/mini";
 .InterestingItem {
-
+    @include bg-cover;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -8,9 +9,7 @@
     width: 380px;
     height: 465px;
     background-image: url("./1.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+   
 
     &__top {
         padding: 20px;

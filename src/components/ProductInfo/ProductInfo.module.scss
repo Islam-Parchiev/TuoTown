@@ -1,9 +1,8 @@
+@import "../../scss/mixins/mini";
 .ProductInfo {
 
     &__list {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+       @include flex-column-center;
 
         padding: 40px 0;
         gap: 40px;
@@ -11,8 +10,7 @@
 }
 
 .product__item {
-    display: flex;
-    align-items: center;
+    @include flex-v-center;
     gap: 110px;
 
     &_img {
@@ -32,16 +30,13 @@
 
     &_descr {
         /* width: 300px; */
-        display: flex;
-        flex-direction: column;
-        align-items: start;
+       @include flex-column-start;
         gap: 15px;
     }
 
     &_text {
-        display: flex;
+       @include flex-h-center;
         align-items: start;
-        justify-content: center;
         order: 1;
         width: 400px;
 

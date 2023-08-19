@@ -1,10 +1,10 @@
+@import "../../scss/mixins/mini";
 .toTop {
+    @include flex-all-center;
     position: fixed;
     right: 50px;
     bottom: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+   
 
     border-radius: 100%;
     width: 60px;

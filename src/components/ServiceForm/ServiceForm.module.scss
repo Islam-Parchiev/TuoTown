@@ -1,52 +1,48 @@
+@import "../../scss/mixins/mini";
 .ServiceForm {
+    @include flex-column-center;
     width: 790px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    
     
     &__wrapper {
+        @include flex-all-center;
         margin-top: 30px;
+        border-radius: 15px;
         width: 100%;
         height: 630px;
         background-color: var(--light-color);
-        border-radius: 15px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
     }
     &__input {
+        @include flex-column-start;
         position: relative;
         border-radius: 5px;
+        padding: 15px;
         width: 368px;
         height: 100px;
-        padding: 15px;
         background-color: #f6f6f6;
-        display: flex;
-        flex-direction: column;
-        align-items: start;
         .focusBorder{
-            position: absolute; 
-            bottom: 21px;
+            position: absolute;
              left: 15px; 
+            bottom: 21px; 
              width: 0; 
              height: 2px;
               background-color: #3399FF;
                transition: 0.4s;
             }
-            &:focus .focusBorder{
-                width: 92%; 
-                transition: 0.4s;
-            }
         input {
             outline: none;
+            border-bottom: 2px solid var(--black-color);
             padding-bottom: 10px;
             width: 100%;
             height: 30px;
-            border-bottom: 2px solid var(--black-color);
         }
         span {
             margin: 5px 0;
         }
+            &:focus .focusBorder{
+                width: 92%; 
+                transition: 0.4s;
+            }
        
     }
     &__top {
@@ -55,20 +51,18 @@
         gap: 15px;
     }
     &__bottom {
+        @include flex-column-start;
         width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: start;
       span {
         margin: 15px;
       }
     }
     &__textarea {
         position: relative;
-        background-color: #f6f6f6;
         border-radius: 5px;
             width: 755px;
             height: 182px;
+        background-color: #f6f6f6;
         textarea {
             padding: 10px 15px;
             width: 100%;
@@ -79,22 +73,22 @@
     }
     &__btn {
         margin-top: 30px;
-        border-radius: 27px;
 border: 2px solid var(--red-color);
+        border-radius: 27px;
 padding: 14px 34px;
     }
 }
-.focus ~ .focusBorder{position: absolute; bottom: 21px; left: 15px; width: 0; height: 2px; background-color: #3399FF; transition: 0.4s;}
+.focus ~ .focusBorder{position: absolute; left: 15px; bottom: 21px; width: 0; height: 2px; background-color: #3399FF; transition: 0.4s;}
 .focus:focus ~ .focusBorder{width: 92%; transition: 0.4s;}
 
 .focuss {
     outline: none;
 }
 .focuss ~ .focusBorder:before,
-.focuss ~ .focusBorder:after{content: ""; position: absolute; top: 0; right: 0; width: 0; height: 2px; background-color: #3399FF; transition: 0.2s; transition-delay: 0.2s;}
-.focuss ~ .focusBorder:after{top: auto; bottom: 0; right: auto; left: 0; transition-delay: 0.6s;}
+.focuss ~ .focusBorder:after{content: ""; position: absolute; right: 0; top: 0; width: 0; height: 2px; background-color: #3399FF; transition: 0.2s; transition-delay: 0.2s;}
+.focuss ~ .focusBorder:after{ left: 0; right: auto;top: auto; bottom: 0; transition-delay: 0.6s;}
 .focuss ~ .focusBorder i:before,
-.focuss ~ .focusBorder i:after{content: ""; position: absolute; top: 0; left: 0; width: 2px; height: 0; background-color: #3399FF; transition: 0.2s;}
+.focuss ~ .focusBorder i:after{content: ""; position: absolute; left: 0; top: 0; width: 2px; height: 0; background-color: #3399FF; transition: 0.2s;}
 .focuss ~ .focusBorder i:after{left: auto; right: 0; top: auto; bottom: 0; transition-delay: 0.4s;}
 .focuss:focus ~ .focusBorder:before,
 .focuss:focus ~ .focusBorder:after{width: 100%; transition: 0.2s; transition-delay: 0.6s;}
