@@ -2,7 +2,7 @@ import React from 'react'
 import './AboutUs.scss'
 const AboutUs: React.FC = () => {
 	return (
-		<section className="AboutUs">
+		<section  data-testid="AboutUs" className="AboutUs">
 			<div className="container AboutUs__container">
 				<div className="AboutUs__top">
 					<div className="AboutUs__img">
