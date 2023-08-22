@@ -113,6 +113,17 @@ const Filter:FC<any> = () => {
 					
 				</ul>
 			</Accordion>
+			<Accordion title="Новинки">
+				<ul className="list-reset Accordion__items">
+					<li className="Accordion__item">
+						<a href="/">
+						Складной нож
+						</a>
+					</li>
+				
+					
+				</ul>
+			</Accordion>
 		</div>
 	)
 }

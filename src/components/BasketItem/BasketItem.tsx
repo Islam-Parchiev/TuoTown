@@ -10,8 +10,6 @@ import styles from './BasketItem.module.scss';
 
 const BasketItem:React.FC<any> = ({id,price,title,imageUrl,count}) => {
 	
-	const {items} = useSelector(selectCart)
- 
 	const dispatch = useDispatch();
 
 	const deleteItem = (id:any) => {

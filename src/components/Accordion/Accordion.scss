@@ -47,13 +47,15 @@
     &__body {
         overflow: hidden;
         padding-bottom: 10px;
-        max-height: 1px;
+        height: 1px;
+        visibility: hidden;
         transition: all 0.3s ease-in-out;
     }
 }
 
 .Accordion.active .Accordion__body {
-    max-height: 100px;
+    height: 100px;
+    visibility: visible;
     transition: all 0.3s ease-in-out;
 }
 
