@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 
 import { useDispatch } from 'react-redux';
 
-import { selectCart,removeItem,onClickPlus,onClickMinus } from '../../redux/slices/cartSlice';
+import { removeItem,onClickPlus,onClickMinus } from '../../redux/slices/cartSlice';
 
 import styles from './BasketItem.module.scss';
 
