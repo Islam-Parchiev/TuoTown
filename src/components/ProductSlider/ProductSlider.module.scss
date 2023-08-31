@@ -3,7 +3,9 @@
     justify-content: center;
     background-color: var(--charleston-color);
 }
-
+.ProductCarousel {
+    overflow-y: hidden;
+}
 .ProductSlider__slide {
     border-radius: 15px;
     width: 900px !important;

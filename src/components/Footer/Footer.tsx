@@ -4,7 +4,7 @@ import './Footer.scss'
 
 const Footer: FC = () => {
 	return (
-		<footer className="Footer">
+		<footer data-testid="footer" className="Footer">
 			<div className="Footer__top">
 				<div className="container Footer__top-container">
 					<div className="Footer__column Footer__column--first">

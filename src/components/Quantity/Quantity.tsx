@@ -17,7 +17,7 @@ const Quantity: FC = () => {
 				// @ts-ignore
 				modules={[Pagination, Navigation, A11y]}
 				pagination={{ clickable: true }}
-				className="quantity__slider">
+				className={`${styles.quantity__slider}`}>
 				<SwiperSlide>
 					<div className={`${styles.quantity__slide}`}>
 						<div className={`${styles.quantity__slide_text}`}>

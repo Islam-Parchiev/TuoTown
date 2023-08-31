@@ -93,7 +93,7 @@ const Sidebar: FC<IToggleSidebar> = ({ toggleSidebar, setToggleSidebar }) => {
 							<Link to="/">Контакты </Link>
 						</li>
 						<li className="nav__list-item">
-							<Link to="/">Как проехать </Link>
+							<Link to="/map">Как проехать </Link>
 						</li>
 					</ul>
 				</nav>
