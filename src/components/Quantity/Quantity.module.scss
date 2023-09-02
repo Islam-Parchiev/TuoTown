@@ -15,7 +15,13 @@
         text-align: left;
         background-image: url("./slide.jpg");
         &_text {
-            width: 500px;
+            max-width: 500px;
+        }
+        @include tablet {
+            padding: 0 40px;
+        }
+        @include mobile {
+            padding: 0 20px;
         }
     }
 

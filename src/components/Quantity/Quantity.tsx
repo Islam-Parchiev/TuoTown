@@ -22,7 +22,7 @@ const Quantity: FC = () => {
 					<div className={`${styles.quantity__slide}`}>
 						<div className={`${styles.quantity__slide_text}`}>
 							<h1 className={`${styles.quantity__title}`}>
-								Исключительное качество без компромиссов
+								Исключительное качество без компромиссов1
 							</h1>
 							<div className={`${styles.quantity__descr}`}>
 								Ножи «Tuotown» – это главный инструмент поваров и
