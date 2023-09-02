@@ -1,18 +1,25 @@
 @import "../../scss/mixins/mini";
+@import "../../scss/mixins/breakpoint";
 .Footer {
     width: 100%;
-    height: 462px;
+    min-height: 462px;
 
     &__top {
         display: block;
         padding-top: 40px;
         width: 100%;
-        height: 376px;
+        min-height: 376px;
         background-color: var(--charleston-color);
 
         &-container {
             display: flex;
             gap: 70px;
+            @include tablet {
+                flex-direction: column;
+                padding-bottom: 30px;
+                gap: 20px;
+            }
+            
         }
     }
 
@@ -23,6 +30,10 @@
         &-container {
             @include flex-all-sb;
             height: 100%;
+            @include mobile {
+                flex-direction: column;
+                padding: 10px 0;
+            }
         }
 
         span {
@@ -34,7 +45,9 @@
             color: var(--light-color);
             opacity: 0.5;
         }
-
+       @include mobile {
+        min-height: 85px;
+       }
     }
 
     &__column {
@@ -84,6 +97,9 @@
                 opacity: 0.5;
             }
         }
+        @include tablet {
+            width: 100%;
+        }
     }
 
     &__logo {
@@ -99,9 +115,20 @@
             line-height: 17px;
             color: var(--light-color);
         }
-
-        img {
-            cursor: pointer;
+       &-img {
+        width: 194px;
+        height: 47px;
+       }
+        // img {
+        //     display: block;
+        //     width: 100%;
+        //     height: 100%;
+        //     object-fit: cover;
+        //     cursor: pointer;
+        // }
+        @include tablet {
+            flex-direction: column;
+            gap: 5px;
         }
     }
 

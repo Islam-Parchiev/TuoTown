@@ -9,7 +9,9 @@ const Footer: FC = () => {
 				<div className="container Footer__top-container">
 					<div className="Footer__column Footer__column--first">
 						<div className="Footer__logo">
-							<img src="/img/header/logo.png" alt="" />
+							<div className="Footer__logo-img">
+								<img src="/img/header/logo.png" alt="" />
+							</div>
 							<span>легендарные ножи, создающие шедевры</span>
 						</div>
 						<div className="Footer__descr">
