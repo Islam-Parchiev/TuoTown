@@ -5,11 +5,6 @@
     width: 286px;
     height: 475px;
     cursor: pointer;
-   @include mobile {
-     width: 210px;
-     height: 200px;
-     margin-bottom: 170px;
-   }
     &__top {
         display: flex;
         flex-direction: column;
@@ -60,6 +55,15 @@
         width: 1px;
         height: 1px;
         clip: rect(0 0 0 0);
+        @include mobile {
+            position: initial;
+            overflow: visible;
+            margin: 0;
+            padding: auto;
+            width: auto;
+            height: auto;
+            clip: auto;
+        }
 
     }
 
@@ -68,12 +72,18 @@
         height: 37px;
         max-width: 72px;
         transition: all 0.3s ease-in-out;
+        // gap: 100px;
         gap: 10px;
 
         svg {
             fill: var(--light-color);
             cursor: pointer;
 
+        }
+        @include mobile {
+            max-width: none;
+            width: 100%;
+            justify-content: space-between;
         }
     }
 
@@ -89,7 +99,21 @@
             background-color: var(--red-color);
 
         }
+       
     }
+    
+   @include mobile {
+     margin-bottom: 170px;
+     width: 210px;
+     height: 200px;
+    &:hover {
+        .Card__plusIcon {
+            border-radius: unset;
+            background-color: transparent;
+    
+        }
+    }
+   }
 }
 
 .Card__icons:hover .Card__basketIcon {
@@ -103,9 +127,17 @@
     clip: inherit;
 }
 
-.Card__icons:hover {
-    border-radius: 20px;
+.Card__icons {
+    &:hover {
+        border-radius: 20px;
     padding: 0 10px;
 
     background-color: var(--red-color);
+    @include mobile {
+        border-radius: unset;
+        background-color: transparent;
+        padding: 0;
+    }
+    }
+    
 }

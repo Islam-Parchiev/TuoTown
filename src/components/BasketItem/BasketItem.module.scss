@@ -1,4 +1,5 @@
 @import "../../scss/mixins/mini";
+@import "../../scss/mixins/breakpoint";
 .BasketItem {
     display: flex;
     justify-content: space-between;
@@ -14,6 +15,9 @@
     &__left {
        @include flex-v-center;
         gap: 20px;
+        @include mobile {
+            flex-direction: column;
+        }
     }
 
     &__img {

@@ -1,4 +1,5 @@
 @import "../../scss/mixins/mini";
+@import "../../scss/mixins/breakpoint";
 .Basket {
     &__container {
       @include flex-column-center;
@@ -25,6 +26,9 @@
             color: var(--text-light, #ADACAC);
             gap: 10px;
 /* p small/regular */
+        }
+        @include mobile {
+         gap: 100px;
         }
     }
     &__title {
