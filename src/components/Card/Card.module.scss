@@ -1,10 +1,15 @@
 @import "../../scss/mixins/mini";
+@import "../../scss/mixins/breakpoint";
 .Card {
     grid-column: 1 span;
     width: 286px;
     height: 475px;
     cursor: pointer;
-
+   @include mobile {
+     width: 210px;
+     height: 200px;
+     margin-bottom: 170px;
+   }
     &__top {
         display: flex;
         flex-direction: column;
@@ -15,6 +20,11 @@
         height: 412px;
         background-color: var(--charleston-color);
         gap: 50px;
+        @include mobile {
+            
+            height: 300px;
+            gap: 20px;
+        }
     }
 
     &__title {

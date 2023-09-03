@@ -4,7 +4,7 @@ import './Collection.scss'
 
 const Collection: React.FC<any> = ({ otherClass }) => {
 	return (
-		<li className={`collection ${otherClass}`}>
+		<li className={`collection ${otherClass ? otherClass : ''}`}>
 			<div className="collection__info">
 				<h3 className="collection__title">
 					Познакомьтесь с коллекцией ножей TUOTOWN

@@ -1,4 +1,6 @@
 @import "../../scss/mixins/mini";
+@import "../../scss/mixins/breakpoint";
+
 .Categories {
     padding-bottom: 150px;
 
@@ -10,6 +12,16 @@
         padding-top: 80px;
 
         row-gap: 40px;
+        
+        @include tablet {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @include mobile {
+            grid-template-columns: repeat(2, 1fr);
+        padding-bottom: 20px;
+        }
+        
+        
     }
 
     &__bottom {
@@ -18,7 +30,10 @@
 
     &__list {
         @include flex-all-sb;
-
+        @include mobile {
+            flex-wrap: wrap;
+            gap: 20px;
+        }
 
     }
 
@@ -64,7 +79,10 @@
             }
         }
 
-
+       @include mobile {
+        width: 15%;
+        text-align: center;
+       }
 
 
     }

@@ -395,7 +395,7 @@ const Categories = () => {
 				</div>
 				<div className="Categories__bottom">
 					<ul className="list-reset Categories__goods">
-						<Collection otherClass={'dd'} />
+						<Collection />
 						{knives.map((knive: ICard): any => (
 							<Card
 								key={knive.id}
