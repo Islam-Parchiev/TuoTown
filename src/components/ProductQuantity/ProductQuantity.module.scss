@@ -1,4 +1,5 @@
 @import "../../scss/mixins/mini";
+@import "../../scss/mixins/breakpoint";
 .ProductQuantity {
     @include bg-cover;
     height: 50vh;
@@ -42,5 +43,10 @@
         font-size: 14px;
         line-height: normal;
         color: var(--light-color);
+    }
+    @include mobile {
+        &__btn {
+            margin-top: 20px;
+        }
     }
 }

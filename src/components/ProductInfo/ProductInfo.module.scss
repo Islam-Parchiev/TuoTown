@@ -1,4 +1,5 @@
 @import "../../scss/mixins/mini";
+@import "../../scss/mixins/breakpoint";
 .ProductInfo {
 
     &__list {
@@ -6,6 +7,7 @@
 
         padding: 40px 0;
         gap: 40px;
+      
     }
 }
 
@@ -16,8 +18,8 @@
     &_img {
         order: 0;
         border-radius: 18px;
-        width: 500px;
-        height: 505px;
+        width: 400px;
+        height: 405px;
 
         img {
             border-radius: 18px;
@@ -26,6 +28,8 @@
             object-fit: cover;
 
         }
+      
+
     }
 
     &_descr {
@@ -39,6 +43,7 @@
         align-items: start;
         order: 1;
         width: 400px;
+        
 
     }
 
@@ -66,11 +71,21 @@
     &:nth-child(2n) {
         .product__item_img {
             order: 1;
+            @include mobile {
+                order:0;
+            }
         }
 
         .product__item_text {
 
             order: 0;
+             @include mobile {
+            order:1;
         }
+        }
+    }
+    @include mobile {
+        flex-direction: column;
+        gap: 0px;
     }
 }

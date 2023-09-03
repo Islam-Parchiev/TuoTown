@@ -15,7 +15,7 @@ const ProductQuantity:React.FC = ({productTitle,productPrice,onClickAdd}:any) =>
 				Ножи «Tuotown» – это главный инструмент поваров и секрет кулинарного мастерства
 				</div>
 				<div className={styles.ProductQuantity__buy}>
-					 <Button size="medium" variant="primary" type="two" onclick={onClickAdd}>Купить</Button>
+					 <Button size="medium" variant="primary" type="two" onclick={onClickAdd} otherClass={styles.ProductQuantity__btn}>Купить</Button>
 					 <span className={styles.ProductQuantity__price}>{productPrice}р.</span>
 				</div>
 			</div>

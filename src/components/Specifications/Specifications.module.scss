@@ -1,12 +1,20 @@
 @import "../../scss/mixins/mini";
+@import "../../scss/mixins/breakpoint";
 .Specifications {
-    height: 80vh;
+    min-height: 80vh;
     background-color: var(--charleston-color);
 
     &__container {
        @include flex-v-center;
         height: 100%;
         gap: 200px;
+        padding-top: 50px;
+        @include mobile {
+            flex-direction: column;
+            // padding-top: 50px;
+            padding-bottom: 100px;
+            gap: 50px;
+        }
 
     }
 
@@ -21,6 +29,10 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+        }
+        @include mobile {
+            width: 300px;
+            height: 400px;
         }
     }
 
