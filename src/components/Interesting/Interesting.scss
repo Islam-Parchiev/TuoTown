@@ -1,4 +1,5 @@
 @import "../../scss/mixins/mini";
+@import "../../scss/mixins/breakpoint";
 .Interesting {
     padding-top: 50px;
     padding-bottom: 50px;
@@ -15,5 +16,8 @@
     &__items {
         @include flex-v-center ;
         gap: 20px;
+        @include mobile {
+            flex-direction: column;
+        }
     }
 }

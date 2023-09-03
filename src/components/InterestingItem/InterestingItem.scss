@@ -1,4 +1,5 @@
 @import "../../scss/mixins/mini";
+@import "../../scss/mixins/breakpoint";
 .InterestingItem {
     @include bg-cover;
     display: flex;
@@ -9,7 +10,6 @@
     width: 380px;
     height: 465px;
     background-image: url("./1.jpg");
-   
 
     &__top {
         padding: 20px;
@@ -51,5 +51,9 @@
             visibility: visible;
             transition: all 0.3s ease-in-out;
         }
+    }
+    @include mobile {
+        width: 100%;
+        height: 280px;
     }
 }
