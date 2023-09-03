@@ -1,4 +1,5 @@
 @import "../../scss/mixins/mini";
+@import "../../scss/mixins/breakpoint";
 .Pagination {
     @include flex-v-center;
     gap: 10px;
@@ -10,7 +11,12 @@
         &:hover {
             background-color: var(--red-color);
         }
-        
+        @include mobile {
+            padding: 5px 10px;
+        }
+    }
+    @include mobile {
+        gap: 15px;
     }
 }
 .Pagination li.active {

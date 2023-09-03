@@ -1,4 +1,5 @@
 @import "./scss/main.scss";
+@import "./scss/mixins/breakpoint";
 @import "./scss/mixins/_mini.scss";
 
 body {
@@ -114,4 +115,12 @@ code {
 
 .ymaps-layers-pane {
   filter: invert(100%) !important;
+}
+.cardSkeleton {
+  width: 286px;
+  height: 476px;
+  @include mobile {
+    width: 210px;
+    height: 350px;
+  }
 }

@@ -19,7 +19,7 @@ import Pagination from '../../components/Pagination/Pagination';
 import Search from '../../components/Search/Search';
 import CardSkeleton from '../../components/Card/CardSkeleton'
 import { setPage } from '../../redux/slices/filterSlice'
-
+import { setFilter,setSort } from '../../redux/slices/filterSlice';
 const fakeArr = [...Array(10)];
 
 const Catalog:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
@@ -78,6 +78,14 @@ const Catalog:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 						<div className="Catalog__left">
 							<Filter/>
 							<Search/>
+							<ul className="list-reset Catalog__mobile-filters">
+								<li className="Accordion__item">
+								Новинки <input type="checkbox" value={neww} onChange={()=> dispatch(setFilter(!neww))} />
+								</li>
+								<li className="Accordion__item">
+								По цене <input type="checkbox" value={sort} onChange={()=>dispatch(setSort(!sort))} />
+								</li>
+							</ul>
 						</div>
 						<ul className="list-reset Catalog__goods">
 							{

@@ -4,11 +4,10 @@ import ContentLoader,{IContentLoaderProps} from 'react-content-loader'
 const CardSkeleton:React.FC<IContentLoaderProps> = () => (
 	<ContentLoader 
 		speed={2}
-		width={286}
-		height={476}
 		viewBox="0 0 296 506"
 		backgroundColor="#9b8d8d"
 		foregroundColor="#615f5f"
+		className="cardSkeleton"
 		
 	>
 		<rect x="152" y="267" rx="0" ry="0" width="10" height="0" /> 

@@ -1,19 +1,30 @@
 @import "../../scss/mixins/mini";
+@import "../../scss/mixins/breakpoint";
 .Catalog {
     &__container {
         @include flex-column-center;
         margin: 0 auto;
         padding: 80px 0;
         width: 1290px;
+        @include mobile {
+            width: 100%;
+
+        }
     }
     &__left {
         padding-top: 40px;
+        @include mobile {
+            width: 100%;
+        }
     }
     &__wrapper {
         display: flex;
         align-items: start;
         margin-bottom: 40px;    
         gap: 90px;
+        @include mobile {
+            flex-direction: column;
+        }
     }
     &__goods {
         display: grid;
@@ -22,6 +33,12 @@
         grid-template-rows: auto;
         padding-top: 40px;
         row-gap: 50px;
+        @include mobile {
+            column-gap:10px;
+            grid-template-columns: repeat(2,1fr);
+            padding-top: 0;
+            padding-bottom: 30px;
+        }
     }
     &__title {
         font-family: Jura;
@@ -32,5 +49,23 @@
         text-transform: uppercase;
         color:var(--light-color);
 /* H2 */
+    }
+    &__mobile-filters {
+        display: none;
+        padding-top: 30px;
+        color:#fff;
+        gap: 10px;
+        input {
+            width: 20px;
+            height: 20px;
+        }
+        li {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        @include mobile {
+            display: flex;
+        }
     }
 }
