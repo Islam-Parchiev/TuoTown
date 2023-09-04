@@ -54,13 +54,13 @@ const Catalog:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 	useEffect(() => {
 
 		// @ts-ignore
-		dispatch(fetchCatalogItems({page,check,searchValue,search,neww,sortByPrice}))
+		dispatch(fetchCatalogItems({check,search,sortByPrice}))
 		console.log('goodssss')
 	
 		searchValue.length > 3 && dispatch(setPage(1))
 		// knives && knives.length >6 && setPage(1)
 
-	}, [page,search,searchValue,check,neww,sort])
+	}, [search,check,sort])
 
 	useEffect(()=> {
     	const queryString = qs.stringify({
