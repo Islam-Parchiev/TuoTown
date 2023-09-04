@@ -2,6 +2,9 @@ import React,{useState,useEffect} from 'react'
 
 import { Helmet } from 'react-helmet'
 import { useSelector } from 'react-redux'
+import qs from 'qs';
+import { useNavigate } from 'react-router-dom';
+
 
 import { useDebounce } from '../../hooks/debounce'
 import { useAppDispatch } from '../../redux/store'
@@ -19,11 +22,11 @@ import Pagination from '../../components/Pagination/Pagination';
 import Search from '../../components/Search/Search';
 import CardSkeleton from '../../components/Card/CardSkeleton'
 import { setPage } from '../../redux/slices/filterSlice'
-import { setFilter,setSort } from '../../redux/slices/filterSlice';
+import { setFilter,setSort,setFilters } from '../../redux/slices/filterSlice';
 const fakeArr = [...Array(10)];
 
 const Catalog:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
-
+	const navigate = useNavigate()
 	const dispatch =useAppDispatch();
 	const {knives,status} = useSelector((state:any)=> state.catalogSlice)
 	const { neww,page,searchValue,sort } =useSelector((state:any)=> state.filterSlice);
@@ -37,6 +40,17 @@ const Catalog:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 	const search = searchValue.length>0?`&title=${debouncedValue}`:'';
 	const check = neww===true?'&new=true':'';
 	const sortByPrice= sort===true?'&sortBy=price&order=asc':'';
+
+	useEffect(()=> {
+    if(window.location.search) {
+			const params = qs.parse(window.location.search.substring(1));
+			console.log('params:Catalog',params);
+			// {sort: 'true', new: 'true', search: '', page: '2'}
+
+			dispatch(setFilters({...params}))
+		}
+	},[])
+
 	useEffect(() => {
 
 		// @ts-ignore
@@ -47,6 +61,18 @@ const Catalog:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 		// knives && knives.length >6 && setPage(1)
 
 	}, [page,search,searchValue,check,neww,sort])
+
+	useEffect(()=> {
+    	const queryString = qs.stringify({
+			sort,
+			new:neww,
+			search:searchValue,
+			page,
+		});
+		navigate(`?${queryString}`)
+		console.log(queryString);
+	},[page,searchValue,neww,sort]);
+
 	// console.log('filterrrrrrrr',knives.filter((value:any) => value.new === true))
 	const lastKniveIndex = page * knivesPerPage;
 	const firstKniveIndex = lastKniveIndex - knivesPerPage;
