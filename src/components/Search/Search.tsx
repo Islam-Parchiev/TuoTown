@@ -6,10 +6,10 @@ import { useAppDispatch } from '../../redux/store';
 import { setSearchValue } from '../../redux/slices/filterSlice';
 
 import styles from './Search.module.scss';
-const Search:React.FC<any> = () => {
-	const {searchValue} = useAppSelector((state:any)=> state.filterSlice)
+const Search:React.FC = () => {
+	const {searchValue} = useAppSelector((state)=> state.filterSlice)
 	const dispatch = useAppDispatch()
-	const handleInput = (e:any) => {
+	const handleInput = (e:React.ChangeEvent<HTMLInputElement>) => {
 		dispatch(setSearchValue(e.target.value));
 	}
 	return (

@@ -1,4 +1,4 @@
-import {useEffect, useRef, useState} from 'react'
+import {useEffect, useRef, useState,FC} from 'react'
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
@@ -7,9 +7,11 @@ import { useDebounce } from '../../hooks/debounce';
 import { ICard } from '../../types/Card';
 
 import styles from './HeaderSearch.module.scss';
-
-const HeaderSearch = ({setHeaderSearch}:any) => {
-	const headerSearchRef = useRef<any>(null);
+interface IHeaderSearch {
+	setHeaderSearch:(boolean:boolean)=>void
+}
+const HeaderSearch:FC<IHeaderSearch> = ({setHeaderSearch}) => {
+	const headerSearchRef = useRef<HTMLDivElement>(null);
 
 	const [headerSearchValue,setHeaderSearchValue] = useState<string>('');
 	const [headerSearchItems,setHeaderSearchItems] = useState<ICard[]>([]);
@@ -19,7 +21,7 @@ const HeaderSearch = ({setHeaderSearch}:any) => {
 		/**
 		 * Alert if clicked on outside of element
 		 */
-		function handleClickOutside(event:any) {
+		function handleClickOutside(event:MouseEvent) {
 			// @ts-ignore
 			if (headerSearchRef.current && !headerSearchRef.current.contains(event.target)) {
 				

@@ -1,4 +1,4 @@
-import React, { FC, useEffect,useRef } from 'react'
+import { FC, useEffect,useRef } from 'react'
 
 import {Link} from 'react-router-dom';
 
@@ -7,12 +7,12 @@ import { IToggleSidebar } from '../../types/Sidebar';
 import './Sidebar.scss'
 
 const Sidebar: FC<IToggleSidebar> = ({ toggleSidebar, setToggleSidebar }) => {
-	const ref = useRef<any>()
+	const ref = useRef<HTMLDivElement>(null)
 	useEffect(() => {
 		/**
 		 * Alert if clicked on outside of element
 		 */
-		function handleClickOutside(event:any) {
+		function handleClickOutside(event:MouseEvent) {
 			// @ts-ignore
 		  if (ref.current && !ref.current.contains(event.target)) {
 				

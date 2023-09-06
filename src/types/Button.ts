@@ -3,6 +3,6 @@ export interface IButton {
 	variant:'primary' | 'secondary'
 	size:'small'|'medium'|'large'	
 	type:'one'|'two'
-	children:any
+	children:JSX.Element | string
 	otherClass?:string
 }

@@ -10,10 +10,9 @@ import { setFilter,setSort } from '../../redux/slices/filterSlice';
 import styles from './Filter.module.scss';
 
 
-const Filter:FC<any> = () => {
-    // @eslint-ignore
-	const { neww,sort } =useAppSelector((state:any)=> state.filterSlice);
-  console.log(neww)
+const Filter:FC = () => {
+	const { neww,sort } =useAppSelector((state)=> state.filterSlice);
+  	console.log(neww)
 	const dispatch = useAppDispatch();
 	return (
 		<div className={styles.Filter}>

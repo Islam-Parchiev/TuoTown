@@ -72,7 +72,7 @@ const cities = [
 		  coords: [55.749162, 38.559742],
 	},
 ];
-const getPointData = (index:any) => {
+const getPointData = (index:number) => {
 	return {
 	  balloonContentBody: 'placemark <strong>balloon ' + {index} + '</strong>',
 	  clusterCaption: 'placemark <strong>' + {index} + '</strong>',
@@ -86,16 +86,16 @@ const getPointOptions = () => {
 };
 
 const MapContent:React.FC = () => {
-	const [state, setState] = React.useState<any>();
+	const [coord, setCoord] = React.useState<{ center: number[] }>();
 
-	const onItemClick = (coords:any) => {
-	  setState({ center: coords });
+	const onItemClick = (coords:number[]) => {
+		setCoord({ center: coords });
 	};
 	return (
 		<div className={styles.MapContent}>
 			<div className={styles.MapContent__left}>
 				<YMaps>
-     	 <Map className={styles.MapContent__map} state={state} defaultState={mapState}>
+     	 <Map className={styles.MapContent__map} state={coord} defaultState={mapState}>
       	  <Clusterer
      	     options={{
        	     preset: 'islands#invertedVioletClusterIcons',

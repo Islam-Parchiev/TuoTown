@@ -4,14 +4,14 @@ import styles from './ProductVideo.module.scss'
 
 const ProductVideo: FC = () => {
 	const [play,setPlay] = useState(false);
-	const videoRef = useRef<any>()
+	const videoRef = useRef<HTMLVideoElement>(null)
 
 	const onPlay = () => {
-		videoRef.current.play()
+		videoRef?.current?.play()
 		setPlay(true)
 	}
 	const onStop = () => {
-		videoRef.current.pause()
+		videoRef?.current?.pause()
 		setPlay(false)
 	}
 	return (

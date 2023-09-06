@@ -9,9 +9,10 @@ import AboutUs from '../../components/AboutUs/AboutUs'
 import Interesting from '../../components/Interesting/Interesting'
 import Sidebar from '../../components/Sidebar/Sidebar'
 import ToTop from '../../components/ToTop/ToTop';
+import { IToggleSidebar } from '../../types/Sidebar';
 
-const Main:FC<any> = ({toggleSidebar,setToggleSidebar}) => {
-	const mainRef = useRef<any>()
+const Main:FC<IToggleSidebar> = ({toggleSidebar,setToggleSidebar}) => {
+	const mainRef = useRef<HTMLElement>(null)
 	const [scroll, setScroll] = useState<number>(0);
 	console.log(scroll)
   	const handleScroll = () => {

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { useAppSelector } from '../../redux/store'
 
 
+import { IToggleSidebar } from '../../types/Sidebar'
 import { selectCart } from '../../redux/slices/cartSlice'
 import HeaderSearch from '../HeaderSearch/HeaderSearch'
 
@@ -12,7 +13,7 @@ import styles from './Header.module.scss'
 
 
 
-const Header: FC<any> = ({ toggleSidebar, setToggleSidebar }) => {
+const Header: FC<IToggleSidebar> = ({ toggleSidebar, setToggleSidebar }) => {
 	const {items} = useAppSelector(selectCart)
 	const isMounted = React.useRef(false);
 	const [headerSearch,setHeaderSearch] = useState<boolean>(false);

@@ -49,7 +49,7 @@ export const cartSlice = createSlice({
 			}
 			state.price = calcTotalPrice(state.items);
 		},
-		onClickMinus(state,action:PayloadAction<any>) {
+		onClickMinus(state,action:PayloadAction<number>) {
 			const findItem = state.items.find(obj => obj.id === action.payload);
 
 			if(findItem) {

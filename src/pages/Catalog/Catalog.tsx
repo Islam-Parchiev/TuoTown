@@ -30,13 +30,14 @@ import CatalogGoods from '../../components/CatalogGoods/CatalogGoods';
 
 
 import ErrorFallback from '../../components/ErrorFallback/ErrorFallback';
+import { IToggleSidebar } from '../../types/Sidebar';
 const fakeArr = [...Array(10)];
 
-const Catalog:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
+const Catalog:React.FC<IToggleSidebar> = ({toggleSidebar,setToggleSidebar}) => {
 	const navigate = useNavigate()
 	const dispatch =useAppDispatch();
-	const {knives,status} = useAppSelector((state:any)=> state.catalogSlice)
-	const { neww,page,searchValue,sort } =useAppSelector((state:any)=> state.filterSlice);
+	const {knives,status} = useAppSelector((state)=> state.catalogSlice)
+	const { neww,page,searchValue,sort } =useAppSelector((state)=> state.filterSlice);
 	console.log('catalog',knives);
 	
 
@@ -113,10 +114,10 @@ const Catalog:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 							<Search/>
 							<ul className="list-reset Catalog__mobile-filters">
 								<li className="Accordion__item">
-								Новинки <input type="checkbox" value={neww} onChange={()=> dispatch(setFilter(!neww))} />
+								Новинки <input type="checkbox" checked={neww} onChange={()=> dispatch(setFilter(!neww))} />
 								</li>
 								<li className="Accordion__item">
-								По цене <input type="checkbox" value={sort} onChange={()=>dispatch(setSort(!sort))} />
+								По цене <input type="checkbox" checked={sort} onChange={()=>dispatch(setSort(!sort))} />
 								</li>
 							</ul>
 						</div>

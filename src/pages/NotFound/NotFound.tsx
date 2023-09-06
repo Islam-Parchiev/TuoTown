@@ -4,10 +4,11 @@ import {Helmet} from 'react-helmet';
 import { Link } from 'react-router-dom';
 
 import Sidebar from '../../components/Sidebar/Sidebar';
+import { IToggleSidebar } from '../../types/Sidebar';
 
 import styles from './NotFound.module.scss';
 
-const NotFound:FC<any> = ({toggleSidebar,setToggleSidebar}) => {
+const NotFound:FC<IToggleSidebar> = ({toggleSidebar,setToggleSidebar}) => {
 	return (
 		<>
 			<Helmet>

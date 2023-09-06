@@ -10,7 +10,7 @@ import CategoriesGoods from '../CategoriesGoods/CategoriesGoods'
 
 const Categories = () => {
 	
-	const [category, setCategory] = React.useState(1)
+	const [category, setCategory] = React.useState<number>(1)
 	// console.log(category);
 	// useEffect(() => {
 	// 	fetch(`https://64cc9c882eafdcdc851a0655.mockapi.io/knives/items?page=1&limit=6&type=${category}`)
@@ -397,22 +397,7 @@ const Categories = () => {
 				<div className="Categories__bottom">
 					<ErrorBoundary 
 						FallbackComponent={ErrorFallback}>
-						{/* <ul className="list-reset Categories__goods">
-						<Collection />
-						{knives.map((knive: ICard): any => (
-							<Card
-								key={knive.id}
-								id={knive.id}
-								descr={knive.descr}
-								title={knive.title}
-								new={knive.new}
-								newItem={knive.new}
-								price={knive.price}
-								imageUrl={knive.imageUrl}
-								type={knive.type}
-							/>
-						))}
-						</ul> */}
+					
                         	<CategoriesGoods category={category}/>
 					</ErrorBoundary>
 					<Send />

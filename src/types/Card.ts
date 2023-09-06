@@ -5,6 +5,6 @@ export interface ICard{
     descr:string,
     new:boolean,
     imageUrl:string,
-    type:any[],
+    type:number,
     newItem?:boolean
 }

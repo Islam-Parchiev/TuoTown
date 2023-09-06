@@ -28,9 +28,10 @@ const ServiceForm: React.FC = () => {
 	} = useForm<IServiceFormFields>({
 		mode: 'onChange',
 	})
+	const form = useRef<HTMLFormElement>(null);
 	const sendEmail = () => {
 	
-		emailjs.sendForm('service_c5fenef', 'template_xoiy8ec', form.current, 'DQkHD520RftRbJ7wx')
+		emailjs.sendForm('service_c5fenef', 'template_xoiy8ec', form?.current || '', 'DQkHD520RftRbJ7wx')
 		  .then((result) => {
 			  console.log(result.text);
 		  }, (error) => {
@@ -45,7 +46,6 @@ const ServiceForm: React.FC = () => {
 		notify()
 		reset()
 	}
-	const form = useRef<any>();
 
  
 	return (

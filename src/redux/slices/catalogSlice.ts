@@ -11,11 +11,15 @@ export enum  Status {
 	SUCCESS='success',
 	ERROR = 'error'    
  }
-
+interface IfetchCatalogItems {
+	check:string;
+	search:string;
+	sortByPrice:string;
+}
 
 export const fetchCatalogItems = createAsyncThunk(
   	'users/fetchCatalogItems',
-  	async ({check,search,sortByPrice}:any) => {
+  	async ({check,search,sortByPrice}:IfetchCatalogItems) => {
 			
     	// eslint-disable-next-line max-len
 		const {data} = await axios.get<ICard[]>(`https://64cc9c882eafdcdc851a0655.mockapi.io/knives/items?limit=6${sortByPrice}${search}${check}`)

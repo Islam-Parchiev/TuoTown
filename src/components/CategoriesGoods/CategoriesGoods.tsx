@@ -5,7 +5,7 @@ import Collection from '../Collection/Collection'
 import Card from '../Card/Card'
 import CardSkeleton from '../Card/CardSkeleton'
 import { Status } from '../../redux/slices/catalogSlice'
-const CategoriesGoods:FC<any> = ({category}) => {
+const CategoriesGoods:FC<{category:number}> = ({category}) => {
 	const fakeArr = [...Array(6)];
 	const [knives, setKnives] = useState<ICard[]>([])
 	const [status,setStatus]= useState('loading');
@@ -21,7 +21,7 @@ const CategoriesGoods:FC<any> = ({category}) => {
 			<Collection />
 			{status===Status.LOADING ? fakeArr.map(i=> (
 				<CardSkeleton/>
-			)):knives.map((knive: ICard): any => (
+			)):knives.map((knive: ICard): JSX.Element => (
 				<Card
 					key={knive.id}
 					id={knive.id}

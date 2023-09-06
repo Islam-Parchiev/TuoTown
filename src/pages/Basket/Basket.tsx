@@ -9,9 +9,10 @@ import Form from '../../components/Form/Form'
 
 import './Basket.scss'
 import Cart from '../../components/Cart/Cart'
+import { IToggleSidebar } from '../../types/Sidebar'
 
 
-const Basket: React.FC<any> = ({ toggleSidebar, setToggleSidebar }) => {
+const Basket: React.FC<IToggleSidebar> = ({ toggleSidebar, setToggleSidebar }) => {
 	return (
 		<main className="Basket">
 			{toggleSidebar === true ? (

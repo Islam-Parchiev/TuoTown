@@ -1,8 +1,10 @@
 import React from 'react'
 
 import './Collection.scss'
-
-const Collection: React.FC<any> = ({ otherClass }) => {
+interface ICollection {
+	otherClass?:string
+}
+const Collection: React.FC<ICollection> = ({ otherClass }) => {
 	return (
 		<li className={`collection ${otherClass ? otherClass : ''}`}>
 			<div className="collection__info">

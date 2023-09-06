@@ -1,6 +1,9 @@
 import {FC} from 'react'
 import './ErrorFallback.scss'
-const ErrorFallback:FC<any> = ({error}) => {
+interface IErrorFallback {
+	error:Error
+}
+const ErrorFallback:FC<IErrorFallback> = ({error}) => {
 	return (
 		<div role="alert" className="ErrorFallback">
 			<p>Something went wrong</p>

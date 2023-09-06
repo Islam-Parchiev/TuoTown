@@ -4,7 +4,13 @@ import Button from '../Button/Button';
 
 import styles from './ProductQuantity.module.scss';
 
-const ProductQuantity:React.FC = ({productTitle,productPrice,onClickAdd}:any) => {
+interface IProductQuantity {
+	productTitle:string
+	productPrice:number
+	onClickAdd:()=>void
+}
+
+const ProductQuantity:React.FC<IProductQuantity> = ({productTitle,productPrice,onClickAdd}) => {
 	return (
 		<section className={styles.ProductQuantity}>
 			<div className={`container ${styles.ProductQuantity__container}`}>

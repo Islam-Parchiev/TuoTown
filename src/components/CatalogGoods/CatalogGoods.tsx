@@ -12,9 +12,9 @@ import { setPage } from '../../redux/slices/filterSlice';
 import { useDebounce } from '../../hooks/debounce';
 const fakeArr = [...Array(10)];
 const CatalogGoods:FC = () => {
-	const {knives,status} = useAppSelector((state:any)=> state.catalogSlice)
-	const {neww,page,searchValue,sort } =useAppSelector((state:any)=> state.filterSlice);
-	const [knivesPerPage] = useState(6);
+	const {knives,status} = useAppSelector((state)=> state.catalogSlice)
+	const {neww,page,searchValue,sort } =useAppSelector((state)=> state.filterSlice);
+	const [knivesPerPage] = useState<number>(6);
 	const lastKniveIndex = page * knivesPerPage;
 	const firstKniveIndex = lastKniveIndex - knivesPerPage;
 	const currentKnives= knives.slice(firstKniveIndex,lastKniveIndex)
@@ -42,7 +42,7 @@ const CatalogGoods:FC = () => {
 			{
 				status === Status.LOADING ? fakeArr.map(i => (
 					<CardSkeleton/>
-				)):currentKnives.map((knive: ICard): any => (
+				)):currentKnives.map((knive: ICard): JSX.Element => (
 					<Card
 						key={knive.id}
 						id={knive.id}

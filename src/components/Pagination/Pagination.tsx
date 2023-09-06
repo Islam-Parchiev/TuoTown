@@ -2,7 +2,14 @@ import {FC} from 'react'
 
 import './Pagination.scss';
 
-const Pagination:FC<any> = ({paginate,page,knivesPerPage,totalKnives}) => {
+interface IPagination {
+	paginate:(number:number)=>void;
+	page:number;
+	knivesPerPage:number;
+	totalKnives:number;
+}
+
+const Pagination:FC<IPagination> = ({paginate,page,knivesPerPage,totalKnives}) => {
 	// console.log('ddddd',knives.length);
 	
 	const kniveNumbers = [];

@@ -19,12 +19,13 @@ import { ICard } from '../../types/Card';
 
 import { addItem } from '../../redux/slices/cartSlice';
 import ToTop from '../../components/ToTop/ToTop';
+import { IToggleSidebar } from '../../types/Sidebar';
 
-const Product:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
+const Product:React.FC<IToggleSidebar> = ({toggleSidebar,setToggleSidebar}) => {
 	const {id} = useParams()
 	const [product,setProduct] = useState<ICard>();
 
-	const mainRef = useRef<any>()
+	const mainRef = useRef<HTMLElement>(null)
 	const [scroll, setScroll] = useState<number>(0);
 	console.log(scroll)
   	const handleScroll = () => {
