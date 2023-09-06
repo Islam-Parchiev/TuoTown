@@ -1,11 +1,13 @@
 import React,{useState,useEffect} from 'react'
 
 import { Helmet } from 'react-helmet'
-import { useSelector } from 'react-redux'
+
+
 import qs from 'qs';
 import { useNavigate } from 'react-router-dom';
 import { ErrorBoundary } from 'react-error-boundary';
 
+import { useAppSelector } from '../../redux/store';
 
 import { useDebounce } from '../../hooks/debounce'
 import { useAppDispatch } from '../../redux/store'
@@ -33,8 +35,8 @@ const fakeArr = [...Array(10)];
 const Catalog:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 	const navigate = useNavigate()
 	const dispatch =useAppDispatch();
-	const {knives,status} = useSelector((state:any)=> state.catalogSlice)
-	const { neww,page,searchValue,sort } =useSelector((state:any)=> state.filterSlice);
+	const {knives,status} = useAppSelector((state:any)=> state.catalogSlice)
+	const { neww,page,searchValue,sort } =useAppSelector((state:any)=> state.filterSlice);
 	console.log('catalog',knives);
 	
 

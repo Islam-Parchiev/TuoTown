@@ -1,5 +1,6 @@
 import {FC} from 'react'
-import { useSelector } from 'react-redux';
+
+import { useAppSelector } from '../../redux/store';
 
 
 import { useAppDispatch } from '../../redux/store';
@@ -11,7 +12,7 @@ import styles from './Filter.module.scss';
 
 const Filter:FC<any> = () => {
     // @eslint-ignore
-	const { neww,sort } =useSelector((state:any)=> state.filterSlice);
+	const { neww,sort } =useAppSelector((state:any)=> state.filterSlice);
   console.log(neww)
 	const dispatch = useAppDispatch();
 	return (

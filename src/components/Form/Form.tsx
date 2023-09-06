@@ -2,8 +2,11 @@ import React from 'react'
 
 import { ToastContainer,toast } from 'react-toastify';
 
+
 import { useForm,SubmitHandler } from 'react-hook-form';
-import { useSelector } from 'react-redux';
+
+import { useAppSelector } from '../../redux/store';
+
 
 import { IShippingFields } from '../../types/Form';
 
@@ -12,7 +15,7 @@ import './Form.scss';
 import { selectCart } from '../../redux/slices/cartSlice';
 
 const Form:React.FC = () => {
-	const {items} = useSelector(selectCart)
+	const {items} = useAppSelector(selectCart)
 	const notify = () => toast.success('Заказ оформлен', {
 		position: 'top-right',
 		autoClose: 5000,

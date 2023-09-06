@@ -1,8 +1,13 @@
-import React,{useState} from 'react'
+import {useState,FC} from 'react'
 
 import './Accordion.scss';
 
-const Accordion = ({children,title}:any) => {
+interface IAccordion {
+	children:JSX.Element,
+	title:string
+}
+
+const Accordion:FC<IAccordion> = ({children,title}) => {
 	const [open,setOpen] = useState<boolean>(false);
 	return (
 		<div className={`Accordion ${open && 'active'}`}>

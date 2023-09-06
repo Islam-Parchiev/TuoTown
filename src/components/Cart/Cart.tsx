@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-import { useSelector } from 'react-redux'
+import { useAppSelector } from '../../redux/store'
 
 import { selectCart } from '../../redux/slices/cartSlice'
 
@@ -10,7 +10,7 @@ import BasketItem from '../BasketItem/BasketItem'
 import './Cart.scss'
 
 const Cart: React.FC = () => {
-	const {items,price} = useSelector(selectCart)
+	const {items,price} = useAppSelector(selectCart)
 	console.log(items)
 	return (
 		<div className="Cart">

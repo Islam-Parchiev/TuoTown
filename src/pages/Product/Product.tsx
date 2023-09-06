@@ -3,8 +3,10 @@ import React, { useEffect, useRef, useState } from 'react'
 import {Helmet} from 'react-helmet';
 
 import { useParams } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
 import axios from 'axios';
+
+import { useAppDispatch } from '../../redux/store';
+
 
 import Sidebar from '../../components/Sidebar/Sidebar';
 import ProductQuantity from '../../components/ProductQuantity/ProductQuantity';
@@ -55,7 +57,7 @@ const Product:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 		  
   
 	  }, [id])
-	const dispatch = useDispatch();
+	const dispatch = useAppDispatch();
 
 	const onClickAdd = () => {
 		// @ts-ignore

@@ -1,7 +1,8 @@
 import React from 'react'
-
-import { useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
+
+import { useAppDispatch } from '../../redux/store'
+
 
 import { addItem } from '../../redux/slices/cartSlice'
 
@@ -10,7 +11,7 @@ import { ICard } from '../../types/Card'
 import styles from './Card.module.scss'
 
 const Card: React.FC<ICard> = ({ imageUrl, title, price, newItem,id }) => {
-	const dispatch = useDispatch();
+	const dispatch = useAppDispatch();
 
 	const onClickAdd = () => {
 		const item = {

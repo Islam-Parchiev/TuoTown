@@ -119,13 +119,7 @@
         width: 194px;
         height: 47px;
        }
-        // img {
-        //     display: block;
-        //     width: 100%;
-        //     height: 100%;
-        //     object-fit: cover;
-        //     cursor: pointer;
-        // }
+      
         @include tablet {
             flex-direction: column;
             gap: 5px;
