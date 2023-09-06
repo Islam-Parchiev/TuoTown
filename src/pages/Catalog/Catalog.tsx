@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet'
 import { useSelector } from 'react-redux'
 import qs from 'qs';
 import { useNavigate } from 'react-router-dom';
+import { ErrorBoundary } from 'react-error-boundary';
 
 
 import { useDebounce } from '../../hooks/debounce'
@@ -23,6 +24,10 @@ import Search from '../../components/Search/Search';
 import CardSkeleton from '../../components/Card/CardSkeleton'
 import { setPage } from '../../redux/slices/filterSlice'
 import { setFilter,setSort,setFilters } from '../../redux/slices/filterSlice';
+import CatalogGoods from '../../components/CatalogGoods/CatalogGoods';
+
+
+import ErrorFallback from '../../components/ErrorFallback/ErrorFallback';
 const fakeArr = [...Array(10)];
 
 const Catalog:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
@@ -51,16 +56,16 @@ const Catalog:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 		}
 	},[])
 
-	useEffect(() => {
+	// useEffect(() => {
 
-		// @ts-ignore
-		dispatch(fetchCatalogItems({check,search,sortByPrice}))
-		console.log('goodssss')
+	// 	// @ts-ignore
+	// 	dispatch(fetchCatalogItems({check,search,sortByPrice}))
+	// 	console.log('goodssss')
 	
-		searchValue.length > 3 && dispatch(setPage(1))
-		// knives && knives.length >6 && setPage(1)
+	// 	searchValue.length > 3 && dispatch(setPage(1))
+	// 	// knives && knives.length >6 && setPage(1)
 
-	}, [search,check,sort])
+	// }, [search,check,sort])
 
 	useEffect(()=> {
     	const queryString = qs.stringify({
@@ -113,7 +118,8 @@ const Catalog:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 								</li>
 							</ul>
 						</div>
-						<ul className="list-reset Catalog__goods">
+
+						{/* <ul className="list-reset Catalog__goods">
 							{
 								status === Status.LOADING ? fakeArr.map(i => (
 									<CardSkeleton/>
@@ -132,8 +138,12 @@ const Catalog:React.FC<any> = ({toggleSidebar,setToggleSidebar}) => {
 								))
 							}
 						
-						</ul>
-  
+						</ul> */}
+						<ErrorBoundary 
+							FallbackComponent={ErrorFallback}>
+                       	<CatalogGoods/>
+							
+						</ErrorBoundary>
 
         
 	

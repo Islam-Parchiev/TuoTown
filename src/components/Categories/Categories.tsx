@@ -1,25 +1,26 @@
-import React, { useState, useEffect } from 'react'
-import { withErrorBoundary } from 'react-error-boundary'
+import React from 'react'
+import { ErrorBoundary } from 'react-error-boundary'
 
-import Card from '../Card/Card'
-import Collection from '../Collection/Collection'
+import ErrorFallback from '../ErrorFallback/ErrorFallback'
+
 import Send from '../Send/Send'
-import { ICard } from '../../types/Card'
+
 import './Categories.scss'
+import CategoriesGoods from '../CategoriesGoods/CategoriesGoods'
 
 const Categories = () => {
-	const [knives, setKnives] = useState<ICard[]>([])
+	
 	const [category, setCategory] = React.useState(1)
 	// console.log(category);
-	useEffect(() => {
-		fetch(`https://64cc9c882eafdcdc851a0655.mockapi.io/knives/items?page=1&limit=6&type=${category}`)
-			.then(res => res.json())
-			.then(data => setKnives(data))
-	}, [category])
+	// useEffect(() => {
+	// 	fetch(`https://64cc9c882eafdcdc851a0655.mockapi.io/knives/items?page=1&limit=6&type=${category}`)
+	// 		.then(res => res.json())
+	// 		.then(data => setKnives(data))
+	// }, [category])
 	
 	return (
 		<section className="Categories">
-			{category}
+			{/* {category} */}
 			<div className="container Categories__container">
 				<div className="Categories__top">
 					<ul className="list-reset Categories__list">
@@ -394,7 +395,9 @@ const Categories = () => {
 					</ul>
 				</div>
 				<div className="Categories__bottom">
-					<ul className="list-reset Categories__goods">
+					<ErrorBoundary 
+						FallbackComponent={ErrorFallback}>
+						{/* <ul className="list-reset Categories__goods">
 						<Collection />
 						{knives.map((knive: ICard): any => (
 							<Card
@@ -409,7 +412,9 @@ const Categories = () => {
 								type={knive.type}
 							/>
 						))}
-					</ul>
+						</ul> */}
+                        	<CategoriesGoods category={category}/>
+					</ErrorBoundary>
 					<Send />
 				</div>
 			</div>
@@ -417,6 +422,4 @@ const Categories = () => {
 	)
 }
 
-export default withErrorBoundary(Categories,{
-	fallback:<div>Something went wrong...</div>,
-});
+export default Categories
