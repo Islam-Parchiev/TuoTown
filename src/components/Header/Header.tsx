@@ -38,7 +38,9 @@ const Header: FC<IToggleSidebar> = ({ toggleSidebar, setToggleSidebar }) => {
 				<div className={styles.header__column}>
 					<button
 						onClick={() => setToggleSidebar(!toggleSidebar)}
-						className={`btn-reset ${styles.header__sidebarBtn}`}>
+						className={`btn-reset ${styles.header__sidebarBtn}`}
+						title="Меню"
+						aria-label="Открыть боковое меню">
 						<svg
 							width="23"
 							height="23"
@@ -56,7 +58,8 @@ const Header: FC<IToggleSidebar> = ({ toggleSidebar, setToggleSidebar }) => {
 							<circle cx="19.5" cy="19.5" r="3" />
 						</svg>
 					</button>
-					<Link to="/map" className={styles.header__positionBtn}>
+					<Link 
+						to="/map" className={styles.header__positionBtn}>
 						<svg
 							width="23"
 							height="23"

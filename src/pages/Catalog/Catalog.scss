@@ -6,7 +6,7 @@
         margin: 0 auto;
         padding: 80px 0;
         width: 1290px;
-        @include mobile {
+        @include tablet {
             width: 100%;
 
         }
@@ -22,7 +22,7 @@
         align-items: start;
         margin-bottom: 40px;    
         gap: 90px;
-        @include mobile {
+        @include tablet {
             flex-direction: column;
         }
     }
@@ -38,6 +38,9 @@
             grid-template-columns: repeat(2,1fr);
             padding-top: 0;
             padding-bottom: 30px;
+        }
+        @include tablet {
+            grid-template-columns: repeat(2,1fr);
         }
     }
     &__title {
@@ -64,7 +67,7 @@
             align-items: center;
             gap: 5px;
         }
-        @include mobile {
+        @include tablet {
             display: flex;
         }
     }

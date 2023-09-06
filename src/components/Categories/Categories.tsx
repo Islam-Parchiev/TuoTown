@@ -25,6 +25,8 @@ const Categories = () => {
 				<div className="Categories__top">
 					<ul className="list-reset Categories__list">
 						<li
+							role="button"
+							// tabIndex={1}
 							onClick={() => setCategory(1)}
 							className={`Categories__listItem ${
 								category === 1 ? 'active' : ''
@@ -78,6 +80,8 @@ const Categories = () => {
 						</li>
 
 						<li
+							role="button"
+							// tabIndex={2}
 							onClick={() => setCategory(2)}
 							className={`Categories__listItem ${
 								category === 2 ? 'active' : ''
@@ -173,6 +177,8 @@ const Categories = () => {
 							</h4>
 						</li>
 						<li
+							role="button"
+							// tabIndex={3}
 							onClick={() => setCategory(3)}
 							className={`Categories__listItem ${
 								category === 3 ? 'active' : ''
@@ -298,6 +304,8 @@ const Categories = () => {
 							</h4>
 						</li>
 						<li
+							role="button"
+							// tabIndex={4}
 							onClick={() => setCategory(4)}
 							className={`Categories__listItem ${
 								category === 4 ? 'active' : ''

@@ -9,6 +9,7 @@
     height: 71px;
     background-color: rgba(#212121, 0.8);
     &__sidebarBtn {
+        
         svg {
             stroke: var(--light-color);
 
@@ -16,6 +17,7 @@
                 stroke: var(--hover-color);
             }
         }
+       
     }
 
     &__positionBtn {

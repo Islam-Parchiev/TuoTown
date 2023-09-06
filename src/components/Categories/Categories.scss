@@ -46,7 +46,6 @@
     &__listItem {
         @include flex-column-center;
         cursor: pointer;
-
         svg {
             width: 45px;
             height: 45px;
@@ -65,6 +64,9 @@
                 
                 font-size: 14px;
             }
+        }
+        &:focus {
+            outline: 1px solid red;
         }
 
         &:hover {

@@ -1,7 +1,7 @@
 @import "../../scss/mixins/breakpoint";
 .Filter {
     width: 300px;
-    @include mobile {
+    @include tablet {
         display: none;
     }
 }
