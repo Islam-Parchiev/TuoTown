@@ -27,6 +27,7 @@ const  App:React.FC = () => {
 				<Route path="*" element={<NotFound toggleSidebar={toggleSidebar} setToggleSidebar={setToggleSidebar}/>}/>
 			</Routes>
 			<Footer/>
+			
 		</div>
 	);
 }

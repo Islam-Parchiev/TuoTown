@@ -59,7 +59,10 @@ const Header: FC<IToggleSidebar> = ({ toggleSidebar, setToggleSidebar }) => {
 						</svg>
 					</button>
 					<Link 
-						to="/map" className={styles.header__positionBtn}>
+						to="/map" 
+						className={styles.header__positionBtn}
+						aria-label="Открыть карту"
+						title="Карта">
 						<svg
 							width="23"
 							height="23"
@@ -86,15 +89,27 @@ const Header: FC<IToggleSidebar> = ({ toggleSidebar, setToggleSidebar }) => {
 							/>
 						</svg>
 					</Link>
-					<a href="tel:89811201117" className={styles.header__phone}>
+					<a 
+						href="tel:89811201117" 
+						className={styles.header__phone} 	
+						aria-label="Номер телефона"
+						title="Номер телефона">
 						8 981 120-11-17
 					</a>
 				</div>
-				<Link to="/" className={styles.header__column}>
-					<img src="img/header/logo.png" alt="logo" />
+				<Link 
+					to="/" 
+					className={styles.header__column} 
+					aria-label="Логотип"
+					title="Логотип">
+					<img src="img/header/logo.png" alt="logo"/>
 				</Link>
 				<div className={styles.header__column}>
-					<Link to="/basket" className={`btn-reset ${styles.header__basket}`}>
+					<Link 
+						to="/basket" 
+						className={`btn-reset ${styles.header__basket}`}
+						title="Корзина"
+						aria-label="Перейти в корзину">
 						<span className={styles.header__basketCount}>{items.length}</span>
 						<svg
 							width="19"
@@ -150,7 +165,11 @@ const Header: FC<IToggleSidebar> = ({ toggleSidebar, setToggleSidebar }) => {
 						</svg>
 					</Link>
 
-					<Link to="/service" className={`btn-reset ${styles.header__mail}`}>
+					<Link 
+						to="/service" 
+						className={`btn-reset ${styles.header__mail}`}
+						title="Сервис"
+						aria-label="Перейти на страницу обратной связи">
 						<svg
 							width="24"
 							height="23"
@@ -174,7 +193,11 @@ const Header: FC<IToggleSidebar> = ({ toggleSidebar, setToggleSidebar }) => {
 						</svg>
 					</Link>
 
-					<button onClick={()=> setHeaderSearch(!headerSearch)} className={`btn-reset ${styles.header__search}`}>
+					<button 
+						onClick={()=> setHeaderSearch(!headerSearch)} 
+						className={`btn-reset ${styles.header__search}`}
+						title="Поиск"
+						aria-label="Открыть поле поиска">
 						<svg
 							width="24"
 							height="23"

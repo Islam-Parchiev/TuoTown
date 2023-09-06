@@ -28,7 +28,10 @@ const Card: React.FC<ICard> = ({ imageUrl, title, price, newItem,id }) => {
 		<li className={styles.Card}>
 			<div className={styles.Card__top}>
 				<div className={styles.Card__icons}>
-					<Link to={`/product/${id}`}>
+					<Link 
+						to={`/product/${id}`} 
+						aria-label="Перейти на страницу товара" 
+						title="Перейти на страницу товара">
 						<svg
 							className={styles.Card__plusIcon}
 							width="24"
@@ -53,7 +56,8 @@ const Card: React.FC<ICard> = ({ imageUrl, title, price, newItem,id }) => {
 						height="19"
 						viewBox="0 0 15 19"
 						xmlns="http://www.w3.org/2000/svg"
-						onClick={onClickAdd}>
+						onClick={onClickAdd}
+						aria-label="Добавить товар в корзину" >
 						<g clip-path="url(#clip0_67_4364)">
 							<path
 								d="M7.86207 0C8.12591 0.0631229 8.39933 0.106823 8.65837 0.194224C10.1502 
