@@ -6,10 +6,16 @@
         margin: 0 auto;
         padding-bottom: 20px;
         max-width: 850px;
+        @include mobile {
+            max-width: 800px;
+        }
     }
     &__wrapper {
         @include flex-column-start;
         padding-top: 120px;
+        @include mobile {
+            align-items: center;
+        }
     }
     &__heading {
         @include flex-v-center;
@@ -45,6 +51,11 @@
         @include flex-v-center;
         padding-top: 40px;
         gap: 30px;
+        @include mobile {
+            flex-direction: column;
+            align-items: start;
+            width: 90%;
+        }
       
         
     }
@@ -125,6 +136,7 @@ a {
 .services__item {
     @include flex-v-center;
     gap: 20px;
+    
     &-img {
         @include flex-all-center;
         border-radius: 15px;

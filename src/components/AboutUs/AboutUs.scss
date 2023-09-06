@@ -49,20 +49,14 @@
             object-fit: cover;
         }
         @include mobile {
-            width: 400px;
-            height: 340px;
+            width: 70%;
+            height: 240px;
         }
     }
 
     &__bottom {
         display: flex;
         gap: 50px;
-
-        @include mobile {
-            flex-direction: column-reverse;
-            align-items: center;
-            gap: 20px;
-        }
         &-text {
             width: 70%;
             @include mobile {
@@ -83,8 +77,8 @@
                 object-fit: cover;
             }
             @include mobile {
-                width: 400px;
-                height: 340px;
+                width: 70%;
+                height: 240px;
             }
         }
 
@@ -104,6 +98,12 @@
             font-size: 16px;
             line-height: 22px;
             color: var(--light-color);
+        }
+
+        @include mobile {
+            flex-direction: column-reverse;
+            align-items: center;
+            gap: 20px;
         }
     }
 }

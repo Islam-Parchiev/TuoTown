@@ -6,7 +6,9 @@
     border-radius: 15px;
     padding: 40px 40px;
     background-color: #232323;
-
+    @include mobile {
+        width: 90%;
+    }
     &-inputs {
         @include tablet {
             width: 100%;

@@ -57,7 +57,7 @@ const BasketItem:React.FC<any> = ({id,price,title,imageUrl,count}) => {
 						<span>р.</span>
 					</div>
 				</div>
-				<button onClick={() => deleteItem(id)} className="btn-reset BasketItem__remove">
+				<button onClick={() => deleteItem(id)} className={`btn-reset ${styles.BasketItem__remove}`}>
 					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
 						<path fill-rule="evenodd" clip-rule="evenodd" d="M3.33833 2.55929C3.12376 2.34682 2.77588
 						 2.34682 2.56131 2.55929C2.34675 2.77176 2.34675 3.11624 2.56131 3.32872L7.27873 

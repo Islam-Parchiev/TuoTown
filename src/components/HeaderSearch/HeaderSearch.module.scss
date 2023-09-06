@@ -9,9 +9,6 @@
     width: 600px;
     max-height: 300px;
     background-color: var(--charleston-color);
-    @include mobile {
-        width: 480px;
-    }
     &::-webkit-scrollbar {
         border-radius: 15px;
         width: 12px;
@@ -91,5 +88,8 @@
             color: var(--light-color);
         }
 
+    }
+    @include mobile {
+        max-width: 480px;
     }
 }

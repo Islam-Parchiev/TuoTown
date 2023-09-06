@@ -1,4 +1,5 @@
 @import "../../scss/mixins/mini";
+@import "../../scss/mixins/breakpoint";
 .Cart {
     margin: 0 auto;
     width: 100%;
@@ -42,5 +43,8 @@
 
     &-value {
         margin-left: 10px;
+    }
+    @include mobile {
+        width: 90%;
     }
 }

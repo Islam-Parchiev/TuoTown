@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
+import { withErrorBoundary } from 'react-error-boundary'
 
 import Card from '../Card/Card'
 import Collection from '../Collection/Collection'
 import Send from '../Send/Send'
 import { ICard } from '../../types/Card'
-
 import './Categories.scss'
 
 const Categories = () => {
@@ -417,4 +417,6 @@ const Categories = () => {
 	)
 }
 
-export default Categories
+export default withErrorBoundary(Categories,{
+	fallback:<div>Something went wrong...</div>,
+});
