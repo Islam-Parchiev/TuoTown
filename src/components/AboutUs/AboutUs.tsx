@@ -1,10 +1,44 @@
 import React from 'react'
+
+import { motion } from 'framer-motion'
+
 import './AboutUs.scss'
+
+const aboutUsTopAnimation = {
+	hidden:{
+      	x:-1800,
+	  	// opacity:0,
+	},
+	visible:(custom:any)=>({
+		x:0,
+	  	// opacity:1,
+	  	transition:{delay:custom * 0.5},
+	}),
+}
+const aboutUsBottomAnimation = {
+	hidden:{
+      	x:1800,
+	  	// opacity:0,
+	},
+	visible:(custom:any)=>({
+		x:0,
+	  	// opacity:1,
+	  	transition:{delay:custom * 0.5},
+	}),
+}
 const AboutUs: React.FC = () => {
 	return (
-		<section  data-testid="AboutUs" className="AboutUs">
+		<motion.section  
+			data-testid="AboutUs" 
+			className="AboutUs"
+			initial="hidden"
+			whileInView="visible"
+			viewport={{amount:0.2,once:true}}>
 			<div className="container AboutUs__container">
-				<div className="AboutUs__top">
+				<motion.div 
+					className="AboutUs__top"
+					variants={aboutUsTopAnimation}
+					custom={1}>
 					<div className="AboutUs__img">
 						<img src="/img/AboutUs/1.jpg" alt="" />
 					</div>
@@ -23,8 +57,10 @@ const AboutUs: React.FC = () => {
 							сопутствующих товаров.
 						</p>
 					</div>
-				</div>
-				<div className="AboutUs__bottom">
+				</motion.div>
+				<motion.div className="AboutUs__bottom"
+					variants={aboutUsBottomAnimation}
+					custom={1}>
 					<div className="AboutUs__bottom-text">
 						<p>
 							Истинная красота ножа — совершённая функциональность
@@ -54,9 +90,9 @@ const AboutUs: React.FC = () => {
 					<div className="AboutUs__bottom-img">
 						<img src="/img/AboutUs/2.jpg" alt="" />
 					</div>
-				</div>
+				</motion.div>
 			</div>
-		</section>
+		</motion.section>
 	)
 }
 

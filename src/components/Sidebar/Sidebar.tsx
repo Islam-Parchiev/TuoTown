@@ -1,5 +1,5 @@
 import { FC, useEffect,useRef } from 'react'
-
+import { motion } from 'framer-motion'
 import {Link} from 'react-router-dom';
 
 import { IToggleSidebar } from '../../types/Sidebar';
@@ -38,8 +38,14 @@ const Sidebar: FC<IToggleSidebar> = ({ toggleSidebar, setToggleSidebar }) => {
 	}, [])
 
 	return (
-		<div className="overlay">
-			<div ref={ref} className="Sidebar">
+		<motion.div 
+			className="overlay"
+		>
+			<motion.div 
+				ref={ref} 
+				className="Sidebar"
+				initial={{x:-444}}
+				animate={{x:0}}>
 				<button
 					onClick={() => setToggleSidebar(!toggleSidebar)}
 					className="btn-reset Sidebar__back">
@@ -97,8 +103,8 @@ const Sidebar: FC<IToggleSidebar> = ({ toggleSidebar, setToggleSidebar }) => {
 						</li>
 					</ul>
 				</nav>
-			</div>
-		</div>
+			</motion.div>
+		</motion.div>
 	)
 }
 

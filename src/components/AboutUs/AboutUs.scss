@@ -2,6 +2,7 @@
 @import "../../scss/mixins/mini";
 @import "../../scss/mixins/breakpoint";
 .AboutUs {
+    overflow-x: hidden;
     &__top {
         @include flex-v-center;
         gap: 50px;

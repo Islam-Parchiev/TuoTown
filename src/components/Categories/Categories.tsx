@@ -1,5 +1,6 @@
 import React from 'react'
 import { ErrorBoundary } from 'react-error-boundary'
+import { motion } from 'framer-motion'
 
 import ErrorFallback from '../ErrorFallback/ErrorFallback'
 
@@ -7,6 +8,19 @@ import Send from '../Send/Send'
 
 import './Categories.scss'
 import CategoriesGoods from '../CategoriesGoods/CategoriesGoods'
+
+
+const ulAnimation = {
+	hidden:{
+      	y:-100,
+	  	opacity:0,
+	},
+	visible:(custom:any)=>({
+		y:0,
+	  	opacity:1,
+	  	transition:{delay:custom * 0.2},
+	}),
+}
 
 const Categories = () => {
 	
@@ -23,9 +37,15 @@ const Categories = () => {
 			{/* {category} */}
 			<div className="container Categories__container">
 				<div className="Categories__top">
-					<ul className="list-reset Categories__list">
-						<li
+					<motion.ul 
+                    	initial="hidden"
+						whileInView="visible"
+                        	viewport={{amount:0.2,once:true}}
+						className="list-reset Categories__list">
+						<motion.li
 							role="button"
+							variants={ulAnimation}
+							custom={1}
 							// tabIndex={1}
 							onClick={() => setCategory(1)}
 							className={`Categories__listItem ${
@@ -77,10 +97,12 @@ const Categories = () => {
 							<h4 className="Categories__listItemTitle">
 								Кухонные ножи
 							</h4>
-						</li>
+						</motion.li>
 
-						<li
+						<motion.li
 							role="button"
+							variants={ulAnimation}
+							custom={2}
 							// tabIndex={2}
 							onClick={() => setCategory(2)}
 							className={`Categories__listItem ${
@@ -175,9 +197,11 @@ const Categories = () => {
 							<h4 className="Categories__listItemTitle">
 								Складные ножи
 							</h4>
-						</li>
-						<li
+						</motion.li>
+						<motion.li
 							role="button"
+							variants={ulAnimation}
+							custom={3}
 							// tabIndex={3}
 							onClick={() => setCategory(3)}
 							className={`Categories__listItem ${
@@ -302,9 +326,11 @@ const Categories = () => {
 							<h4 className="Categories__listItemTitle">
 								Точилки для ножей
 							</h4>
-						</li>
-						<li
+						</motion.li>
+						<motion.li
 							role="button"
+							variants={ulAnimation}
+							custom={4}
 							// tabIndex={4}
 							onClick={() => setCategory(4)}
 							className={`Categories__listItem ${
@@ -399,8 +425,8 @@ const Categories = () => {
 							<h4 className="Categories__listItemTitle">
 								Аксессуары для кухни
 							</h4>
-						</li>
-					</ul>
+						</motion.li>
+					</motion.ul>
 				</div>
 				<div className="Categories__bottom">
 					<ErrorBoundary 

@@ -5,4 +5,6 @@ export interface IButton {
 	type:'one'|'two'
 	children:JSX.Element | string
 	otherClass?:string
+	
+	
 }
