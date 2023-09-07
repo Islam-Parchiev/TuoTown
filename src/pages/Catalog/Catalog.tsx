@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react'
 
 import { Helmet } from 'react-helmet'
-
+import { motion } from 'framer-motion';
 
 import qs from 'qs';
 import { useNavigate } from 'react-router-dom';
@@ -31,6 +31,7 @@ import CatalogGoods from '../../components/CatalogGoods/CatalogGoods';
 
 import ErrorFallback from '../../components/ErrorFallback/ErrorFallback';
 import { IToggleSidebar } from '../../types/Sidebar';
+
 const fakeArr = [...Array(10)];
 
 const Catalog:React.FC<IToggleSidebar> = ({toggleSidebar,setToggleSidebar}) => {
@@ -95,7 +96,11 @@ const Catalog:React.FC<IToggleSidebar> = ({toggleSidebar,setToggleSidebar}) => {
 				<title>Catalog</title>
 				
 			</Helmet>
-			<main className="Catalog">
+			<motion.main 
+			className="Catalog"
+			initial={{width:0}}
+			animate={{width:'100%'}}
+			exit={{x:window.innerWidth,transition:{duration:0.1}}}>
 				{toggleSidebar === true ? (
 					<Sidebar
 						toggleSidebar={toggleSidebar}
@@ -159,7 +164,7 @@ const Catalog:React.FC<IToggleSidebar> = ({toggleSidebar,setToggleSidebar}) => {
 						knivesPerPage={knivesPerPage}/>
 					<Send/>
 				</div>
-			</main>
+			</motion.main>
 		</>
 	)
 }

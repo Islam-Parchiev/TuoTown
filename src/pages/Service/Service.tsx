@@ -1,6 +1,7 @@
 import React from 'react'
 
 import {Helmet} from 'react-helmet';
+import { motion } from 'framer-motion';
 
 import Sidebar from '../../components/Sidebar/Sidebar'
 import ServiceHeader from '../../components/ServiceHeader/ServiceHeader'
@@ -20,7 +21,11 @@ const Service:React.FC<IToggleSidebar> = ({toggleSidebar,setToggleSidebar}) => {
 				<meta charSet="utf-8"/>
 				<title>Service</title>
 			</Helmet>
-			<div className="Service">
+			<motion.main 
+				className="Service"
+				initial={{width:0}}
+				animate={{width:'100%'}}
+				exit={{x:window.innerWidth,transition:{duration:0.1}}}>
 				{toggleSidebar === true ? (
 					<Sidebar
 						toggleSidebar={toggleSidebar}
@@ -32,7 +37,7 @@ const Service:React.FC<IToggleSidebar> = ({toggleSidebar,setToggleSidebar}) => {
 					<ServiceForm/>
 					<Send/>
 				</div>
-			</div>
+			</motion.main>
 		</>		
 	)
 }

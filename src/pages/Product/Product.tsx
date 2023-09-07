@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 
 import {Helmet} from 'react-helmet';
+import { motion } from 'framer-motion';
 
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
@@ -82,7 +83,12 @@ const Product:React.FC<IToggleSidebar> = ({toggleSidebar,setToggleSidebar}) => {
 				<title>{product?.title}</title>
 			</Helmet>
 
-			<main ref={mainRef} className="Product">
+			<motion.main 
+				ref={mainRef} 
+				className="Product"
+				initial={{width:0}}
+				animate={{width:'100%'}}
+				exit={{x:window.innerWidth,transition:{duration:0.1}}}>
 				{toggleSidebar === true ? <Sidebar toggleSidebar={toggleSidebar} setToggleSidebar={setToggleSidebar}/> :null}
 				{scroll > 1500 ? <ToTop/> :null}
 
@@ -92,7 +98,7 @@ const Product:React.FC<IToggleSidebar> = ({toggleSidebar,setToggleSidebar}) => {
 				<ProductSlider/>
 				<ProductVideo/>
 				<Specifications/>
-			</main>
+			</motion.main>
 		</>
 	)
 }

@@ -65,25 +65,25 @@ const Sidebar: FC<IToggleSidebar> = ({ toggleSidebar, setToggleSidebar }) => {
 					</svg>
 				</button>
 				<ul className="list-reset Sidebar__list">
-					<li className="Sidebar__list-item">
+					<li className="Sidebar__list-item" onClick={()=> setToggleSidebar(false)}>
 						<Link to="/catalog">Каталог </Link>
 					</li>
-					<li className="Sidebar__list-item">
+					<li className="Sidebar__list-item" onClick={()=> setToggleSidebar(false)}>
 						<Link to="/service">Сервис </Link>
 					</li>
-					<li className="Sidebar__list-item">
+					<li className="Sidebar__list-item" onClick={()=> setToggleSidebar(false)}>
 						<Link to="/">Кухонные ножи QXF </Link>
 					</li>
-					<li className="Sidebar__list-item">
+					<li className="Sidebar__list-item" onClick={()=> setToggleSidebar(false)}>
 						<Link to="/">Точильные камни </Link>
 					</li>
-					<li className="Sidebar__list-item">
+					<li className="Sidebar__list-item" onClick={()=> setToggleSidebar(false)}>
 						<Link to="/">Наборы для BBQ </Link>
 					</li>
-					<li className="Sidebar__list-item">
+					<li className="Sidebar__list-item" onClick={()=> setToggleSidebar(false)}>
 						<Link to="/">Кухонные принадлежности </Link>
 					</li>
-					<li className="Sidebar__list-item">
+					<li className="Sidebar__list-item" onClick={()=> setToggleSidebar(false)}>
 						<Link to="/">Туристические товары</Link>
 					</li>
 				</ul>
