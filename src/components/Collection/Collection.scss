@@ -7,10 +7,10 @@
     align-items: end;
     justify-content: center;
     grid-column: 2 span;
+    border-radius: 15px;
     height: 480px;
     max-width: 590px;
     background-image: url("../../../public/img/collection/bg.png");
-    border-radius: 15px;
 
     &__title {
         font-family: Montserrat;
