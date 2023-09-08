@@ -51,7 +51,7 @@ const Catalog:React.FC<IToggleSidebar> = ({toggleSidebar,setToggleSidebar}) => {
 	const sortByPrice= sort===true?'&sortBy=price&order=asc':'';
 
 	useEffect(()=> {
-    if(window.location.search) {
+    	if(window.location.search) {
 			const params = qs.parse(window.location.search.substring(1));
 			console.log('params:Catalog',params);
 			// {sort: 'true', new: 'true', search: '', page: '2'}

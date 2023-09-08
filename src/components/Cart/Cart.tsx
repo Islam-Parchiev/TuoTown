@@ -15,14 +15,14 @@ const Cart: React.FC = () => {
 	return (
 		<div className="Cart">
 			<ul className="list-reset Cart-items">
-				{items.map(item => (
+				{items.length > 0  ? items.map(item => (
 					<BasketItem 
 						id={item.id} 
 						imageUrl={item.imageUrl} 
 						price={item.price} 
 						title={item.title}
 						count={item.count}/>
-				))}
+				)): <h2 className="Cart__empty">Корзина пуста</h2>}
 			
 			</ul>
 			<div className="Cart-footer">
