@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
+
 
 import Send from '../../components/Send/Send'
 import Sidebar from '../../components/Sidebar/Sidebar'
@@ -15,11 +15,8 @@ import { IToggleSidebar } from '../../types/Sidebar'
 
 const Basket: React.FC<IToggleSidebar> = ({ toggleSidebar, setToggleSidebar }) => {
 	return (
-		<motion.main 
-			className="Basket"
-			initial={{width:0}}
-			animate={{width:'100%'}}
-			exit={{x:window.innerWidth,transition:{duration:0.1}}}>
+		<main 
+			className="Basket">
 			{toggleSidebar === true ? (
 				<Sidebar
 					toggleSidebar={toggleSidebar}
@@ -123,7 +120,7 @@ const Basket: React.FC<IToggleSidebar> = ({ toggleSidebar, setToggleSidebar }) =
 				</div>
 				<Send />
 			</div>
-		</motion.main>
+		</main>
 	)
 }
 

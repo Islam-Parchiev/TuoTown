@@ -1,7 +1,7 @@
 import {FC, useRef,useEffect, useState} from 'react'
 
 import {Helmet} from 'react-helmet';
-import { motion } from 'framer-motion';
+
 
 import Quantity from '../../components/Quantity/Quantity'
 import Categories from '../../components/Categories/Categories'
@@ -31,12 +31,9 @@ const Main:FC<IToggleSidebar> = ({toggleSidebar,setToggleSidebar}) => {
 				<meta charSet="utf-8"/>
 				<title>Main</title>
 			</Helmet>
-			<motion.main 
+			<main 
 				ref={mainRef} 
-				className="Main"
-				initial={{width:0}}
-				animate={{width:'100%'}}
-				exit={{x:window.innerWidth,transition:{duration:0.1}}}>
+				className="Main">
 				{toggleSidebar === true ? <Sidebar toggleSidebar={toggleSidebar} setToggleSidebar={setToggleSidebar}/>:null}
 				{scroll > 1500 ? <ToTop/> :null}
 				<Quantity/>
@@ -44,7 +41,7 @@ const Main:FC<IToggleSidebar> = ({toggleSidebar,setToggleSidebar}) => {
 				<AboutUs/>
 				<Interesting/>
 			
-			</motion.main>
+			</main>
 		</>
 	)
 }

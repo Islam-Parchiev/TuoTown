@@ -1,7 +1,7 @@
 import React from 'react'
 
 import {Helmet} from 'react-helmet';
-import { motion } from 'framer-motion';
+
 
 import './Map.scss';
 import { IToggleSidebar } from '../../types/Sidebar';
@@ -18,11 +18,8 @@ const Map:React.FC<IToggleSidebar> = ({toggleSidebar,setToggleSidebar}) => {
 				<title>Map</title>
 				
 			</Helmet>
-			<motion.main 
-				className="Map"
-				initial={{width:0}}
-				animate={{width:'100%'}}
-				exit={{x:window.innerWidth,transition:{duration:0.1}}}>
+			<main 
+				className="Map">
 				{toggleSidebar === true ? (
 					<Sidebar
 						toggleSidebar={toggleSidebar}
@@ -33,7 +30,7 @@ const Map:React.FC<IToggleSidebar> = ({toggleSidebar,setToggleSidebar}) => {
 					<MapHeader/>
 					<MapBody/>
 				</div>
-			</motion.main>
+			</main>
 		</>
 	)
 }
