@@ -14,7 +14,7 @@ import { IToggleSidebar } from '../../types/Sidebar';
 const Main:FC<IToggleSidebar> = ({toggleSidebar,setToggleSidebar}) => {
 	const mainRef = useRef<HTMLElement>(null)
 	const [scroll, setScroll] = useState<number>(0);
-	console.log(scroll)
+	// console.log(scroll)
   	const handleScroll = () => {
    	 setScroll(window.scrollY);
  	 };

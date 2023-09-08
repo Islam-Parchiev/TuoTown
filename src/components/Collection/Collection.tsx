@@ -4,7 +4,8 @@ import './Collection.scss'
 interface ICollection {
 	otherClass?:string
 }
-const Collection: React.FC<ICollection> = ({ otherClass }) => {
+const Collection: React.FC<ICollection> = React.memo(({ otherClass }) => {
+	console.log('collectionrender');
 	return (
 		<li className={`collection ${otherClass ? otherClass : ''}`}>
 			<div className="collection__info">
@@ -27,6 +28,7 @@ const Collection: React.FC<ICollection> = ({ otherClass }) => {
 			</div>
 		</li>
 	)
-}
+})
+
 
 export default Collection

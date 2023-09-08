@@ -1,7 +1,7 @@
 import React from 'react'
 
 import styles from './Send.module.scss'
-const Send: React.FC = () => {
+const Send: React.FC = React.memo(() => {
 	return (
 		<div className={styles.Send}>
 			<h2 className={`${styles.Send__title}`}>
@@ -34,6 +34,6 @@ const Send: React.FC = () => {
 			</form>
 		</div>
 	)
-}
+})
 
 export default Send

@@ -15,7 +15,7 @@ const CategoriesGoods:FC<{category:number}> = ({category}) => {
 			.then(data => setKnives(data))
 			.finally(()=> setStatus('success'))
 	}, [category])
-
+    
 	return (
 		<ul className="list-reset Categories__goods">
 			<Collection />

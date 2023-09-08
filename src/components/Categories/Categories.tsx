@@ -1,6 +1,7 @@
 import React from 'react'
 import { ErrorBoundary } from 'react-error-boundary'
-import { motion } from 'framer-motion'
+// import {useWhyDidYouUpdate} from 'ahooks'
+// import { motion } from 'framer-motion'
 
 import ErrorFallback from '../ErrorFallback/ErrorFallback'
 
@@ -8,19 +9,20 @@ import Send from '../Send/Send'
 
 import './Categories.scss'
 import CategoriesGoods from '../CategoriesGoods/CategoriesGoods'
+import CategoriesList from '../CategoriesList/CategoriesList'
 
 
-const ulAnimation = {
-	hidden:{
-      	y:-100,
-	  	opacity:0,
-	},
-	visible:(custom:any)=>({
-		y:0,
-	  	opacity:1,
-	  	transition:{delay:custom * 0.2},
-	}),
-}
+// const ulAnimation = {
+// 	hidden:{
+//       	y:-100,
+// 	  	opacity:0,
+// 	},
+// 	visible:(custom:any)=>({
+// 		y:0,
+// 	  	opacity:1,
+// 	  	transition:{delay:custom * 0.2},
+// 	}),
+// }
 
 const Categories = () => {
 	
@@ -32,12 +34,16 @@ const Categories = () => {
 	// 		.then(data => setKnives(data))
 	// }, [category])
 	
+	const onChangeCategory = React.useCallback((number:number)=> {
+		setCategory(number)
+	},[])
+
 	return (
 		<section className="Categories">
 			{/* {category} */}
 			<div className="container Categories__container">
 				<div className="Categories__top">
-					<motion.ul 
+				{/* <motion.ul 
                     	initial="hidden"
 						whileInView="visible"
                         	viewport={{amount:0.2,once:true}}
@@ -426,7 +432,8 @@ const Categories = () => {
 								Аксессуары для кухни
 							</h4>
 						</motion.li>
-					</motion.ul>
+					</motion.ul> */}
+					<CategoriesList category={category} setCategory={onChangeCategory} />
 				</div>
 				<div className="Categories__bottom">
 					<ErrorBoundary 

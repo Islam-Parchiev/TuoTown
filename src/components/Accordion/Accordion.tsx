@@ -1,4 +1,4 @@
-import {useState,FC} from 'react'
+import {useState,FC,memo} from 'react'
 
 import './Accordion.scss';
 
@@ -7,7 +7,7 @@ interface IAccordion {
 	title:string
 }
 
-const Accordion:FC<IAccordion> = ({children,title}) => {
+const Accordion:FC<IAccordion> = memo(({children,title}) => {
 	const [open,setOpen] = useState<boolean>(false);
 	return (
 		<div className={`Accordion ${open && 'active'}`}>
@@ -26,6 +26,6 @@ const Accordion:FC<IAccordion> = ({children,title}) => {
 			</div>
 		</div>
 	)
-}
+})
 
 export default Accordion
