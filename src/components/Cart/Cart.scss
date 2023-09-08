@@ -1,5 +1,6 @@
 @import "../../scss/mixins/mini";
 @import "../../scss/mixins/breakpoint";
+
 .Cart {
     margin: 0 auto;
     width: 100%;
@@ -30,7 +31,7 @@
     }
 
     &-price {
-      @include flex-v-center;
+        @include flex-v-center;
         font-family: Jura;
         font-weight: 500;
         font-style: normal;
@@ -44,10 +45,12 @@
     &-value {
         margin-left: 10px;
     }
+
     &__empty {
         text-align: center;
-        color:var(--light-color);
+        color: var(--light-color);
     }
+
     @include mobile {
         width: 90%;
     }

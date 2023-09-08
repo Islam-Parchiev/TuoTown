@@ -8,7 +8,7 @@ import AboutUs from './AboutUs';
 describe('AboutUs component',()=> {
 		 it('AboutUs renders',()=> {
 		 render(<AboutUs/>);
-		//  expect(screen.getByRole('list')).toBeInTheDocument();
+	
 		expect(screen.getByText(/легендарные ножи/i)).toBeInTheDocument();
 
 	});

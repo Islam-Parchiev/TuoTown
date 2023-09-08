@@ -1,5 +1,6 @@
 @import "../../scss/mixins/mini";
 @import "../../scss/mixins/breakpoint";
+
 .header {
     position: absolute;
     right: 0;
@@ -8,8 +9,9 @@
     width: 100%;
     height: 71px;
     background-color: rgba(#212121, 0.8);
+
     &__sidebarBtn {
-        
+
         svg {
             stroke: var(--light-color);
 
@@ -17,7 +19,7 @@
                 stroke: var(--hover-color);
             }
         }
-       
+
     }
 
     &__positionBtn {
@@ -28,6 +30,7 @@
                 stroke: var(--hover-color);
             }
         }
+
         @include mobile {
             display: none;
         }
@@ -35,6 +38,7 @@
 
     &__basket {
         position: relative;
+
         svg {
             fill: var(--light-color);
 
@@ -45,17 +49,18 @@
     }
 
     &__basketCount {
-      @include flex-all-center;
-      position: absolute;
-      right: -9px;
-      top: -9px;
-      z-index: 10;
-      border-radius: 100%;
-      width: 17px;
-      height: 17px;
-      color:var(--light-color);
-      background-color: var(--red-color);
+        @include flex-all-center;
+        position: absolute;
+        right: -9px;
+        top: -9px;
+        z-index: 10;
+        border-radius: 100%;
+        width: 17px;
+        height: 17px;
+        color: var(--light-color);
+        background-color: var(--red-color);
     }
+
     &__mail {
         svg {
             stroke: var(--light-color);
@@ -64,6 +69,7 @@
                 stroke: var(--hover-color);
             }
         }
+
         @include mobile {
             display: none;
         }
@@ -103,10 +109,12 @@
         &:hover {
             color: var(--hover-color);
         }
+
         @include small-tablet {
             display: none;
         }
     }
+
     @include small-tablet {
         border-style: solid;
         border-width: 5px;
@@ -115,6 +123,6 @@
         border-left: 0;
         border-image-source: linear-gradient(to left, rgba(255, 0, 0, 0.54), rgba(0, 0, 0, 0.00));
         border-image-slice: 1;
-            background-color: #000;
+        background-color: #000;
     }
 }

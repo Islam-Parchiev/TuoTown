@@ -1,14 +1,14 @@
-
 import styles from './MapNav.module.scss'
 
 const MapNav = () => {
 	return (
 		<div className={styles.MapNav}>
 			<label className={styles.MapNav__search}>
-				<input 
-					type="text" 
-					className="input-reset" 
-					placeholder="Страна, город, улица..."/>
+				<input
+					type="text"
+					className="input-reset"
+					placeholder="Страна, город, улица..."
+				/>
 				<button className={`btn-reset ${styles.MapNav__search_btn}`}>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"

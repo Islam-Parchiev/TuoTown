@@ -2,10 +2,10 @@ import React from 'react'
 
 import './Collection.scss'
 interface ICollection {
-	otherClass?:string
+	otherClass?: string
 }
 const Collection: React.FC<ICollection> = React.memo(({ otherClass }) => {
-	console.log('collectionrender');
+
 	return (
 		<li className={`collection ${otherClass ? otherClass : ''}`}>
 			<div className="collection__info">
@@ -29,6 +29,5 @@ const Collection: React.FC<ICollection> = React.memo(({ otherClass }) => {
 		</li>
 	)
 })
-
 
 export default Collection

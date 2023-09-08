@@ -6,20 +6,20 @@ import { motion } from 'framer-motion'
 
 import 'swiper/css'
 import SliderNavigation from '../SliderNavigation/SliderNavigation'
-import {MButton} from '../Button/Button'
+import { MButton } from '../Button/Button'
 import Button from '../Button/Button'
 
 import styles from './Quantity.module.scss'
 
 const slideAnimation = {
-	hidden:{
-      	x:-1500,
-	  	// opacity:0,
+	hidden: {
+		x: -1500,
+		// opacity:0,
 	},
-	visible:(custom:any)=>({
-		x:0,
-	  	// opacity:1,
-	  	transition:{delay:custom * 0.5},
+	visible: (custom: any) => ({
+		x: 0,
+		// opacity:1,
+		transition: { delay: custom * 0.5 },
 	}),
 }
 const Quantity: FC = () => {
@@ -31,20 +31,19 @@ const Quantity: FC = () => {
 				pagination={{ clickable: true }}
 				className={`${styles.quantity__slider}`}>
 				<SwiperSlide>
-					<motion.div 
+					<motion.div
 						className={`${styles.quantity__slide}`}
 						initial="hidden"
 						whileInView="visible"
-						viewport={{amount:0.2,once:true}}>
-						<div 
-							className={`${styles.quantity__slide_text}`}>
-							<motion.h1 
+						viewport={{ amount: 0.2, once: true }}>
+						<div className={`${styles.quantity__slide_text}`}>
+							<motion.h1
 								className={`${styles.quantity__title}`}
 								variants={slideAnimation}
 								custom={1}>
 								Исключительное качество без компромиссов1
 							</motion.h1>
-							<motion.div 
+							<motion.div
 								className={`${styles.quantity__descr}`}
 								variants={slideAnimation}
 								custom={1}>
@@ -55,14 +54,16 @@ const Quantity: FC = () => {
 						{/* <button className={`btn-reset ${styles.quantity__btn}`}>
 							ПОДРОБНЕЕ
 						</button> */}
-						<MButton 
-							size="medium" 
-							variant="secondary" 
+						<MButton
+							size="medium"
+							variant="secondary"
 							variants={slideAnimation}
 							custom={0.4}
 							type="two"
-							onclick={()=> console.log('click')}
-							otherClass={styles.quantity__btn}>Подронее</MButton>
+							onclick={() => console.log('click')}
+							otherClass={styles.quantity__btn}>
+							Подронее
+						</MButton>
 					</motion.div>
 				</SwiperSlide>
 				<SwiperSlide>
@@ -76,12 +77,14 @@ const Quantity: FC = () => {
 								секрет кулинарного мастерства
 							</div>
 						</div>
-						<Button 
-							size="medium" 
-							variant="secondary" 
+						<Button
+							size="medium"
+							variant="secondary"
 							type="two"
-							onclick={()=> console.log('click')}
-							otherClass={styles.quantity__btn}>Подронее</Button>
+							onclick={() => console.log('click')}
+							otherClass={styles.quantity__btn}>
+							Подронее
+						</Button>
 					</div>
 				</SwiperSlide>
 				<SwiperSlide>
@@ -95,12 +98,14 @@ const Quantity: FC = () => {
 								секрет кулинарного мастерства
 							</div>
 						</div>
-						<Button 
-							size="medium" 
-							variant="secondary" 
+						<Button
+							size="medium"
+							variant="secondary"
 							type="two"
-							onclick={()=> console.log('click')}
-							otherClass={styles.quantity__btn}>Подронее</Button>
+							onclick={() => console.log('click')}
+							otherClass={styles.quantity__btn}>
+							Подронее
+						</Button>
 					</div>
 				</SwiperSlide>
 				<SliderNavigation />

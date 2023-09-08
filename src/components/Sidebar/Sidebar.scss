@@ -1,4 +1,5 @@
 @import "../../scss/mixins/mini";
+
 .Sidebar {
     @include flex-column-start;
     @include bg-cover;

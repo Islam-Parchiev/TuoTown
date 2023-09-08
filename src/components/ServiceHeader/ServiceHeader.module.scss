@@ -1,12 +1,13 @@
 @import "../../scss/mixins/mini";
 @import "../../scss/mixins/breakpoint";
+
 .ServiceHeader {
     @include flex-column-center;
     padding-top: 100px;
     text-align: center;
 
     &__nav {
-       @include flex-v-center;
+        @include flex-v-center;
         gap: 10px;
 
         &_item {
@@ -24,17 +25,20 @@
                     padding-bottom: 3px;
                     color: var(--light-color);
                 }
+
                 @include mobile {
                     width: 100%;
                     height: 100%;
                 }
             }
+
             @include mobile {
                 border: 1px solid var(--light-color);
                 border-radius: 15px;
                 padding: 5px;
             }
         }
+
         @include mobile {
             flex-wrap: wrap;
             justify-content: center;

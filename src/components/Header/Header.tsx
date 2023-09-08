@@ -3,35 +3,28 @@ import { Link } from 'react-router-dom'
 
 import { useAppSelector } from '../../redux/store'
 
-
 import { IToggleSidebar } from '../../types/Sidebar'
 import { selectCart } from '../../redux/slices/cartSlice'
 import HeaderSearch from '../HeaderSearch/HeaderSearch'
 
 import styles from './Header.module.scss'
 
-
-
-
 const Header: FC<IToggleSidebar> = ({ toggleSidebar, setToggleSidebar }) => {
-	const {items} = useAppSelector(selectCart)
-	const isMounted = React.useRef(false);
-	const [headerSearch,setHeaderSearch] = useState<boolean>(false);
+	const { items } = useAppSelector(selectCart)
+	const isMounted = React.useRef(false)
+	const [headerSearch, setHeaderSearch] = useState<boolean>(false)
 
-	useEffect(()=> {
- 
-		if(isMounted.current) {
-			const json = JSON.stringify(items);
-			localStorage.setItem('cartItems',json);
+	useEffect(() => {
+		if (isMounted.current) {
+			const json = JSON.stringify(items)
+			localStorage.setItem('cartItems', json)
 
-			console.log('aaaaaaaaaaaaaaaaaaaaaaaaa',json);
-			// @ts-ignore
-			// console.log('ls',JSON.parse(localStorage.getItem('cartItems')))
+			
 		}
-		isMounted.current = true;
- 	},[items])
+		isMounted.current = true
+	}, [items])
 
-	console.log(items);
+	
 	return (
 		<header className={styles.header}>
 			<div className={`container ${styles.header__container}`}>
@@ -58,8 +51,8 @@ const Header: FC<IToggleSidebar> = ({ toggleSidebar, setToggleSidebar }) => {
 							<circle cx="19.5" cy="19.5" r="3" />
 						</svg>
 					</button>
-					<Link 
-						to="/map" 
+					<Link
+						to="/map"
 						className={styles.header__positionBtn}
 						aria-label="Открыть карту"
 						title="Карта">
@@ -89,28 +82,30 @@ const Header: FC<IToggleSidebar> = ({ toggleSidebar, setToggleSidebar }) => {
 							/>
 						</svg>
 					</Link>
-					<a 
-						href="tel:89811201117" 
-						className={styles.header__phone} 	
+					<a
+						href="tel:89811201117"
+						className={styles.header__phone}
 						aria-label="Номер телефона"
 						title="Номер телефона">
 						8 981 120-11-17
 					</a>
 				</div>
-				<Link 
-					to="/" 
-					className={styles.header__column} 
+				<Link
+					to="/"
+					className={styles.header__column}
 					aria-label="Логотип"
 					title="Логотип">
-					<img src="img/header/logo.png" alt="logo"/>
+					<img src="img/header/logo.png" alt="logo" />
 				</Link>
 				<div className={styles.header__column}>
-					<Link 
-						to="/basket" 
+					<Link
+						to="/basket"
 						className={`btn-reset ${styles.header__basket}`}
 						title="Корзина"
 						aria-label="Перейти в корзину">
-						<span className={styles.header__basketCount}>{items.length}</span>
+						<span className={styles.header__basketCount}>
+							{items.length}
+						</span>
 						<svg
 							width="19"
 							height="23"
@@ -165,8 +160,8 @@ const Header: FC<IToggleSidebar> = ({ toggleSidebar, setToggleSidebar }) => {
 						</svg>
 					</Link>
 
-					<Link 
-						to="/service" 
+					<Link
+						to="/service"
 						className={`btn-reset ${styles.header__mail}`}
 						title="Сервис"
 						aria-label="Перейти на страницу обратной связи">
@@ -193,8 +188,8 @@ const Header: FC<IToggleSidebar> = ({ toggleSidebar, setToggleSidebar }) => {
 						</svg>
 					</Link>
 
-					<button 
-						onClick={()=> setHeaderSearch(!headerSearch)} 
+					<button
+						onClick={() => setHeaderSearch(!headerSearch)}
 						className={`btn-reset ${styles.header__search}`}
 						title="Поиск"
 						aria-label="Открыть поле поиска">
@@ -221,11 +216,7 @@ const Header: FC<IToggleSidebar> = ({ toggleSidebar, setToggleSidebar }) => {
 						</svg>
 					</button>
 				</div>
-				{
-					headerSearch && <HeaderSearch setHeaderSearch={setHeaderSearch}/>
-
-				}
-				
+				{headerSearch && <HeaderSearch setHeaderSearch={setHeaderSearch} />}
 			</div>
 		</header>
 	)

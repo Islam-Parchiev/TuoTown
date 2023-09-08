@@ -5,37 +5,35 @@ import { motion } from 'framer-motion'
 import './AboutUs.scss'
 
 const aboutUsTopAnimation = {
-	hidden:{
-      	x:-1800,
-	  	// opacity:0,
+	hidden: {
+		x: -1800,
 	},
-	visible:(custom:any)=>({
-		x:0,
-	  	// opacity:1,
-	  	transition:{delay:custom * 0.5},
+	visible: (custom: any) => ({
+		x: 0,
+
+		transition: { delay: custom * 0.5 },
 	}),
 }
 const aboutUsBottomAnimation = {
-	hidden:{
-      	x:1800,
-	  	// opacity:0,
+	hidden: {
+		x: 1800,
 	},
-	visible:(custom:any)=>({
-		x:0,
-	  	// opacity:1,
-	  	transition:{delay:custom * 0.5},
+	visible: (custom: any) => ({
+		x: 0,
+
+		transition: { delay: custom * 0.5 },
 	}),
 }
 const AboutUs: React.FC = () => {
 	return (
-		<motion.section  
-			data-testid="AboutUs" 
+		<motion.section
+			data-testid="AboutUs"
 			className="AboutUs"
 			initial="hidden"
 			whileInView="visible"
-			viewport={{amount:0.2,once:true}}>
+			viewport={{ amount: 0.2, once: true }}>
 			<div className="container AboutUs__container">
-				<motion.div 
+				<motion.div
 					className="AboutUs__top"
 					variants={aboutUsTopAnimation}
 					custom={1}>
@@ -58,7 +56,8 @@ const AboutUs: React.FC = () => {
 						</p>
 					</div>
 				</motion.div>
-				<motion.div className="AboutUs__bottom"
+				<motion.div
+					className="AboutUs__bottom"
 					variants={aboutUsBottomAnimation}
 					custom={1}>
 					<div className="AboutUs__bottom-text">

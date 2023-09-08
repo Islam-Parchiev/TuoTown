@@ -1,12 +1,15 @@
 @import "../../scss/mixins/breakpoint";
+
 .ProductSlider {
     display: flex;
     justify-content: center;
     background-color: var(--charleston-color);
 }
+
 .ProductCarousel {
     overflow-y: hidden;
 }
+
 .ProductSlider__slide {
     border-radius: 15px;
     width: 900px !important;
@@ -17,6 +20,7 @@
         height: 100%;
         object-fit: cover;
     }
+
     @include mobile {
         width: 350px !important;
     }

@@ -1,4 +1,5 @@
 @import "../../scss/mixins/mini";
+
 .Accordion {
     display: block;
     border-bottom: 1px solid #4F4F4F;
@@ -30,9 +31,7 @@
             font-size: 14px;
             line-height: 140%;
             color: var(--text-light, #ADACAC);
-            /* p small/regular */
 
-            /* 19.6px */
             &:hover {
                 color: var(--light-color);
             }

@@ -14,7 +14,7 @@
     "singleAttributePerLine": false,
     "singleQuote": true,
     "tabWidth": 5,
-    "trailingComma": "none",
+    "trailingComma": "all",
     "useTabs": true,
     "vueIndentScriptAndStyle": false
   }

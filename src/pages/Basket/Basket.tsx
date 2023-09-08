@@ -2,21 +2,17 @@ import React from 'react'
 
 import { Link } from 'react-router-dom'
 
-
 import Send from '../../components/Send/Send'
 import Sidebar from '../../components/Sidebar/Sidebar'
 import Form from '../../components/Form/Form'
-
 
 import './Basket.scss'
 import Cart from '../../components/Cart/Cart'
 import { IToggleSidebar } from '../../types/Sidebar'
 
-
 const Basket: React.FC<IToggleSidebar> = ({ toggleSidebar, setToggleSidebar }) => {
 	return (
-		<main 
-			className="Basket">
+		<main className="Basket">
 			{toggleSidebar === true ? (
 				<Sidebar
 					toggleSidebar={toggleSidebar}
@@ -45,9 +41,9 @@ const Basket: React.FC<IToggleSidebar> = ({ toggleSidebar, setToggleSidebar }) =
 						</Link>
 						<h1 className="Basket__title">Корзина</h1>
 					</div>
-					
-					<Cart/>
- 					<ul className="list-reset Basket__services">
+
+					<Cart />
+					<ul className="list-reset Basket__services">
 						<li className="Basket__services-item services__item">
 							<div className="services__item-img">
 								<svg
@@ -115,8 +111,8 @@ const Basket: React.FC<IToggleSidebar> = ({ toggleSidebar, setToggleSidebar }) =
 							</div>
 						</li>
 					</ul>
-				
-					<Form/>
+
+					<Form />
 				</div>
 				<Send />
 			</div>

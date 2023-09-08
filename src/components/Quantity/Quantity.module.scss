@@ -1,5 +1,6 @@
 @import "../../scss/mixins/mini";
 @import "../../scss/mixins/breakpoint";
+
 .quantity {
     @include flex-all-center;
     width: 100%;
@@ -14,12 +15,15 @@
         height: 590px;
         text-align: left;
         background-image: url("./slide.jpg");
+
         &_text {
             max-width: 500px;
         }
+
         @include tablet {
             padding: 0 40px;
         }
+
         @include mobile {
             padding: 0 20px;
         }

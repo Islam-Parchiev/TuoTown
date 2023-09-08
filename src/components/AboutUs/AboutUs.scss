@@ -1,22 +1,25 @@
-
 @import "../../scss/mixins/mini";
 @import "../../scss/mixins/breakpoint";
+
 .AboutUs {
     overflow-x: hidden;
+
     &__top {
         @include flex-v-center;
         gap: 50px;
 
         &-text {
             width: 70%;
+
             @include mobile {
                 width: 100%;
             }
         }
+
         @include mobile {
             flex-direction: column;
             gap: 20px;
-        } 
+        }
     }
 
     &__title {
@@ -49,6 +52,7 @@
             height: 100%;
             object-fit: cover;
         }
+
         @include mobile {
             width: 70%;
             height: 240px;
@@ -58,8 +62,10 @@
     &__bottom {
         display: flex;
         gap: 50px;
+
         &-text {
             width: 70%;
+
             @include mobile {
                 width: 100%;
             }
@@ -77,6 +83,7 @@
                 height: 100%;
                 object-fit: cover;
             }
+
             @include mobile {
                 width: 70%;
                 height: 240px;

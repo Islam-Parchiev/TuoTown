@@ -1,5 +1,6 @@
 @import "../../scss/mixins/mini";
 @import "../../scss/mixins/breakpoint";
+
 .MapContent {
 	display: flex;
 	align-items: start;
@@ -9,15 +10,18 @@
 	&__map {
 		width: 860px;
 		height: 770px;
+
 		@include mobile {
 			width: 100%;
 			height: 400px;
 		}
+
 		@include tablet {
 			width: 100%;
 			height: 500px;
 		}
 	}
+
 	&__left {
 		@include tablet {
 			width: 100%;
@@ -36,6 +40,7 @@
 		display: flex;
 		flex-direction: column;
 		gap: 15px;
+
 		@include tablet {
 			width: 100%;
 			height: 300px;
@@ -63,10 +68,11 @@
 			background-color: rgb(255, 0, 0);
 			/* цвет плашки */
 		}
+
 		@include tablet {
 			display: flex;
 			overflow-x: scroll;
-			overflow-y:hidden; 
+			overflow-y: hidden;
 		}
 	}
 
@@ -116,11 +122,13 @@
 			align-items: center;
 			gap: 10px;
 		}
+
 		@include tablet {
 			flex-shrink: 0;
 			width: 350px;
 		}
 	}
+
 	@include tablet {
 		flex-direction: column;
 		width: 100%;

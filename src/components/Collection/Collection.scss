@@ -1,5 +1,6 @@
 @import "../../scss/mixins/mini";
 @import "../../scss/mixins/breakpoint";
+
 .collection {
     @include bg-cover;
     display: flex;
@@ -10,6 +11,7 @@
     max-width: 590px;
     background-image: url("../../../public/img/collection/bg.png");
     border-radius: 15px;
+
     &__title {
         font-family: Montserrat;
         font-weight: 600;
@@ -20,7 +22,7 @@
     }
 
     &__info {
-       @include flex-v-center;
+        @include flex-v-center;
         gap: 90px;
 
         svg {
@@ -32,12 +34,14 @@
 
             }
         }
+
         @include mobile {
             gap: 30px;
         }
     }
+
     @include mobile {
-       
+
         width: 90%;
         height: 160px;
     }

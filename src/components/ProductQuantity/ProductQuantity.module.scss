@@ -1,10 +1,11 @@
 @import "../../scss/mixins/mini";
 @import "../../scss/mixins/breakpoint";
+
 .ProductQuantity {
     @include bg-cover;
     height: 50vh;
     background-image: url("./slide.jpg");
-   
+
 
     &__container {
         @include flex-h-center;
@@ -44,6 +45,7 @@
         line-height: normal;
         color: var(--light-color);
     }
+
     @include mobile {
         &__btn {
             margin-top: 20px;

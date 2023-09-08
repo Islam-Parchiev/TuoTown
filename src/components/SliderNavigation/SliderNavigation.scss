@@ -1,5 +1,6 @@
 @import "../../scss/mixins/mini";
 @import "../../scss/mixins/breakpoint";
+
 .SliderNavigation {
     position: absolute;
     right: 0;
@@ -9,16 +10,18 @@
     justify-content: space-between;
     padding: 0 22%;
     width: 100%;
+
     @include tablet {
         padding: 0 30px;
     }
+
     @include mobile {
         display: none;
     }
 }
 
 .slider-prev {
-   @include flex-all-center;
+    @include flex-all-center;
     border: 1px solid var(--light-color);
     border-radius: 100%;
     width: 33px;

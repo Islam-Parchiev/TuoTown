@@ -1,25 +1,25 @@
-import React,{useRef} from 'react'
+import React, { useRef } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
-import { ToastContainer,toast } from 'react-toastify';
-import emailjs from '@emailjs/browser';
+import { ToastContainer, toast } from 'react-toastify'
+import emailjs from '@emailjs/browser'
 
 import { IServiceFormFields } from '../../types/Form'
 
 import styles from './ServiceForm.module.scss'
 
-
 const ServiceForm: React.FC = () => {
-	const notify = () => toast.success('Отправлено!', {
-		position: 'top-right',
-		autoClose: 5000,
-		hideProgressBar: false,
-		closeOnClick: true,
-		pauseOnHover: true,
-		draggable: true,
-		progress: undefined,
-		theme: 'dark',
-	});
+	const notify = () =>
+		toast.success('Отправлено!', {
+			position: 'top-right',
+			autoClose: 5000,
+			hideProgressBar: false,
+			closeOnClick: true,
+			pauseOnHover: true,
+			draggable: true,
+			progress: undefined,
+			theme: 'dark',
+		})
 	const {
 		register,
 		handleSubmit,
@@ -28,29 +28,37 @@ const ServiceForm: React.FC = () => {
 	} = useForm<IServiceFormFields>({
 		mode: 'onChange',
 	})
-	const form = useRef<HTMLFormElement>(null);
+	const form = useRef<HTMLFormElement>(null)
 	const sendEmail = () => {
-	
-		emailjs.sendForm('service_c5fenef', 'template_xoiy8ec', form?.current || '', 'DQkHD520RftRbJ7wx')
-		  .then((result) => {
-			  console.log(result.text);
-		  }, (error) => {
-			  console.log(error.text);
-		  });
+		emailjs
+			.sendForm(
+				'service_c5fenef',
+				'template_xoiy8ec',
+				form?.current || '',
+				'DQkHD520RftRbJ7wx',
+			)
+			.then(
+				result => {
+					console.log(result.text)
+				},
+				error => {
+					console.log(error.text)
+				},
+			)
+	}
 
-	  };
-
-	const onSubmit: SubmitHandler<IServiceFormFields> = data => {
-		console.log(data)
-		sendEmail();
+	const onSubmit: SubmitHandler<IServiceFormFields> = () => {
+		sendEmail()
 		notify()
 		reset()
 	}
 
- 
 	return (
 		<div className={styles.ServiceForm__wrapper}>
-			<form ref={form} onSubmit={handleSubmit(onSubmit)} className={styles.ServiceForm}>
+			<form
+				ref={form}
+				onSubmit={handleSubmit(onSubmit)}
+				className={styles.ServiceForm}>
 				<div className={styles.ServiceForm__top}>
 					<label className={styles.ServiceForm__input}>
 						<span>Тема</span>

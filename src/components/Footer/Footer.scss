@@ -1,5 +1,6 @@
 @import "../../scss/mixins/mini";
 @import "../../scss/mixins/breakpoint";
+
 .Footer {
     width: 100%;
     min-height: 462px;
@@ -14,12 +15,13 @@
         &-container {
             display: flex;
             gap: 70px;
+
             @include tablet {
                 flex-direction: column;
                 padding-bottom: 30px;
                 gap: 20px;
             }
-            
+
         }
     }
 
@@ -30,6 +32,7 @@
         &-container {
             @include flex-all-sb;
             height: 100%;
+
             @include mobile {
                 flex-direction: column;
                 padding: 10px 10px;
@@ -45,16 +48,17 @@
             color: var(--light-color);
             opacity: 0.5;
         }
-       @include mobile {
-        min-height: 85px;
-       }
+
+        @include mobile {
+            min-height: 85px;
+        }
     }
 
     &__column {
         width: 33%;
 
         &--first {
-           @include flex-column-start;
+            @include flex-column-start;
             gap: 10px;
         }
 
@@ -97,6 +101,7 @@
                 opacity: 0.5;
             }
         }
+
         @include tablet {
             width: 100%;
         }
@@ -115,11 +120,12 @@
             line-height: 17px;
             color: var(--light-color);
         }
-       &-img {
-        width: 194px;
-        height: 47px;
-       }
-      
+
+        &-img {
+            width: 194px;
+            height: 47px;
+        }
+
         @include tablet {
             flex-direction: column;
             gap: 5px;
@@ -138,7 +144,7 @@
     &__row {
         @include flex-column-start;
         flex-wrap: wrap;
-        
+
 
         ul {
             @include flex-v-center;
@@ -184,7 +190,7 @@
         ul {
             @include flex-v-center;
             flex-wrap: wrap;
-            
+
             gap: 15px;
         }
 

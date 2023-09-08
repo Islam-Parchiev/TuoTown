@@ -1,13 +1,14 @@
 @import "../../scss/mixins/mini";
 @import "../../scss/mixins/breakpoint";
+
 .ProductInfo {
 
     &__list {
-       @include flex-column-center;
+        @include flex-column-center;
 
         padding: 40px 0;
         gap: 40px;
-      
+
     }
 }
 
@@ -28,22 +29,22 @@
             object-fit: cover;
 
         }
-      
+
 
     }
 
     &_descr {
         /* width: 300px; */
-       @include flex-column-start;
+        @include flex-column-start;
         gap: 15px;
     }
 
     &_text {
-       @include flex-h-center;
+        @include flex-h-center;
         align-items: start;
         order: 1;
         width: 400px;
-        
+
 
     }
 
@@ -71,19 +72,22 @@
     &:nth-child(2n) {
         .product__item_img {
             order: 1;
+
             @include mobile {
-                order:0;
+                order: 0;
             }
         }
 
         .product__item_text {
 
             order: 0;
-             @include mobile {
-            order:1;
-        }
+
+            @include mobile {
+                order: 1;
+            }
         }
     }
+
     @include mobile {
         flex-direction: column;
         gap: 0px;

@@ -1,54 +1,49 @@
 import React from 'react'
 
-import { ToastContainer,toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify'
 
+import { useForm, SubmitHandler } from 'react-hook-form'
 
-import { useForm,SubmitHandler } from 'react-hook-form';
+import { useAppSelector } from '../../redux/store'
 
-import { useAppSelector } from '../../redux/store';
+import { IShippingFields } from '../../types/Form'
 
+import 'react-toastify/dist/ReactToastify.css'
+import './Form.scss'
+import { selectCart } from '../../redux/slices/cartSlice'
 
-import { IShippingFields } from '../../types/Form';
+const Form: React.FC = () => {
+	const { items } = useAppSelector(selectCart)
+	const notify = () =>
+		toast.success('Заказ оформлен', {
+			position: 'top-right',
+			autoClose: 5000,
+			hideProgressBar: false,
+			closeOnClick: true,
+			pauseOnHover: true,
+			draggable: true,
+			progress: undefined,
+			theme: 'dark',
+		})
 
-import 'react-toastify/dist/ReactToastify.css';
-import './Form.scss';
-import { selectCart } from '../../redux/slices/cartSlice';
-
-const Form:React.FC = () => {
-	const {items} = useAppSelector(selectCart)
-	const notify = () => toast.success('Заказ оформлен', {
-		position: 'top-right',
-		autoClose: 5000,
-		hideProgressBar: false,
-		closeOnClick: true,
-		pauseOnHover: true,
-		draggable: true,
-		progress: undefined,
-		theme: 'dark',
-	});
-
-	
-  
 	const {
 		register,
-		// control,
 		handleSubmit,
 		formState: { errors },
 		reset,
 	} = useForm<IShippingFields>({
 		mode: 'onChange',
 	})
-	const onSubmit:SubmitHandler<IShippingFields> = (data) => {
+	const onSubmit: SubmitHandler<IShippingFields> = data => {
 		const order = {
 			...data,
 			...items,
 		}
 		notify()
-	
-		console.log('Ваш заказ:',order);
-	 reset()
+
+		console.log('Ваш заказ:', order)
+		reset()
 	}
-	// /^\+?(\d{1,3})?[- .]?\(?(?:\d{2,3})\)?[- .]?\d\d\d[- .]?\d\d\d\d$/
 	return (
 		<div className="Form">
 			<h2 className="Form-title">
@@ -60,7 +55,6 @@ const Form:React.FC = () => {
 						<label className="Form-label">
 							<span>Получатель</span>
 							<input
-								
 								{...register('name', {
 									required: 'Name is require field!',
 									maxLength: {
@@ -146,13 +140,16 @@ const Form:React.FC = () => {
 							</a>
 							, а также согласен получать информационную рассылку
 						</p>
-						<button disabled={items.length === 0}  className="btn-reset Form-btn" type="submit">
+						<button
+							disabled={items.length === 0}
+							className="btn-reset Form-btn"
+							type="submit">
 							Отправить форму
 						</button>
 					</div>
 				</form>
 			</div>
-	
+
 			<ToastContainer
 				position="top-right"
 				autoClose={5000}

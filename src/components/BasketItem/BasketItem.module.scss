@@ -1,5 +1,6 @@
 @import "../../scss/mixins/mini";
 @import "../../scss/mixins/breakpoint";
+
 .BasketItem {
     display: flex;
     justify-content: space-between;
@@ -7,16 +8,19 @@
     padding: 15px;
     width: 100%;
     background-color: #303030;
+
     &__title {
         color: var(--light-color);
+
         @include mobile {
             font-size: 14px;
         }
     }
 
     &__left {
-       @include flex-v-center;
+        @include flex-v-center;
         gap: 20px;
+
         @include mobile {
             flex-direction: column;
         }
@@ -36,6 +40,7 @@
     &__right {
         @include flex-v-center;
         gap: 15px;
+
         @include mobile {
             flex-direction: column;
             justify-content: end;
@@ -60,26 +65,31 @@
 
         &_plus {
             transform: rotate(180deg);
+
             @include mobile {
                 width: 20px;
                 height: 20px;
+
                 svg {
                     width: 100%;
                     height: 100%;
                 }
             }
         }
+
         &_minus {
             @include mobile {
                 margin-top: 5px;
                 width: 20px;
                 height: 20px;
+
                 svg {
                     width: 100%;
                     height: 100%;
                 }
             }
         }
+
         @include mobile {
             gap: 15px;
         }
@@ -92,6 +102,7 @@
         }
 
     }
+
     &__remove {
         @include mobile {
             position: absolute;
@@ -99,12 +110,13 @@
             top: 5%;
             width: 25px;
             height: 25px;
+
             svg {
                 width: 100%;
                 height: 100%;
             }
         }
-        
+
     }
 
     @include mobile {

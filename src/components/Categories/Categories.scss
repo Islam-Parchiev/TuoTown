@@ -12,26 +12,28 @@
         padding-top: 80px;
 
         row-gap: 40px;
-        
+
         @include tablet {
             grid-template-columns: repeat(2, 1fr);
         }
+
         @include mobile {
-        justify-items: center;
+            justify-items: center;
             grid-template-columns: repeat(2, 1fr);
-        padding-top: 20px;
-        padding-bottom: 20px;
+            padding-top: 20px;
+            padding-bottom: 20px;
         }
-        
-        
+
+
     }
 
     &__bottom {
-       @include flex-column-center;
+        @include flex-column-center;
     }
 
     &__list {
         @include flex-all-sb;
+
         @include mobile {
             flex-wrap: wrap;
             gap: 20px;
@@ -46,6 +48,7 @@
     &__listItem {
         @include flex-column-center;
         cursor: pointer;
+
         svg {
             width: 45px;
             height: 45px;
@@ -60,11 +63,13 @@
             line-height: normal;
             color: var(--light-color);
             opacity: 0.3;
+
             @include mobile {
-                
+
                 font-size: 14px;
             }
         }
+
         &:focus {
             outline: 1px solid red;
         }
@@ -89,10 +94,10 @@
             }
         }
 
-       @include mobile {
-        width: 15%;
-        text-align: center;
-       }
+        @include mobile {
+            width: 15%;
+            text-align: center;
+        }
 
 
     }

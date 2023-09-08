@@ -1,7 +1,8 @@
 @import "./scss/main.scss";
 @import "./scss/mixins/breakpoint";
 @import "./scss/mixins/_mini.scss";
-// @import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300;400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
+
 body {
   margin: 0;
   font-family:
@@ -21,17 +22,21 @@ body {
   background-color: var(--body-bg);
 
   &::-webkit-scrollbar {
-    width: 12px;               /* ширина scrollbar */
+    width: 12px;
+    /* ширина scrollbar */
   }
 
   &::-webkit-scrollbar-track {
-    background: rgb(61, 61, 61);        /* цвет дорожки */
+    background: rgb(61, 61, 61);
+    /* цвет дорожки */
   }
 
   &::-webkit-scrollbar-thumb {
-    border-radius: 20px;       /* закругления плашки */
-    background-color: rgb(255, 0, 0);    /* цвет плашки */
-    
+    border-radius: 20px;
+    /* закругления плашки */
+    background-color: rgb(255, 0, 0);
+    /* цвет плашки */
+
   }
 }
 
@@ -116,9 +121,11 @@ code {
 .ymaps-layers-pane {
   filter: invert(100%) !important;
 }
+
 .cardSkeleton {
   width: 286px;
   height: 476px;
+
   @include mobile {
     width: 160px;
     height: 250px;

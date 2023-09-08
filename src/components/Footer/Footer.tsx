@@ -263,7 +263,11 @@ const Footer: FC = () => {
 						права защищены и принадлежат правообладателям.
 					</span>
 					<img src="/img/Footer/teka.png" alt="" />
-					<a href="https://github.com/Vedar006" className="visually-hidden">Vedar</a>
+					<a
+						href="https://github.com/Vedar006"
+						className="visually-hidden">
+						Vedar
+					</a>
 				</div>
 			</div>
 		</footer>

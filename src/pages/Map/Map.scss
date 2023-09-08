@@ -1,18 +1,20 @@
 .Map {
-     &__wrapper {
+    &__wrapper {
         padding-top: 50px;
-     }
-    
+    }
+
     &__header {
         text-align: center;
+
         h1 {
             font-family: Jura;
             font-weight: 500;
             font-style: normal;
             font-size: 32px;
-            line-height: 120%; /* 38.4px */
+            line-height: 120%;
+            /* 38.4px */
             text-transform: uppercase;
-            color:var(--light-color);
+            color: var(--light-color);
         }
     }
 }
