@@ -1,5 +1,5 @@
 import { FC, memo } from 'react'
-import { useWhyDidYouUpdate } from 'ahooks'
+
 import { motion } from 'framer-motion'
 
 const ulAnimation = {
@@ -19,7 +19,6 @@ interface ICategoriesList {
 }
 
 const CategoriesList: FC<ICategoriesList> = memo(({ category, setCategory }) => {
-	useWhyDidYouUpdate('CategoriesList', { category, setCategory })
 
 	return (
 		<motion.ul
