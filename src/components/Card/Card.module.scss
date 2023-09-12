@@ -113,7 +113,9 @@
         }
 
     }
-
+    @include middle-mobile {
+        width: 260px;
+    }
     @include mobile {
         width: 160px;
         max-height: 335px;

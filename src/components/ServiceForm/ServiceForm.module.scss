@@ -13,7 +13,9 @@
         width: 100%;
         min-height: 630px;
         background-color: var(--light-color);
-
+        @include big-mobile {
+           padding: 15px 0;  
+           }
         @include mobile {
             padding-top: 30px;
             padding-bottom: 30px;
@@ -59,7 +61,10 @@
         @include tablet {
             max-width: 300px;
         }
-
+        @include big-mobile {
+         width: 100%;
+         max-width: 500px;   
+        }
         @include mobile {
             width: 100%;
             max-width: 400px;
@@ -75,8 +80,7 @@
         @include tablet {
             justify-content: center;
         }
-
-        @include mobile {
+        @include big-mobile {
             flex-direction: column;
             align-items: center;
             width: 100%;
@@ -90,7 +94,7 @@
         span {
             margin: 15px;
         }
-
+        // @include middle-mobile
         @include tablet {
             align-items: center;
         }
@@ -113,7 +117,13 @@
         @include tablet {
             max-width: 620px;
         }
-
+        @include big-mobile {
+            width: 100%;
+            max-width: 500px;   
+           }
+        @include middle-mobile {
+            width: 100%;
+        }
         @include mobile {
             width: 100%;
             max-width: 400px;

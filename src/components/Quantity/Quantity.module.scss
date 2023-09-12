@@ -19,7 +19,10 @@
         &_text {
             max-width: 500px;
         }
-
+  
+        @include minidesk {
+            padding: 0 2%;
+        }
         @include tablet {
             padding: 0 40px;
         }
@@ -27,6 +30,7 @@
         @include mobile {
             padding: 0 20px;
         }
+
     }
 
     &__title {

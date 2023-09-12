@@ -7,7 +7,7 @@
 }
 
 @mixin minidesk {
-  @media (max-width: (1200px)) {
+  @media (max-width: (1220px)) {
     @content;
   }
 }
@@ -17,7 +17,16 @@
     @content;
   }
 }
-
+@mixin middle-desktop {
+  @media (max-width:(1320px)) {
+    @content;
+  }
+}
+@mixin middle-tablet {
+  @media (max-width: (1114px)) {
+    @content;
+  }
+}
 @mixin tablet {
   @media (max-width: (1024px)) {
     @content;
@@ -29,7 +38,16 @@
     @content;
   }
 }
-
+@mixin big-mobile {
+  @media (max-width:(667px)) {
+    @content;
+  }
+}
+@mixin middle-mobile {
+  @media (max-width:(632px)) {
+    @content;
+  }
+}
 @mixin mobile {
   @media (max-width: (576px)) {
     @content;

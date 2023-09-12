@@ -126,6 +126,9 @@ code {
   width: 286px;
   height: 476px;
 
+  @include middle-mobile {
+    width: 260px;
+}
   @include mobile {
     width: 160px;
     height: 250px;
