@@ -30,4 +30,7 @@
         background-color: var(--red-color);
         transform: translateX(50%);
     }
+    @include mobile {
+        height: 50vh;
+    }
 }

@@ -29,7 +29,9 @@
             object-fit: cover;
 
         }
-
+      @include mobile {
+        width: 350px;
+      }
 
     }
 
@@ -45,7 +47,9 @@
         order: 1;
         width: 400px;
 
-
+     @include mobile {
+        width:350px;
+     }
     }
 
     &_title {
