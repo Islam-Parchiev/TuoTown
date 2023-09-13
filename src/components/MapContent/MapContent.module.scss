@@ -17,7 +17,7 @@
 			width: 100%;
 			height: 500px;
 		}
-		@include middle-tablet {
+		@include big-tablet{
 			width: 100%;
 		}
 		@include mobile {
@@ -31,7 +31,7 @@
 			width: 100%;
 			min-height: 400px;
 		}
-		@include middle-tablet {
+		@include big-tablet{
 			width: 70%;
 			min-height: 400px;
 		}

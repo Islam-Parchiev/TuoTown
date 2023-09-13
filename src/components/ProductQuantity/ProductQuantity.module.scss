@@ -45,6 +45,9 @@
         line-height: normal;
         color: var(--light-color);
     }
+    &__buy {
+        margin-top: 20px;
+    }
 
     @include mobile {
         &__btn {

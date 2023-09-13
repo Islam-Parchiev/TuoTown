@@ -16,6 +16,9 @@
             padding-bottom: 100px;
             gap: 50px;
         }
+        @include middle-tablet {
+            flex-direction: column; 
+        }
 
     }
 
